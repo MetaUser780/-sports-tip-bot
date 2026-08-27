@@ -1,0 +1,30 @@
+name: Sports Tip Bot
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "*/30 * * * *"
+
+jobs:
+  run-bot:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Check project files
+        run: |
+          echo "Sports Tip Bot is starting..."
+          echo "Checking repository files..."
+          ls -la
+
+      - name: Run bot
+        run: |
+          echo "Bot workflow is ready."
+          echo "Live odds API will be connected next."
