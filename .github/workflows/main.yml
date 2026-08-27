@@ -9,6 +9,9 @@ jobs:
   run-bot:
     runs-on: ubuntu-latest
 
+    env:
+      ODDS_API_KEY: ${{ secrets.ODDS_API_KEY }}
+
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -26,5 +29,4 @@ jobs:
 
       - name: Run bot
         run: |
-          echo "Bot workflow is ready."
-          echo "Live odds API will be connected next."
+          node bot.js
