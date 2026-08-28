@@ -1,12 +1,12 @@
 {
-  "updatedAt": "2026-08-28T04:50:29.703Z",
+  "updatedAt": "2026-08-28T15:56:09.647Z",
   "stats": {
     "won": 0,
     "lost": 1,
     "push": 0,
-    "pending": 40,
+    "pending": 44,
     "winRate": 0,
-    "totalTips": 41
+    "totalTips": 45
   },
   "tips": [
     {
@@ -917,7 +917,157 @@
       "tier": "free",
       "createdAt": "2026-08-28T04:32:02.208Z",
       "resolvedAt": null
+    },
+    {
+      "id": "baseball_mlb:365be8fc27b2eb31c003fc150dde54a5:h2h",
+      "type": "single",
+      "sport": "MLB",
+      "sportKey": "baseball_mlb",
+      "eventId": "365be8fc27b2eb31c003fc150dde54a5",
+      "game": "Seattle Mariners @ Toronto Blue Jays",
+      "homeTeam": "Toronto Blue Jays",
+      "awayTeam": "Seattle Mariners",
+      "commenceTime": "2026-08-28T23:16:00Z",
+      "market": "h2h",
+      "pick": "Toronto Blue Jays",
+      "odds": -146,
+      "bookmaker": "FanDuel",
+      "status": "PENDING",
+      "tier": "free",
+      "createdAt": "2026-08-28T15:56:09.424Z",
+      "resolvedAt": null
+    },
+    {
+      "id": "baseball_mlb:ef43a82246c16635651619951f3fb493:h2h",
+      "type": "single",
+      "sport": "MLB",
+      "sportKey": "baseball_mlb",
+      "eventId": "ef43a82246c16635651619951f3fb493",
+      "game": "Baltimore Orioles @ Athletics",
+      "homeTeam": "Athletics",
+      "awayTeam": "Baltimore Orioles",
+      "commenceTime": "2026-08-29T01:41:00Z",
+      "market": "h2h",
+      "pick": "Baltimore Orioles",
+      "odds": -108,
+      "bookmaker": "FanDuel",
+      "status": "PENDING",
+      "tier": "free",
+      "createdAt": "2026-08-28T15:56:09.424Z",
+      "resolvedAt": null
+    },
+    {
+      "id": "baseball_mlb:94fdf397f1e71919d8a7a9db4c9f81d8:h2h",
+      "type": "single",
+      "sport": "MLB",
+      "sportKey": "baseball_mlb",
+      "eventId": "94fdf397f1e71919d8a7a9db4c9f81d8",
+      "game": "Arizona Diamondbacks @ San Francisco Giants",
+      "homeTeam": "San Francisco Giants",
+      "awayTeam": "Arizona Diamondbacks",
+      "commenceTime": "2026-08-29T02:16:00Z",
+      "market": "h2h",
+      "pick": "Arizona Diamondbacks",
+      "odds": -116,
+      "bookmaker": "FanDuel",
+      "status": "PENDING",
+      "tier": "free",
+      "createdAt": "2026-08-28T15:56:09.424Z",
+      "resolvedAt": null
+    },
+    {
+      "id": "combo:baseball_mlb:6e66851b93b3cdcc4578b23ae9b93d6d:h2h|soccer_epl:2c49e9d1ef855f62962b915e773f906d:h2h|soccer_epl:5759167055d94ba38e145ab92188abbf:h2h|soccer_epl:feafb731d0307bc91a58e18187aa2eab:h2h|soccer_usa_mls:1ef7214244fa34acdaaafcc299cf9ca1:h2h|soccer_usa_mls:47162eeb7df0608a3dd63213f0c7c526:h2h",
+      "type": "combo",
+      "sport": "COMBO",
+      "legs": [
+        {
+          "sportKey": "soccer_usa_mls",
+          "sport": "MLS",
+          "eventId": "47162eeb7df0608a3dd63213f0c7c526",
+          "game": "Vancouver Whitecaps FC @ Sporting Kansas City",
+          "homeTeam": "Sporting Kansas City",
+          "awayTeam": "Vancouver Whitecaps FC",
+          "commenceTime": "2026-08-30T00:30:00Z",
+          "market": "h2h",
+          "pick": "Vancouver Whitecaps FC",
+          "odds": -275,
+          "bookmaker": "BetRivers"
+        },
+        {
+          "sportKey": "soccer_epl",
+          "sport": "EPL",
+          "eventId": "5759167055d94ba38e145ab92188abbf",
+          "game": "Ipswich Town @ Manchester United",
+          "homeTeam": "Manchester United",
+          "awayTeam": "Ipswich Town",
+          "commenceTime": "2026-08-30T15:30:00Z",
+          "market": "h2h",
+          "pick": "Manchester United",
+          "odds": -250,
+          "bookmaker": "MyBookie.ag"
+        },
+        {
+          "sportKey": "soccer_usa_mls",
+          "sport": "MLS",
+          "eventId": "1ef7214244fa34acdaaafcc299cf9ca1",
+          "game": "CF Montreal @ Inter Miami CF",
+          "homeTeam": "Inter Miami CF",
+          "awayTeam": "CF Montreal",
+          "commenceTime": "2026-08-29T23:30:00Z",
+          "market": "h2h",
+          "pick": "Inter Miami CF",
+          "odds": -250,
+          "bookmaker": "BetRivers"
+        },
+        {
+          "sportKey": "baseball_mlb",
+          "sport": "MLB",
+          "eventId": "6e66851b93b3cdcc4578b23ae9b93d6d",
+          "game": "Colorado Rockies @ Atlanta Braves",
+          "homeTeam": "Atlanta Braves",
+          "awayTeam": "Colorado Rockies",
+          "commenceTime": "2026-08-28T23:16:00Z",
+          "market": "h2h",
+          "pick": "Atlanta Braves",
+          "odds": -220,
+          "bookmaker": "FanDuel"
+        },
+        {
+          "sportKey": "soccer_epl",
+          "sport": "EPL",
+          "eventId": "feafb731d0307bc91a58e18187aa2eab",
+          "game": "Nottingham Forest @ Liverpool",
+          "homeTeam": "Liverpool",
+          "awayTeam": "Nottingham Forest",
+          "commenceTime": "2026-08-29T11:30:00Z",
+          "market": "h2h",
+          "pick": "Liverpool",
+          "odds": -195,
+          "bookmaker": "MyBookie.ag"
+        },
+        {
+          "sportKey": "soccer_epl",
+          "sport": "EPL",
+          "eventId": "2c49e9d1ef855f62962b915e773f906d",
+          "game": "Arsenal @ Aston Villa",
+          "homeTeam": "Aston Villa",
+          "awayTeam": "Arsenal",
+          "commenceTime": "2026-08-31T19:00:00Z",
+          "market": "h2h",
+          "pick": "Arsenal",
+          "odds": -195,
+          "bookmaker": "FanDuel"
+        }
+      ],
+      "commenceTime": "2026-08-28T23:16:00Z",
+      "market": "combo",
+      "odds": 790,
+      "bookmaker": "Multiple",
+      "status": "PENDING",
+      "tier": "free",
+      "createdAt": "2026-08-28T15:56:09.646Z",
+      "resolvedAt": null
     }
   ],
-  "extraMarketsLastRun": "2026-08-28T04:20:14Z"
+  "extraMarketsLastRun": "2026-08-28T15:56:08Z"
 }
