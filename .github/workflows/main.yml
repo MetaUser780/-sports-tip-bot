@@ -5,6 +5,9 @@ on:
   schedule:
     - cron: "*/30 * * * *"
 
+permissions:
+  contents: write
+
 jobs:
   run-bot:
     runs-on: ubuntu-latest
@@ -21,12 +24,17 @@ jobs:
         with:
           node-version: 20
 
-      - name: Check project files
-        run: |
-          echo "Sports Tip Bot is starting..."
-          echo "Checking repository files..."
-          ls -la
-
       - name: Run bot
+        run: node bot.js
+
+      - name: Commit updated tips
         run: |
-          node bot.js
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add tips.json
+          if git diff --cached --quiet; then
+            echo "No changes to commit."
+          else
+            git commit -m "Update tips [skip ci]"
+            git push
+          fi
