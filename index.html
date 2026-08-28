@@ -19,10 +19,24 @@ function escapeHtml(str) {
   });
 }
 
+function fmtKickoff(iso) {
+  if (!iso) return "";
+  const d = new Date(iso);
+  if (isNaN(d.getTime())) return "";
+  return d.toLocaleString(undefined, {
+    weekday: "short",
+    month: "short",
+    day: "numeric",
+    hour: "numeric",
+    minute: "2-digit"
+  });
+}
+
 function render() {
   const cardsEl = document.getElementById("cards");
   const filtered = allTips.filter(function (t) { return activeFilter === 0 || t.odds >= activeFilter; });
-  const sorted = filtered.slice().sort(function (a, b) { return new Date(b.commenceTime) - new Date(a.commenceTime); });
+  // Soonest kickoff first, so "what's coming up next" is always at the top.
+  const sorted = filtered.slice().sort(function (a, b) { return new Date(a.commenceTime) - new Date(b.commenceTime); });
 
   if (sorted.length === 0) {
     cardsEl.innerHTML = '<div class="empty">Pa gen tip ki disponib pou filtè sa a kounye a.</div>';
@@ -35,6 +49,7 @@ function render() {
         '<div class="row">' +
           '<div>' +
             '<div class="title">' + escapeHtml(tip.sport) + ' • ' + escapeHtml(tip.game) + '</div>' +
+            '<div class="muted small">🕒 ' + escapeHtml(fmtKickoff(tip.commenceTime)) + '</div>' +
             '<div class="muted small">' + escapeHtml((tip.market || "").toUpperCase()) + ' • ' + escapeHtml(tip.bookmaker) + '</div>' +
           '</div>' +
           '<div style="text-align:right">' +
@@ -85,7 +100,7 @@ function load() {
         note.textContent = "Konekte ak The Odds API. Poko gen match/kòt disponib — tips ap parèt otomatikman lè gen match k ap vini.";
       } else {
         const updated = data.updatedAt ? new Date(data.updatedAt).toLocaleString() : "—";
-        note.textContent = "Done reyèl soti nan The Odds API. Dènye mizajou: " + updated + ". Dashboard la refrechi otomatikman chak 30 minit.";
+        note.textContent = "Done reyèl soti nan The Odds API. Dènye mizajou: " + updated + ". Dashboard la refrechi otomatikman chak 2 èdtan.";
       }
     })
     .catch(function () {
