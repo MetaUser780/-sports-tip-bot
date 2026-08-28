@@ -1,1 +1,99 @@
-<!doctype html><html lang="ht"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#0b0f19"><title>Sports Tip Bot V2</title><style>*{box-sizing:border-box}body{margin:0;background:#0b0f19;color:#f6f7fb;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}.wrap{max-width:760px;margin:auto;padding:20px 15px 45px}header{display:flex;justify-content:space-between;align-items:center;margin-bottom:18px}h1{font-size:26px;margin:0}.muted{color:#929db1}.small{font-size:12px}.pill{border:1px solid #2a3951;background:#121b2b;border-radius:999px;padding:7px 10px;font-size:11px}.tabs{display:flex;gap:7px;overflow:auto;margin-bottom:14px}.tabs button,.btn{background:#111a29;color:#e7ebf3;border:1px solid #2a3951;border-radius:11px;padding:10px 12px;font-weight:700}.tabs button.active{background:#29405f}.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}.stat,.card{background:#111827;border:1px solid #202d42;border-radius:17px}.stat{padding:13px}.stat b{font-size:21px}.stat div{font-size:11px;color:#8d98aa;margin-top:3px}.card{padding:15px;margin-top:11px}.row{display:flex;justify-content:space-between;gap:12px}.title{font-weight:850}.odds{font-size:21px;font-weight:900}.pick{padding:10px 0;border-bottom:1px solid #202d42;font-size:13px}.pick:last-child{border-bottom:0}.reason{font-size:12px;line-height:1.45;color:#aab4c5;margin-top:10px}.actions{display:flex;gap:8px;margin-top:13px}.btn{flex:1;text-align:center;text-decoration:none;font-size:12px}.green{color:#4ddd83}.red{color:#ff657d}.yellow{color:#f3c85d}.note{background:#0f1725;border-radius:13px;padding:11px;margin-top:14px;font-size:12px;color:#9da8bb}</style></head><body><main class="wrap"><header><div><h1>🏆 Sports Tip Bot</h1><div class="muted small">V2 • AI tip dashboard</div></div><span class="pill">API READY</span></header><div class="tabs"><button class="active">Tout</button><button>+300+</button><button>+500+</button><button>+1000+</button></div><section class="stats"><div class="stat"><b>1</b><div>Won</div></div><div class="stat"><b>1</b><div>Lost</div></div><div class="stat"><b>50%</b><div>Win rate</div></div></section><article class="card"><div class="row"><div><div class="title">TIP #101 • NFL</div><div class="muted small">3 picks • Confidence 71%</div></div><div style="text-align:right"><div class="odds">+430</div><div class="yellow">⏳ PENDING</div></div></div><div class="pick"><b>1. Team A</b><br><span class="muted">Moneyline</span></div><div class="pick"><b>2. Team B</b><br><span class="muted">Over 2.5</span></div><div class="pick"><b>3. Team C</b><br><span class="muted">Moneyline</span></div><div class="reason">Fòm resan + matchup + avantaj lakay.</div><div class="actions"><a class="btn" href="https://sportsbook.fanduel.com/">FanDuel</a><a class="btn" href="https://sportsbook.draftkings.com/">DraftKings</a></div></article><div class="note">⚠️ Demo data only. Live odds/API and automatic notifications are not connected yet.</div></main></body></html>
+<!doctype html><html lang="ht"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#0b0f19"><title>Sports Tip Bot V2</title><style>*{box-sizing:border-box}body{margin:0;background:#0b0f19;color:#f6f7fb;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}.wrap{max-width:760px;margin:auto;padding:20px 15px 45px}header{display:flex;justify-content:space-between;align-items:center;margin-bottom:18px}h1{font-size:26px;margin:0}.muted{color:#929db1}.small{font-size:12px}.pill{border:1px solid #2a3951;background:#121b2b;border-radius:999px;padding:7px 10px;font-size:11px}.tabs{display:flex;gap:7px;overflow:auto;margin-bottom:14px}.tabs button,.btn{background:#111a29;color:#e7ebf3;border:1px solid #2a3951;border-radius:11px;padding:10px 12px;font-weight:700;cursor:pointer}.tabs button.active{background:#29405f}.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(75px,1fr));gap:8px}.stat,.card{background:#111827;border:1px solid #202d42;border-radius:17px}.stat{padding:13px}.stat b{font-size:21px}.stat div{font-size:11px;color:#8d98aa;margin-top:3px}.card{padding:15px;margin-top:11px}.row{display:flex;justify-content:space-between;gap:12px}.title{font-weight:850}.odds{font-size:21px;font-weight:900}.pick{padding:10px 0;border-bottom:1px solid #202d42;font-size:13px}.pick:last-child{border-bottom:0}.reason{font-size:12px;line-height:1.45;color:#aab4c5;margin-top:10px}.actions{display:flex;gap:8px;margin-top:13px}.btn{flex:1;text-align:center;text-decoration:none;font-size:12px}.green{color:#4ddd83}.red{color:#ff657d}.yellow{color:#f3c85d}.gray{color:#8d98aa}.note{background:#0f1725;border-radius:13px;padding:11px;margin-top:14px;font-size:12px;color:#9da8bb}.empty{text-align:center;padding:30px 10px;color:#8d98aa;font-size:13px}</style></head><body><main class="wrap"><header><div><h1>🏆 Sports Tip Bot</h1><div class="muted small">V2 • AI tip dashboard</div></div><span class="pill" id="statusPill">LOADING</span></header><div class="tabs" id="tabs"><button class="active" data-filter="0">Tout</button><button data-filter="300">+300+</button><button data-filter="500">+500+</button><button data-filter="1000">+1000+</button></div><section class="stats"><div class="stat"><b id="statWon">0</b><div>Won</div></div><div class="stat"><b id="statLost">0</b><div>Lost</div></div><div class="stat"><b id="statRate">0%</b><div>Win rate</div></div><div class="stat"><b id="statTotal">0</b><div>Total Tips</div></div></section><div id="cards"></div><div class="note" id="note">Ap chaje done...</div></main><script>
+let allTips = [];
+let activeFilter = 0;
+
+const statusInfo = {
+  PENDING: { label: "PENDING", cls: "yellow" },
+  WON: { label: "WON", cls: "green" },
+  LOST: { label: "LOST", cls: "red" },
+  PUSH: { label: "PUSH", cls: "gray" }
+};
+
+function fmtOdds(n) {
+  return (n > 0 ? "+" : "") + n;
+}
+
+function escapeHtml(str) {
+  return String(str).replace(/[&<>"']/g, function (c) {
+    return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c];
+  });
+}
+
+function render() {
+  const cardsEl = document.getElementById("cards");
+  const filtered = allTips.filter(function (t) { return activeFilter === 0 || t.odds >= activeFilter; });
+  const sorted = filtered.slice().sort(function (a, b) { return new Date(b.commenceTime) - new Date(a.commenceTime); });
+
+  if (sorted.length === 0) {
+    cardsEl.innerHTML = '<div class="empty">Pa gen tip ki disponib pou filtè sa a kounye a.</div>';
+    return;
+  }
+
+  cardsEl.innerHTML = sorted.map(function (tip) {
+    const st = statusInfo[tip.status] || statusInfo.PENDING;
+    return '<article class="card">' +
+        '<div class="row">' +
+          '<div>' +
+            '<div class="title">' + escapeHtml(tip.sport) + ' • ' + escapeHtml(tip.game) + '</div>' +
+            '<div class="muted small">' + escapeHtml((tip.market || "").toUpperCase()) + ' • ' + escapeHtml(tip.bookmaker) + '</div>' +
+          '</div>' +
+          '<div style="text-align:right">' +
+            '<div class="odds">' + fmtOdds(tip.odds) + '</div>' +
+            '<div class="' + st.cls + '">' + st.label + '</div>' +
+          '</div>' +
+        '</div>' +
+        '<div class="pick"><b>Pick: ' + escapeHtml(tip.pick) + '</b></div>' +
+        '<div class="actions">' +
+          '<a class="btn" href="https://sportsbook.fanduel.com/" target="_blank" rel="noopener">FanDuel</a>' +
+          '<a class="btn" href="https://sportsbook.draftkings.com/" target="_blank" rel="noopener">DraftKings</a>' +
+        '</div>' +
+      '</article>';
+  }).join("");
+}
+
+function applyStats(stats) {
+  document.getElementById("statWon").textContent = stats.won || 0;
+  document.getElementById("statLost").textContent = stats.lost || 0;
+  document.getElementById("statRate").textContent = (stats.winRate || 0) + "%";
+  document.getElementById("statTotal").textContent = stats.totalTips || 0;
+}
+
+document.getElementById("tabs").addEventListener("click", function (e) {
+  const btn = e.target.closest("button[data-filter]");
+  if (!btn) return;
+  document.querySelectorAll("#tabs button").forEach(function (b) { b.classList.remove("active"); });
+  btn.classList.add("active");
+  activeFilter = Number(btn.dataset.filter);
+  render();
+});
+
+function load() {
+  fetch("tips.json?_=" + Date.now())
+    .then(function (res) {
+      if (!res.ok) throw new Error("HTTP " + res.status);
+      return res.json();
+    })
+    .then(function (data) {
+      allTips = Array.isArray(data.tips) ? data.tips : [];
+      applyStats(data.stats || { won: 0, lost: 0, winRate: 0, totalTips: 0 });
+      render();
+
+      const pill = document.getElementById("statusPill");
+      const note = document.getElementById("note");
+      pill.textContent = "LIVE";
+      if (allTips.length === 0) {
+        note.textContent = "Konekte ak The Odds API. Poko gen match/kòt disponib — tips ap parèt otomatikman lè gen match k ap vini.";
+      } else {
+        const updated = data.updatedAt ? new Date(data.updatedAt).toLocaleString() : "—";
+        note.textContent = "Done reyèl soti nan The Odds API. Dènye mizajou: " + updated + ". Dashboard la refrechi otomatikman chak 30 minit.";
+      }
+    })
+    .catch(function () {
+      document.getElementById("statusPill").textContent = "OFFLINE";
+      document.getElementById("note").textContent = "Pa kapab chaje tips.json kounye a. Verifye ke GitHub Action lan te kouri omwen yon fwa.";
+      document.getElementById("cards").innerHTML = '<div class="empty">Pa gen done pou kounye a.</div>';
+    });
+}
+
+load();
+</script></body></html>
