@@ -1,12 +1,12 @@
 {
-  "updatedAt": "2026-08-28T03:04:52.326Z",
+  "updatedAt": "2026-08-28T04:20:14.725Z",
   "stats": {
     "won": 0,
     "lost": 1,
     "push": 0,
-    "pending": 40,
+    "pending": 43,
     "winRate": 0,
-    "totalTips": 41
+    "totalTips": 44
   },
   "tips": [
     {
@@ -805,6 +805,195 @@
       "tier": "free",
       "createdAt": "2026-08-28T03:03:44.807Z",
       "resolvedAt": null
+    },
+    {
+      "id": "combo:soccer_epl:5759167055d94ba38e145ab92188abbf:h2h|soccer_usa_mls:47162eeb7df0608a3dd63213f0c7c526:h2h",
+      "type": "combo",
+      "sport": "COMBO",
+      "legs": [
+        {
+          "sportKey": "soccer_usa_mls",
+          "sport": "MLS",
+          "eventId": "47162eeb7df0608a3dd63213f0c7c526",
+          "game": "Vancouver Whitecaps FC @ Sporting Kansas City",
+          "homeTeam": "Sporting Kansas City",
+          "awayTeam": "Vancouver Whitecaps FC",
+          "commenceTime": "2026-08-30T00:30:00Z",
+          "market": "h2h",
+          "pick": "Vancouver Whitecaps FC",
+          "odds": -265,
+          "bookmaker": "BetRivers"
+        },
+        {
+          "sportKey": "soccer_epl",
+          "sport": "EPL",
+          "eventId": "5759167055d94ba38e145ab92188abbf",
+          "game": "Ipswich Town @ Manchester United",
+          "homeTeam": "Manchester United",
+          "awayTeam": "Ipswich Town",
+          "commenceTime": "2026-08-30T15:30:00Z",
+          "market": "h2h",
+          "pick": "Manchester United",
+          "odds": -250,
+          "bookmaker": "MyBookie.ag"
+        }
+      ],
+      "commenceTime": "2026-08-30T00:30:00Z",
+      "market": "combo",
+      "odds": -108,
+      "bookmaker": "Multiple",
+      "status": "PENDING",
+      "tier": "free",
+      "createdAt": "2026-08-28T04:20:14.725Z",
+      "resolvedAt": null
+    },
+    {
+      "id": "combo:soccer_epl:5759167055d94ba38e145ab92188abbf:h2h|soccer_usa_mls:1ef7214244fa34acdaaafcc299cf9ca1:h2h|soccer_usa_mls:47162eeb7df0608a3dd63213f0c7c526:h2h",
+      "type": "combo",
+      "sport": "COMBO",
+      "legs": [
+        {
+          "sportKey": "soccer_usa_mls",
+          "sport": "MLS",
+          "eventId": "47162eeb7df0608a3dd63213f0c7c526",
+          "game": "Vancouver Whitecaps FC @ Sporting Kansas City",
+          "homeTeam": "Sporting Kansas City",
+          "awayTeam": "Vancouver Whitecaps FC",
+          "commenceTime": "2026-08-30T00:30:00Z",
+          "market": "h2h",
+          "pick": "Vancouver Whitecaps FC",
+          "odds": -265,
+          "bookmaker": "BetRivers"
+        },
+        {
+          "sportKey": "soccer_epl",
+          "sport": "EPL",
+          "eventId": "5759167055d94ba38e145ab92188abbf",
+          "game": "Ipswich Town @ Manchester United",
+          "homeTeam": "Manchester United",
+          "awayTeam": "Ipswich Town",
+          "commenceTime": "2026-08-30T15:30:00Z",
+          "market": "h2h",
+          "pick": "Manchester United",
+          "odds": -250,
+          "bookmaker": "MyBookie.ag"
+        },
+        {
+          "sportKey": "soccer_usa_mls",
+          "sport": "MLS",
+          "eventId": "1ef7214244fa34acdaaafcc299cf9ca1",
+          "game": "CF Montreal @ Inter Miami CF",
+          "homeTeam": "Inter Miami CF",
+          "awayTeam": "CF Montreal",
+          "commenceTime": "2026-08-29T23:30:00Z",
+          "market": "h2h",
+          "pick": "Inter Miami CF",
+          "odds": -250,
+          "bookmaker": "BetRivers"
+        }
+      ],
+      "commenceTime": "2026-08-29T23:30:00Z",
+      "market": "combo",
+      "odds": 170,
+      "bookmaker": "Multiple",
+      "status": "PENDING",
+      "tier": "free",
+      "createdAt": "2026-08-28T04:20:14.725Z",
+      "resolvedAt": null
+    },
+    {
+      "id": "combo:baseball_mlb:6e66851b93b3cdcc4578b23ae9b93d6d:h2h|baseball_mlb:bb28f14c5f48561498ab3fabd1ebf47b:h2h|soccer_epl:2c49e9d1ef855f62962b915e773f906d:h2h|soccer_epl:5759167055d94ba38e145ab92188abbf:h2h|soccer_usa_mls:1ef7214244fa34acdaaafcc299cf9ca1:h2h|soccer_usa_mls:47162eeb7df0608a3dd63213f0c7c526:h2h",
+      "type": "combo",
+      "sport": "COMBO",
+      "legs": [
+        {
+          "sportKey": "soccer_usa_mls",
+          "sport": "MLS",
+          "eventId": "47162eeb7df0608a3dd63213f0c7c526",
+          "game": "Vancouver Whitecaps FC @ Sporting Kansas City",
+          "homeTeam": "Sporting Kansas City",
+          "awayTeam": "Vancouver Whitecaps FC",
+          "commenceTime": "2026-08-30T00:30:00Z",
+          "market": "h2h",
+          "pick": "Vancouver Whitecaps FC",
+          "odds": -265,
+          "bookmaker": "BetRivers"
+        },
+        {
+          "sportKey": "soccer_epl",
+          "sport": "EPL",
+          "eventId": "5759167055d94ba38e145ab92188abbf",
+          "game": "Ipswich Town @ Manchester United",
+          "homeTeam": "Manchester United",
+          "awayTeam": "Ipswich Town",
+          "commenceTime": "2026-08-30T15:30:00Z",
+          "market": "h2h",
+          "pick": "Manchester United",
+          "odds": -250,
+          "bookmaker": "MyBookie.ag"
+        },
+        {
+          "sportKey": "soccer_usa_mls",
+          "sport": "MLS",
+          "eventId": "1ef7214244fa34acdaaafcc299cf9ca1",
+          "game": "CF Montreal @ Inter Miami CF",
+          "homeTeam": "Inter Miami CF",
+          "awayTeam": "CF Montreal",
+          "commenceTime": "2026-08-29T23:30:00Z",
+          "market": "h2h",
+          "pick": "Inter Miami CF",
+          "odds": -250,
+          "bookmaker": "BetRivers"
+        },
+        {
+          "sportKey": "baseball_mlb",
+          "sport": "MLB",
+          "eventId": "6e66851b93b3cdcc4578b23ae9b93d6d",
+          "game": "Colorado Rockies @ Atlanta Braves",
+          "homeTeam": "Atlanta Braves",
+          "awayTeam": "Colorado Rockies",
+          "commenceTime": "2026-08-28T23:16:00Z",
+          "market": "h2h",
+          "pick": "Atlanta Braves",
+          "odds": -220,
+          "bookmaker": "FanDuel"
+        },
+        {
+          "sportKey": "baseball_mlb",
+          "sport": "MLB",
+          "eventId": "bb28f14c5f48561498ab3fabd1ebf47b",
+          "game": "Los Angeles Dodgers @ Detroit Tigers",
+          "homeTeam": "Detroit Tigers",
+          "awayTeam": "Los Angeles Dodgers",
+          "commenceTime": "2026-08-28T22:41:00Z",
+          "market": "h2h",
+          "pick": "Los Angeles Dodgers",
+          "odds": -215,
+          "bookmaker": "FanDuel"
+        },
+        {
+          "sportKey": "soccer_epl",
+          "sport": "EPL",
+          "eventId": "2c49e9d1ef855f62962b915e773f906d",
+          "game": "Arsenal @ Aston Villa",
+          "homeTeam": "Aston Villa",
+          "awayTeam": "Arsenal",
+          "commenceTime": "2026-08-31T19:00:00Z",
+          "market": "h2h",
+          "pick": "Arsenal",
+          "odds": -210,
+          "bookmaker": "FanDuel"
+        }
+      ],
+      "commenceTime": "2026-08-28T22:41:00Z",
+      "market": "combo",
+      "odds": 749,
+      "bookmaker": "Multiple",
+      "status": "PENDING",
+      "tier": "free",
+      "createdAt": "2026-08-28T04:20:14.725Z",
+      "resolvedAt": null
     }
-  ]
+  ],
+  "extraMarketsLastRun": "2026-08-28T04:20:14Z"
 }
