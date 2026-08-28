@@ -8,6 +8,7 @@ if (!API_KEY) {
 
 const TIPS_FILE = "tips.json";
 const WINDOW_DAYS = 5; // only track games starting within this many days
+const COMBO_SIZES = [2, 3]; // generate one combo tip per size, per run
 
 const SPORTS = [
   { key: "soccer_epl", label: "EPL" },
@@ -74,39 +75,61 @@ function makeTipId(sportKey, eventId, market) {
   return `${sportKey}:${eventId}:${market}`;
 }
 
+// Pulls the single best (highest-price) h2h outcome out of a game's odds -
+// shared by single-game tips and by combo legs, so both pick the same way.
+function extractLegCandidate(sportKey, label, game) {
+  const bookmaker = game.bookmakers?.[0];
+  if (!bookmaker) return null;
+
+  const market = (bookmaker.markets || []).find(m => m.key === "h2h");
+  if (!market) return null;
+
+  const outcomes = market.outcomes || [];
+  if (outcomes.length < 2) return null;
+
+  const best = outcomes.reduce((a, b) =>
+    Number(a.price) > Number(b.price) ? a : b
+  );
+
+  return {
+    sportKey,
+    sport: label,
+    eventId: game.id,
+    game: `${game.away_team} @ ${game.home_team}`,
+    homeTeam: game.home_team,
+    awayTeam: game.away_team,
+    commenceTime: game.commence_time,
+    market: "h2h",
+    pick: best.name,
+    odds: Number(best.price),
+    bookmaker: bookmaker.title
+  };
+}
+
 function buildNewTips(sportKey, label, games, existingIds) {
   const tips = [];
 
   for (const game of games) {
-    const bookmaker = game.bookmakers?.[0];
-    if (!bookmaker) continue;
+    const leg = extractLegCandidate(sportKey, label, game);
+    if (!leg) continue;
 
-    const market = (bookmaker.markets || []).find(m => m.key === "h2h");
-    if (!market) continue;
-
-    const outcomes = market.outcomes || [];
-    if (outcomes.length < 2) continue;
-
-    const best = outcomes.reduce((a, b) =>
-      Number(a.price) > Number(b.price) ? a : b
-    );
-
-    const id = makeTipId(sportKey, game.id, market.key);
+    const id = makeTipId(leg.sportKey, leg.eventId, leg.market);
     if (existingIds.has(id)) continue;
 
     tips.push({
       id,
-      sport: label,
-      sportKey,
-      eventId: game.id,
-      game: `${game.away_team} @ ${game.home_team}`,
-      homeTeam: game.home_team,
-      awayTeam: game.away_team,
-      commenceTime: game.commence_time,
-      market: "h2h",
-      pick: best.name,
-      odds: Number(best.price),
-      bookmaker: bookmaker.title,
+      type: "single",
+      sport: leg.sport,
+      sportKey: leg.sportKey,
+      eventId: leg.eventId,
+      game: leg.game,
+      homeTeam: leg.homeTeam,
+      awayTeam: leg.awayTeam,
+      commenceTime: leg.commenceTime,
+      market: leg.market,
+      pick: leg.pick,
+      odds: leg.odds,
+      bookmaker: leg.bookmaker,
       status: "PENDING",
       tier: "free",
       createdAt: new Date().toISOString(),
@@ -115,6 +138,69 @@ function buildNewTips(sportKey, label, games, existingIds) {
   }
 
   return tips;
+}
+
+function americanToDecimal(odds) {
+  return odds > 0 ? 1 + odds / 100 : 1 + 100 / Math.abs(odds);
+}
+
+function decimalToAmerican(decimal) {
+  return decimal >= 2 ? Math.round((decimal - 1) * 100) : Math.round(-100 / (decimal - 1));
+}
+
+function comboId(legs) {
+  const ids = legs.map(l => makeTipId(l.sportKey, l.eventId, l.market)).sort();
+  return "combo:" + ids.join("|");
+}
+
+// Builds a couple of multi-game combo ("parlay") tips out of the soonest
+// upcoming games across all sports, in addition to the single-game tips.
+function buildComboTips(legCandidates, existingIds) {
+  const combos = [];
+  const bySoonest = legCandidates
+    .slice()
+    .sort((a, b) => new Date(a.commenceTime) - new Date(b.commenceTime));
+
+  for (const size of COMBO_SIZES) {
+    if (bySoonest.length < size) continue;
+
+    const legs = bySoonest.slice(0, size);
+    const id = comboId(legs);
+    if (existingIds.has(id)) continue;
+
+    const decimal = legs.reduce((acc, l) => acc * americanToDecimal(l.odds), 1);
+
+    combos.push({
+      id,
+      type: "combo",
+      sport: "COMBO",
+      legs: legs.map(l => ({
+        sportKey: l.sportKey,
+        sport: l.sport,
+        eventId: l.eventId,
+        game: l.game,
+        homeTeam: l.homeTeam,
+        awayTeam: l.awayTeam,
+        commenceTime: l.commenceTime,
+        market: l.market,
+        pick: l.pick,
+        odds: l.odds,
+        bookmaker: l.bookmaker
+      })),
+      commenceTime: legs[0].commenceTime, // earliest leg (bySoonest is sorted)
+      market: "combo",
+      odds: decimalToAmerican(decimal),
+      bookmaker: "Multiple",
+      status: "PENDING",
+      tier: "free",
+      createdAt: new Date().toISOString(),
+      resolvedAt: null
+    });
+
+    existingIds.add(id);
+  }
+
+  return combos;
 }
 
 function pruneFarFutureTips(tips, now) {
@@ -126,39 +212,58 @@ function pruneFarFutureTips(tips, now) {
 }
 
 function sportNeedsScoreCheck(sportKey, tips, now) {
-  return tips.some(
-    t => t.sportKey === sportKey && t.status === "PENDING" && new Date(t.commenceTime) <= now
-  );
+  return tips.some(tip => {
+    if (tip.status !== "PENDING") return false;
+    const legs = tip.type === "combo" ? tip.legs : [tip];
+    return legs.some(leg => leg.sportKey === sportKey && new Date(leg.commenceTime) <= now);
+  });
 }
 
-function resolveTips(pendingTips, scoresBySport) {
-  for (const tip of pendingTips) {
+// Resolves a single game (or a single leg of a combo) against completed
+// scores. Returns "WON" / "LOST" / "PUSH" / "PENDING" (still not decided).
+function resolveLeg(leg, scoresBySport) {
+  const scoreEvents = scoresBySport[leg.sportKey] || [];
+  const match = scoreEvents.find(e => e.id === leg.eventId);
+  if (!match || !match.completed || !Array.isArray(match.scores)) return "PENDING";
+
+  const homeScore = match.scores.find(s => s.name === leg.homeTeam);
+  const awayScore = match.scores.find(s => s.name === leg.awayTeam);
+  if (!homeScore || !awayScore) return "PENDING";
+
+  const home = Number(homeScore.score);
+  const away = Number(awayScore.score);
+  if (Number.isNaN(home) || Number.isNaN(away)) return "PENDING";
+
+  let winner = null;
+  if (home > away) winner = leg.homeTeam;
+  else if (away > home) winner = leg.awayTeam;
+
+  if (winner === null) return "PUSH";
+  return winner === leg.pick ? "WON" : "LOST";
+}
+
+function resolveTips(tips, scoresBySport) {
+  for (const tip of tips) {
     if (tip.status !== "PENDING") continue;
 
-    const scoreEvents = scoresBySport[tip.sportKey] || [];
-    const match = scoreEvents.find(e => e.id === tip.eventId);
-    if (!match || !match.completed || !Array.isArray(match.scores)) continue;
-
-    const homeScore = match.scores.find(s => s.name === tip.homeTeam);
-    const awayScore = match.scores.find(s => s.name === tip.awayTeam);
-    if (!homeScore || !awayScore) continue;
-
-    const home = Number(homeScore.score);
-    const away = Number(awayScore.score);
-    if (Number.isNaN(home) || Number.isNaN(away)) continue;
-
-    let winner = null;
-    if (home > away) winner = tip.homeTeam;
-    else if (away > home) winner = tip.awayTeam;
-
-    tip.resolvedAt = new Date().toISOString();
-    if (winner === null) {
-      tip.status = "PUSH";
-    } else if (winner === tip.pick) {
-      tip.status = "WON";
-    } else {
-      tip.status = "LOST";
+    if (tip.type === "combo") {
+      const results = tip.legs.map(leg => resolveLeg(leg, scoresBySport));
+      if (results.includes("LOST")) {
+        tip.status = "LOST";
+        tip.resolvedAt = new Date().toISOString();
+      } else if (results.every(r => r !== "PENDING")) {
+        // All legs decided and none lost: a push leg doesn't cost you, so
+        // the combo wins unless every leg pushed (then it's a full push).
+        tip.status = results.every(r => r === "PUSH") ? "PUSH" : "WON";
+        tip.resolvedAt = new Date().toISOString();
+      }
+      continue;
     }
+
+    const result = resolveLeg(tip, scoresBySport);
+    if (result === "PENDING") continue;
+    tip.status = result;
+    tip.resolvedAt = new Date().toISOString();
   }
 }
 
@@ -197,9 +302,8 @@ async function main() {
   const existingIds = new Set(data.tips.map(t => t.id));
 
   // 1. Resolve pending tips using completed scores - but only spend a scores
-  //    request on a sport if it actually has a pending tip whose game has
-  //    already started. Most sports most of the time won't, so this avoids
-  //    a lot of unnecessary API calls.
+  //    request on a sport if it actually has a pending tip (single or combo
+  //    leg) whose game has already started.
   const scoresBySport = {};
   for (const sport of SPORTS) {
     if (!sportNeedsScoreCheck(sport.key, data.tips, now)) {
@@ -219,6 +323,7 @@ async function main() {
   // 2. Fetch live odds - limited to the next WINDOW_DAYS days - and add tips
   //    only for games we haven't posted yet.
   let newTips = [];
+  const allLegCandidates = [];
   for (const sport of SPORTS) {
     try {
       const games = await getOdds(sport.key, nowIso, windowEndIso);
@@ -226,10 +331,24 @@ async function main() {
       generated.forEach(t => existingIds.add(t.id));
       newTips = newTips.concat(generated);
       console.log(`${sport.label}: ${games.length} games in window, ${generated.length} new tip(s)`);
+
+      for (const game of games) {
+        const leg = extractLegCandidate(sport.key, sport.label, game);
+        if (leg) allLegCandidates.push(leg);
+      }
     } catch (error) {
       console.log(`WARNING: ${error.message}`);
     }
   }
+
+  // 3. Build a couple of multi-game combo tips (2-leg and 3-leg) from the
+  //    soonest upcoming games across every sport, in addition to the
+  //    single-game tips above.
+  const newCombos = buildComboTips(allLegCandidates, existingIds);
+  if (newCombos.length > 0) {
+    console.log(`Added ${newCombos.length} combo tip(s)`);
+  }
+  newTips = newTips.concat(newCombos);
 
   data.tips = data.tips.concat(newTips);
   data.stats = computeStats(data.tips);

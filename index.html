@@ -53,19 +53,34 @@ function render() {
 
   cardsEl.innerHTML = sorted.map(function (tip) {
     const st = statusInfo[tip.status] || statusInfo.PENDING;
+    const isCombo = tip.type === "combo" && Array.isArray(tip.legs);
+
+    const headerHtml = isCombo
+      ? '<div class="title">🔗 COMBO • ' + escapeHtml(Array.from(new Set(tip.legs.map(function (l) { return l.sport; }))).join(" + ")) + '</div>' +
+        '<div class="muted small">' + tip.legs.length + ' match konbine ansanm</div>'
+      : '<div class="title">' + escapeHtml(tip.sport) + ' • ' + escapeHtml(tip.game) + '</div>' +
+        '<div class="muted small">🕒 ' + escapeHtml(fmtKickoff(tip.commenceTime)) + '</div>' +
+        '<div class="muted small">' + escapeHtml((tip.market || "").toUpperCase()) + ' • ' + escapeHtml(tip.bookmaker) + '</div>';
+
+    const bodyHtml = isCombo
+      ? tip.legs.map(function (leg) {
+          return '<div class="pick">' +
+              escapeHtml(leg.sport) + ' • ' + escapeHtml(leg.game) + '<br>' +
+              '<span class="muted small">🕒 ' + escapeHtml(fmtKickoff(leg.commenceTime)) + '</span><br>' +
+              '<b>Pick: ' + escapeHtml(leg.pick) + '</b> (' + fmtOdds(leg.odds) + ')' +
+            '</div>';
+        }).join("")
+      : '<div class="pick"><b>Pick: ' + escapeHtml(tip.pick) + '</b></div>';
+
     return '<article class="card">' +
         '<div class="row">' +
-          '<div>' +
-            '<div class="title">' + escapeHtml(tip.sport) + ' • ' + escapeHtml(tip.game) + '</div>' +
-            '<div class="muted small">🕒 ' + escapeHtml(fmtKickoff(tip.commenceTime)) + '</div>' +
-            '<div class="muted small">' + escapeHtml((tip.market || "").toUpperCase()) + ' • ' + escapeHtml(tip.bookmaker) + '</div>' +
-          '</div>' +
+          '<div>' + headerHtml + '</div>' +
           '<div style="text-align:right">' +
             '<div class="odds">' + fmtOdds(tip.odds) + '</div>' +
             '<div class="' + st.cls + '">' + st.label + '</div>' +
           '</div>' +
         '</div>' +
-        '<div class="pick"><b>Pick: ' + escapeHtml(tip.pick) + '</b></div>' +
+        bodyHtml +
         '<div class="actions">' +
           '<a class="btn" href="https://sportsbook.fanduel.com/" target="_blank" rel="noopener">FanDuel</a>' +
           '<a class="btn" href="https://sportsbook.draftkings.com/" target="_blank" rel="noopener">DraftKings</a>' +

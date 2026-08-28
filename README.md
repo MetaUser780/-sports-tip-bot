@@ -4,7 +4,7 @@ Mobile-first dashboard connected to live odds via [The Odds API](https://the-odd
 
 ## How it works
 
-- `bot.js` runs on a schedule (GitHub Actions, every 2 hours). It fetches live odds for EPL, MLS, NBA, MLB, and NFL games starting in the next 5 days, generates a tip for each new game, checks completed games against real scores to mark past tips as `WON` / `LOST` / `PUSH`, and writes everything to `tips.json`. A game is only checked against the scores endpoint once it has actually started, and far-future placeholder tips are dropped (they're recreated automatically once they fall back inside the 5-day window) — both to keep API usage low.
+- `bot.js` runs on a schedule (GitHub Actions, every 2 hours). It fetches live odds for EPL, MLS, NBA, MLB, and NFL games starting in the next 5 days, generates a single-game tip for each new game, and also builds a couple of multi-game "combo" tips (2-leg and 3-leg, mixing sports) from the soonest upcoming games. It checks completed games against real scores to mark past tips (and each leg of a combo) as `WON` / `LOST` / `PUSH` — a combo loses if any leg loses, and wins once every leg is decided with no loss — and writes everything to `tips.json`. A game is only checked against the scores endpoint once it has actually started, and far-future placeholder tips are dropped (they're recreated automatically once they fall back inside the 5-day window) — both to keep API usage low.
 - The workflow commits the updated `tips.json` back to the repo, which GitHub Pages then serves automatically.
 - `index.html` is a static dashboard that fetches `tips.json` at load time and renders it — no hardcoded/demo data.
 
