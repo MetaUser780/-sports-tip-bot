@@ -35,8 +35,16 @@ function fmtKickoff(iso) {
 function render() {
   const cardsEl = document.getElementById("cards");
   const filtered = allTips.filter(function (t) { return activeFilter === 0 || t.odds >= activeFilter; });
-  // Soonest kickoff first, so "what's coming up next" is always at the top.
-  const sorted = filtered.slice().sort(function (a, b) { return new Date(a.commenceTime) - new Date(b.commenceTime); });
+  // Upcoming (PENDING) games first, soonest kickoff on top; already-decided
+  // tips follow, most recently resolved first.
+  const sorted = filtered.slice().sort(function (a, b) {
+    const aPending = a.status === "PENDING";
+    const bPending = b.status === "PENDING";
+    if (aPending !== bPending) return aPending ? -1 : 1;
+    return aPending
+      ? new Date(a.commenceTime) - new Date(b.commenceTime)
+      : new Date(b.commenceTime) - new Date(a.commenceTime);
+  });
 
   if (sorted.length === 0) {
     cardsEl.innerHTML = '<div class="empty">Pa gen tip ki disponib pou filtè sa a kounye a.</div>';
