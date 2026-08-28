@@ -1,6 +1,87 @@
-<!doctype html><html lang="ht"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#0b0f19"><title>Sports Tip Bot V2</title><style>*{box-sizing:border-box}body{margin:0;background:#0b0f19;color:#f6f7fb;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}.wrap{max-width:760px;margin:auto;padding:20px 15px 45px}header{display:flex;justify-content:space-between;align-items:center;margin-bottom:18px}h1{font-size:26px;margin:0}.muted{color:#929db1}.small{font-size:12px}.pill{border:1px solid #2a3951;background:#121b2b;border-radius:999px;padding:7px 10px;font-size:11px}.tabs{display:flex;gap:7px;overflow:auto;margin-bottom:14px}.tabs button,.btn{background:#111a29;color:#e7ebf3;border:1px solid #2a3951;border-radius:11px;padding:10px 12px;font-weight:700;cursor:pointer}.tabs button.active{background:#29405f}.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(75px,1fr));gap:8px}.stat,.card{background:#111827;border:1px solid #202d42;border-radius:17px}.stat{padding:13px}.stat b{font-size:21px}.stat div{font-size:11px;color:#8d98aa;margin-top:3px}.card{padding:15px;margin-top:11px}.row{display:flex;justify-content:space-between;gap:12px}.title{font-weight:850}.odds{font-size:21px;font-weight:900}.pick{padding:10px 0;border-bottom:1px solid #202d42;font-size:13px}.pick:last-child{border-bottom:0}.reason{font-size:12px;line-height:1.45;color:#aab4c5;margin-top:10px}.actions{display:flex;gap:8px;margin-top:13px}.btn{flex:1;text-align:center;text-decoration:none;font-size:12px}.green{color:#4ddd83}.red{color:#ff657d}.yellow{color:#f3c85d}.gray{color:#8d98aa}.note{background:#0f1725;border-radius:13px;padding:11px;margin-top:14px;font-size:12px;color:#9da8bb}.empty{text-align:center;padding:30px 10px;color:#8d98aa;font-size:13px}</style></head><body><main class="wrap"><header><div><h1>🏆 Sports Tip Bot</h1><div class="muted small">V2 • AI tip dashboard</div></div><span class="pill" id="statusPill">LOADING</span></header><div class="tabs" id="tabs"><button class="active" data-filter="0">Tout</button><button data-filter="300">+300+</button><button data-filter="500">+500+</button><button data-filter="1000">+1000+</button></div><section class="stats"><div class="stat"><b id="statWon">0</b><div>Won</div></div><div class="stat"><b id="statLost">0</b><div>Lost</div></div><div class="stat"><b id="statRate">0%</b><div>Win rate</div></div><div class="stat"><b id="statTotal">0</b><div>Total Tips</div></div></section><div id="cards"></div><div class="note" id="note">Ap chaje done...</div></main><script>
+<!doctype html><html lang="ht"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#0b0f19"><title>Sports Tip Bot V2</title><style>
+*{box-sizing:border-box}
+body{margin:0;background:#0b0f19;color:#f6f7fb;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+.app{max-width:760px;margin:auto;padding:20px 15px calc(90px + env(safe-area-inset-bottom));position:relative}
+.topbar{display:flex;justify-content:space-between;align-items:center;margin-bottom:18px}
+h1{font-size:24px;margin:0}
+.muted{color:#929db1}
+.small{font-size:12px}
+.pill{border:1px solid #2a3951;background:#121b2b;border-radius:999px;padding:7px 10px;font-size:11px}
+.screen[hidden]{display:none}
+.section-title{font-size:15px;font-weight:850;margin:16px 0 8px}
+.chiprow{display:flex;gap:7px;overflow:auto;padding-bottom:2px;margin-bottom:10px}
+.chip{background:#111a29;color:#e7ebf3;border:1px solid #2a3951;border-radius:999px;padding:9px 13px;font-size:12px;font-weight:700;cursor:pointer;white-space:nowrap;flex:none}
+.chip.active{background:#29405f}
+.btn{background:#111a29;color:#e7ebf3;border:1px solid #2a3951;border-radius:11px;padding:10px 12px;font-weight:700;cursor:pointer}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(75px,1fr));gap:8px}
+.stat,.card{background:#111827;border:1px solid #202d42;border-radius:17px}
+.stat{padding:13px}
+.stat b{font-size:21px}
+.stat div{font-size:11px;color:#8d98aa;margin-top:3px}
+.card{padding:15px;margin-top:11px;cursor:pointer}
+.row{display:flex;justify-content:space-between;gap:12px}
+.title{font-weight:850}
+.odds{font-size:21px;font-weight:900}
+.pick{padding:10px 0;border-bottom:1px solid #202d42;font-size:13px;cursor:default}
+.pick:last-child{border-bottom:0}
+.probbadge{display:inline-block;background:#0f1725;border:1px solid #202d42;border-radius:9px;padding:5px 9px;font-size:11px;color:#9db3d8;margin-top:10px}
+.actions{display:flex;gap:8px;margin-top:13px}
+.actions .btn,.actions a.btn{flex:1;text-align:center;text-decoration:none;font-size:12px;color:#e7ebf3}
+.green{color:#4ddd83}
+.red{color:#ff657d}
+.yellow{color:#f3c85d}
+.gray{color:#8d98aa}
+.note{background:#0f1725;border-radius:13px;padding:11px;margin-top:14px;font-size:12px;color:#9da8bb}
+.empty{text-align:center;padding:30px 10px;color:#8d98aa;font-size:13px}
+.backbtn{background:none;border:none;color:#9db3d8;font-size:13px;font-weight:800;cursor:pointer;padding:6px 0 14px;display:block}
+.unitsrow{display:flex;gap:10px;margin-top:14px}
+.unitbox{flex:1;background:#0f1725;border-radius:12px;padding:11px;text-align:center}
+.unitbox .muted{font-size:11px}
+.unitbox b{font-size:17px;display:block;margin-top:4px}
+.activityitem{display:flex;gap:11px;padding:13px 15px;border-bottom:1px solid #202d42;font-size:13px;cursor:pointer}
+.activityitem:last-child{border-bottom:0}
+.bottomnav{position:fixed;left:0;right:0;bottom:0;display:flex;background:#0f1725;border-top:1px solid #202d42;padding:6px 4px calc(6px + env(safe-area-inset-bottom));z-index:10;max-width:760px;margin:auto}
+.bottomnav button{flex:1;background:none;border:none;color:#8d98aa;font-size:18px;display:flex;flex-direction:column;align-items:center;gap:2px;padding:6px 2px;cursor:pointer}
+.bottomnav button span{font-size:10px;font-weight:700}
+.bottomnav button.active{color:#4ddd83}
+</style></head>
+<body>
+<main class="app">
+  <header class="topbar">
+    <div><h1>🏆 Sports Tip Bot</h1><div class="muted small">V2 • Live pick dashboard</div></div>
+    <span class="pill" id="statusPill">LOADING</span>
+  </header>
+
+  <section id="screen-home" class="screen"></section>
+  <section id="screen-picks" class="screen" hidden></section>
+  <section id="screen-detail" class="screen" hidden></section>
+  <section id="screen-filters" class="screen" hidden></section>
+  <section id="screen-results" class="screen" hidden></section>
+  <section id="screen-alerts" class="screen" hidden></section>
+  <section id="screen-profile" class="screen" hidden></section>
+</main>
+
+<nav class="bottomnav" id="bottomnav">
+  <button data-screen="home" class="active">🏠<span>Home</span></button>
+  <button data-screen="picks">🎯<span>Pikaj</span></button>
+  <button data-screen="results">📊<span>Rezilta</span></button>
+  <button data-screen="alerts">🔔<span>Alèt</span></button>
+  <button data-screen="profile">👤<span>Profil</span></button>
+</nav>
+
+<script>
+// ---------- state ----------
 let allTips = [];
-let activeFilter = 0;
+let stats = emptyStatsClient();
+let updatedAt = null;
+let homeSportFilter = "ALL";
+let detailTipId = null;
+let screenStack = ["home"];
+
+function defaultFilters() {
+  return { minOdds: 0, day: "ALL", sport: "ALL", pickType: "ALL", status: "ALL" };
+}
+let filters = defaultFilters();
 
 const statusInfo = {
   PENDING: { label: "PENDING", cls: "yellow" },
@@ -8,6 +89,11 @@ const statusInfo = {
   LOST: { label: "LOST", cls: "red" },
   PUSH: { label: "PUSH", cls: "gray" }
 };
+
+// ---------- pure helpers ----------
+function emptyStatsClient() {
+  return { won: 0, lost: 0, push: 0, pending: 0, winRate: 0, totalTips: 0 };
+}
 
 function fmtOdds(n) {
   return (n > 0 ? "+" : "") + n;
@@ -24,87 +110,430 @@ function fmtKickoff(iso) {
   const d = new Date(iso);
   if (isNaN(d.getTime())) return "";
   return d.toLocaleString(undefined, {
-    weekday: "short",
-    month: "short",
-    day: "numeric",
-    hour: "numeric",
-    minute: "2-digit"
+    weekday: "short", month: "short", day: "numeric", hour: "numeric", minute: "2-digit"
   });
 }
 
-function render() {
-  const cardsEl = document.getElementById("cards");
-  const filtered = allTips.filter(function (t) { return activeFilter === 0 || t.odds >= activeFilter; });
-  // Upcoming (PENDING) games first, soonest kickoff on top; already-decided
-  // tips follow, most recently resolved first.
-  const sorted = filtered.slice().sort(function (a, b) {
-    const aPending = a.status === "PENDING";
-    const bPending = b.status === "PENDING";
-    if (aPending !== bPending) return aPending ? -1 : 1;
-    return aPending
-      ? new Date(a.commenceTime) - new Date(b.commenceTime)
-      : new Date(b.commenceTime) - new Date(a.commenceTime);
-  });
+function sportIcon(label) {
+  const map = { EPL: "⚽", MLS: "⚽", NBA: "🏀", MLB: "⚾", NFL: "🏈" };
+  return map[label] || "🏅";
+}
 
-  if (sorted.length === 0) {
-    cardsEl.innerHTML = '<div class="empty">Pa gen tip ki disponib pou filtè sa a kounye a.</div>';
+// Real, math-derived implied probability from American odds (no fabricated
+// "AI confidence" score).
+function impliedProb(odds) {
+  const o = Number(odds);
+  if (!isFinite(o) || o === 0) return 0;
+  return o > 0 ? 100 / (o + 100) : (-o) / ((-o) + 100);
+}
+function fmtPct(p) {
+  return (Math.round(p * 1000) / 10) + "%";
+}
+
+// Flat 1-unit staking convention, derived purely from the real odds already
+// stored on the tip - not a new/fabricated data point.
+function unitsToWin(odds, risk) {
+  risk = risk || 1;
+  const o = Number(odds);
+  return o > 0 ? (risk * o) / 100 : (risk * 100) / (-o);
+}
+function fmtUnits(u) {
+  return (Math.round(u * 100) / 100).toFixed(2) + "U";
+}
+function fmtSigned(u) {
+  const r = Math.round(u * 100) / 100;
+  return (r > 0 ? "+" : "") + r.toFixed(2) + "U";
+}
+function netUnits(tip) {
+  if (tip.status === "WON") return unitsToWin(tip.odds, 1);
+  if (tip.status === "LOST") return -1;
+  return 0; // PUSH
+}
+
+function dayKey(input) {
+  const d = typeof input === "string" ? new Date(input) : input;
+  return d.getFullYear() + "-" + String(d.getMonth() + 1).padStart(2, "0") + "-" + String(d.getDate()).padStart(2, "0");
+}
+function dayLabel(key) {
+  const now = new Date();
+  if (key === dayKey(now)) return "Jodi a";
+  if (key === dayKey(new Date(now.getTime() + 24 * 60 * 60 * 1000))) return "Demen";
+  const parts = key.split("-").map(Number);
+  const d = new Date(parts[0], parts[1] - 1, parts[2], 12, 0, 0);
+  const names = ["Dim", "Len", "Mad", "Mèk", "Jed", "Van", "Sam"];
+  return names[d.getDay()];
+}
+
+function timeAgo(iso) {
+  if (!iso) return "";
+  const diffMs = Date.now() - new Date(iso).getTime();
+  const min = Math.floor(diffMs / 60000);
+  if (min < 1) return "kounye a";
+  if (min < 60) return min + " min pase";
+  const hr = Math.floor(min / 60);
+  if (hr < 24) return hr + " èdtan pase";
+  const day = Math.floor(hr / 24);
+  return day + " jou pase";
+}
+
+// Same two-tier ordering used since the kickoff-time feature: upcoming
+// (PENDING) tips soonest-first, then resolved tips.
+function twoTierSort(a, b) {
+  const aPending = a.status === "PENDING";
+  const bPending = b.status === "PENDING";
+  if (aPending !== bPending) return aPending ? -1 : 1;
+  return aPending
+    ? new Date(a.commenceTime) - new Date(b.commenceTime)
+    : new Date(b.commenceTime) - new Date(a.commenceTime);
+}
+
+function applyFilters(tips) {
+  return tips.filter(function (t) {
+    if (filters.minOdds && t.odds < filters.minOdds) return false;
+    if (filters.day !== "ALL" && dayKey(t.commenceTime) !== filters.day) return false;
+    if (filters.sport !== "ALL") {
+      if (filters.sport === "COMBO") { if (t.type !== "combo") return false; }
+      else if (t.type === "combo" || t.sport !== filters.sport) return false;
+    }
+    if (filters.pickType !== "ALL" && t.type !== filters.pickType) return false;
+    if (filters.status !== "ALL" && t.status !== filters.status) return false;
+    return true;
+  });
+}
+
+function noteText() {
+  if (allTips.length === 0) {
+    return "Konekte ak The Odds API. Poko gen match/kòt disponib — tips ap parèt otomatikman lè gen match k ap vini.";
+  }
+  const updated = updatedAt ? new Date(updatedAt).toLocaleString() : "—";
+  return "Done reyèl soti nan The Odds API. Dènye mizajou: " + updated + ". Dashboard la refrechi otomatikman chak 2 èdtan.";
+}
+
+// ---------- shared card markup ----------
+function pickCardHtml(tip) {
+  const st = statusInfo[tip.status] || statusInfo.PENDING;
+  const isCombo = tip.type === "combo" && Array.isArray(tip.legs);
+  const titleHtml = isCombo
+    ? "🔗 COMBO • " + tip.legs.length + " match konbine"
+    : sportIcon(tip.sport) + " " + escapeHtml(tip.sport) + " • " + escapeHtml(tip.game);
+  const subHtml = "🕒 " + escapeHtml(fmtKickoff(tip.commenceTime));
+  const prob = fmtPct(impliedProb(tip.odds));
+
+  return (
+    '<article class="card" data-open-detail="' + escapeHtml(tip.id) + '">' +
+      '<div class="row">' +
+        '<div><div class="title">' + titleHtml + '</div><div class="muted small">' + subHtml + '</div></div>' +
+        '<div style="text-align:right"><div class="odds">' + fmtOdds(tip.odds) + '</div><div class="' + st.cls + '">' + st.label + '</div></div>' +
+      '</div>' +
+      '<div class="probbadge">Pwobabilite (implied): ' + prob + '</div>' +
+      '<div class="actions">' +
+        '<button class="btn" data-open-detail="' + escapeHtml(tip.id) + '">Gade Pick yo</button>' +
+        '<a class="btn" data-external href="https://sportsbook.fanduel.com/" target="_blank" rel="noopener">Jwe Kounye a</a>' +
+      '</div>' +
+    '</article>'
+  );
+}
+
+function statsTilesHtml() {
+  return (
+    '<section class="stats">' +
+      '<div class="stat"><b>' + (stats.won || 0) + '</b><div>Won</div></div>' +
+      '<div class="stat"><b>' + (stats.lost || 0) + '</b><div>Lost</div></div>' +
+      '<div class="stat"><b>' + (stats.winRate || 0) + '%</b><div>Win rate</div></div>' +
+      '<div class="stat"><b>' + (stats.totalTips || 0) + '</b><div>Total Tips</div></div>' +
+    '</section>'
+  );
+}
+
+// ---------- screens ----------
+function renderHome() {
+  const el = document.getElementById("screen-home");
+  const sportChips = ["ALL", "EPL", "MLS", "NBA", "MLB", "NFL", "COMBO"];
+  const chipHtml = sportChips.map(function (s) {
+    const label = s === "ALL" ? "Tout" : (s === "COMBO" ? "🔗 Combo" : sportIcon(s) + " " + s);
+    return '<button class="chip' + (homeSportFilter === s ? " active" : "") + '" data-home-sport="' + s + '">' + label + '</button>';
+  }).join("");
+
+  let pending = allTips.filter(function (t) { return t.status === "PENDING"; });
+  if (homeSportFilter !== "ALL") {
+    pending = pending.filter(function (t) {
+      return homeSportFilter === "COMBO" ? t.type === "combo" : (t.type !== "combo" && t.sport === homeSportFilter);
+    });
+  }
+  pending = pending.slice().sort(function (a, b) { return new Date(a.commenceTime) - new Date(b.commenceTime); });
+  const top = pending.slice(0, 6);
+
+  el.innerHTML =
+    statsTilesHtml() +
+    '<div class="section-title">Pwochen Pick yo</div>' +
+    '<div class="chiprow">' + chipHtml + '</div>' +
+    (top.length ? top.map(pickCardHtml).join("") : '<div class="empty">Pa gen pick ki disponib pou filtè sa a kounye a.</div>') +
+    '<div class="note">' + noteText() + '</div>';
+}
+
+function dayBuckets() {
+  const keys = new Set();
+  allTips.filter(function (t) { return t.status === "PENDING"; }).forEach(function (t) { keys.add(dayKey(t.commenceTime)); });
+  return Array.from(keys).sort().map(function (k) { return { key: k, label: dayLabel(k) }; });
+}
+
+function renderPicks() {
+  const el = document.getElementById("screen-picks");
+  const days = dayBuckets();
+  const dayChips = ['<button class="chip' + (filters.day === "ALL" ? " active" : "") + '" data-day-chip="ALL">Tout Jou</button>']
+    .concat(days.map(function (d) {
+      return '<button class="chip' + (filters.day === d.key ? " active" : "") + '" data-day-chip="' + d.key + '">' + d.label + '</button>';
+    })).join("");
+
+  const oddsLevels = [0, 300, 500, 1000];
+  const oddsChips = oddsLevels.map(function (v) {
+    const label = v === 0 ? "Tout" : "+" + v + "+";
+    return '<button class="chip' + (filters.minOdds === v ? " active" : "") + '" data-odds-chip="' + v + '">' + label + '</button>';
+  }).join("");
+
+  const list = applyFilters(allTips).slice().sort(twoTierSort);
+
+  el.innerHTML =
+    '<div class="section-title">Tout Pick yo</div>' +
+    '<div class="row" style="align-items:center;margin-bottom:8px">' +
+      '<div class="muted small">' + list.length + ' pick jwenn</div>' +
+      '<button class="btn" data-action="open-filters" style="flex:none;padding:8px 12px">🔧 Filtè</button>' +
+    '</div>' +
+    '<div class="chiprow">' + dayChips + '</div>' +
+    '<div class="chiprow">' + oddsChips + '</div>' +
+    (list.length ? list.map(pickCardHtml).join("") : '<div class="empty">Pa gen pick ki koresponn ak filtè yo.</div>');
+}
+
+function renderFilters() {
+  const el = document.getElementById("screen-filters");
+  const oddsLevels = [0, 100, 300, 500, 1000];
+  const oddsHtml = oddsLevels.map(function (v) {
+    const label = v === 0 ? "Tout" : "+" + v + "+";
+    return '<button class="chip' + (filters.minOdds === v ? " active" : "") + '" data-filter-group="minOdds" data-filter-value="' + v + '">' + label + '</button>';
+  }).join("");
+
+  const sportsList = ["ALL", "EPL", "MLS", "NBA", "MLB", "NFL", "COMBO"];
+  const sportsHtml = sportsList.map(function (s) {
+    const label = s === "ALL" ? "Tout" : (s === "COMBO" ? "🔗 Combo" : sportIcon(s) + " " + s);
+    return '<button class="chip' + (filters.sport === s ? " active" : "") + '" data-filter-group="sport" data-filter-value="' + s + '">' + label + '</button>';
+  }).join("");
+
+  const typeList = [["ALL", "Tout"], ["single", "Sèl Match"], ["combo", "Combo"]];
+  const typeHtml = typeList.map(function (pair) {
+    return '<button class="chip' + (filters.pickType === pair[0] ? " active" : "") + '" data-filter-group="pickType" data-filter-value="' + pair[0] + '">' + pair[1] + '</button>';
+  }).join("");
+
+  const statusList = [["ALL", "Tout"], ["PENDING", "Pending"], ["WON", "Won"], ["LOST", "Lost"], ["PUSH", "Push"]];
+  const statusHtml = statusList.map(function (pair) {
+    return '<button class="chip' + (filters.status === pair[0] ? " active" : "") + '" data-filter-group="status" data-filter-value="' + pair[0] + '">' + pair[1] + '</button>';
+  }).join("");
+
+  el.innerHTML =
+    '<button class="backbtn" data-action="back">← Retounen</button>' +
+    '<div class="section-title">Filtè</div>' +
+    '<div class="muted small" style="margin-bottom:6px">Kòt (odds) minimòm</div>' +
+    '<div class="chiprow">' + oddsHtml + '</div>' +
+    '<div class="muted small" style="margin:14px 0 6px">Espò</div>' +
+    '<div class="chiprow">' + sportsHtml + '</div>' +
+    '<div class="muted small" style="margin:14px 0 6px">Tip Pick</div>' +
+    '<div class="chiprow">' + typeHtml + '</div>' +
+    '<div class="muted small" style="margin:14px 0 6px">Estati</div>' +
+    '<div class="chiprow">' + statusHtml + '</div>' +
+    '<button class="btn" style="margin-top:18px;width:100%" data-action="reset-filters">Efase Filtè</button>';
+}
+
+function renderDetail() {
+  const el = document.getElementById("screen-detail");
+  const tip = allTips.find(function (t) { return t.id === detailTipId; });
+  if (!tip) {
+    el.innerHTML = '<button class="backbtn" data-action="back">← Retounen</button><div class="empty">Pick sa pa disponib ankò.</div>';
     return;
   }
 
-  cardsEl.innerHTML = sorted.map(function (tip) {
-    const st = statusInfo[tip.status] || statusInfo.PENDING;
-    const isCombo = tip.type === "combo" && Array.isArray(tip.legs);
+  const st = statusInfo[tip.status] || statusInfo.PENDING;
+  const isCombo = tip.type === "combo" && Array.isArray(tip.legs);
+  const toWin = unitsToWin(tip.odds, 1);
+  const prob = fmtPct(impliedProb(tip.odds));
 
-    const headerHtml = isCombo
-      ? '<div class="title">🔗 COMBO • ' + escapeHtml(Array.from(new Set(tip.legs.map(function (l) { return l.sport; }))).join(" + ")) + '</div>' +
-        '<div class="muted small">' + tip.legs.length + ' match konbine ansanm</div>'
-      : '<div class="title">' + escapeHtml(tip.sport) + ' • ' + escapeHtml(tip.game) + '</div>' +
-        '<div class="muted small">🕒 ' + escapeHtml(fmtKickoff(tip.commenceTime)) + '</div>' +
-        '<div class="muted small">' + escapeHtml((tip.market || "").toUpperCase()) + ' • ' + escapeHtml(tip.bookmaker) + '</div>';
+  const legsHtml = isCombo
+    ? tip.legs.map(function (leg) {
+        const legProb = fmtPct(impliedProb(leg.odds));
+        return '<div class="pick">' +
+          '<div class="title" style="font-size:14px">' + sportIcon(leg.sport) + ' ' + escapeHtml(leg.sport) + ' • ' + escapeHtml(leg.game) + '</div>' +
+          '<div class="muted small">🕒 ' + escapeHtml(fmtKickoff(leg.commenceTime)) + '</div>' +
+          '<div style="margin-top:6px"><b>Pick: ' + escapeHtml(leg.pick) + '</b> (' + fmtOdds(leg.odds) + ') — ' + legProb + '</div>' +
+        '</div>';
+      }).join("")
+    : '<div class="pick"><b>Pick: ' + escapeHtml(tip.pick) + '</b><div class="muted small" style="margin-top:4px">' + escapeHtml((tip.market || "").toUpperCase()) + ' • ' + escapeHtml(tip.bookmaker) + '</div></div>';
 
-    const bodyHtml = isCombo
-      ? tip.legs.map(function (leg) {
-          return '<div class="pick">' +
-              escapeHtml(leg.sport) + ' • ' + escapeHtml(leg.game) + '<br>' +
-              '<span class="muted small">🕒 ' + escapeHtml(fmtKickoff(leg.commenceTime)) + '</span><br>' +
-              '<b>Pick: ' + escapeHtml(leg.pick) + '</b> (' + fmtOdds(leg.odds) + ')' +
-            '</div>';
-        }).join("")
-      : '<div class="pick"><b>Pick: ' + escapeHtml(tip.pick) + '</b></div>';
+  let resultBadge = "";
+  if (tip.status !== "PENDING") {
+    const nu = netUnits(tip);
+    const cls = nu > 0 ? "green" : (nu < 0 ? "red" : "gray");
+    resultBadge = '<div class="unitbox" style="margin-top:12px"><div class="muted small">Rezilta</div><b class="' + cls + '">' + fmtSigned(nu) + '</b></div>';
+  }
 
-    return '<article class="card">' +
-        '<div class="row">' +
-          '<div>' + headerHtml + '</div>' +
-          '<div style="text-align:right">' +
-            '<div class="odds">' + fmtOdds(tip.odds) + '</div>' +
-            '<div class="' + st.cls + '">' + st.label + '</div>' +
-          '</div>' +
+  el.innerHTML =
+    '<button class="backbtn" data-action="back">← Retounen</button>' +
+    '<div class="card" style="cursor:default">' +
+      '<div class="row">' +
+        '<div><div class="title">' + (isCombo ? "🔗 COMBO • " + tip.legs.length + " match" : sportIcon(tip.sport) + " " + escapeHtml(tip.sport) + " • " + escapeHtml(tip.game)) + '</div>' +
+          (isCombo ? "" : '<div class="muted small">🕒 ' + escapeHtml(fmtKickoff(tip.commenceTime)) + '</div>') +
         '</div>' +
-        bodyHtml +
-        '<div class="actions">' +
-          '<a class="btn" href="https://sportsbook.fanduel.com/" target="_blank" rel="noopener">FanDuel</a>' +
-          '<a class="btn" href="https://sportsbook.draftkings.com/" target="_blank" rel="noopener">DraftKings</a>' +
-        '</div>' +
-      '</article>';
-  }).join("");
+        '<div style="text-align:right"><div class="odds">' + fmtOdds(tip.odds) + '</div><div class="' + st.cls + '">' + st.label + '</div></div>' +
+      '</div>' +
+      '<div class="probbadge">Pwobabilite (implied): ' + prob + '</div>' +
+      legsHtml +
+      '<div class="unitsrow">' +
+        '<div class="unitbox"><div class="muted small">Risk</div><b>' + fmtUnits(1) + '</b></div>' +
+        '<div class="unitbox"><div class="muted small">To Win</div><b>' + fmtUnits(toWin) + '</b></div>' +
+      '</div>' +
+      resultBadge +
+      '<div class="actions" style="margin-top:14px">' +
+        '<a class="btn" data-external href="https://sportsbook.fanduel.com/" target="_blank" rel="noopener">FanDuel</a>' +
+        '<a class="btn" data-external href="https://sportsbook.draftkings.com/" target="_blank" rel="noopener">DraftKings</a>' +
+      '</div>' +
+    '</div>';
 }
 
-function applyStats(stats) {
-  document.getElementById("statWon").textContent = stats.won || 0;
-  document.getElementById("statLost").textContent = stats.lost || 0;
-  document.getElementById("statRate").textContent = (stats.winRate || 0) + "%";
-  document.getElementById("statTotal").textContent = stats.totalTips || 0;
+function renderResults() {
+  const el = document.getElementById("screen-results");
+  const resolved = allTips.filter(function (t) { return t.status !== "PENDING"; })
+    .slice()
+    .sort(function (a, b) { return new Date(b.resolvedAt || 0) - new Date(a.resolvedAt || 0); });
+  const totalUnits = resolved.reduce(function (acc, t) { return acc + netUnits(t); }, 0);
+  const totalCls = totalUnits > 0 ? "green" : (totalUnits < 0 ? "red" : "gray");
+
+  const rowsHtml = resolved.length ? resolved.map(function (t) {
+    const st = statusInfo[t.status] || statusInfo.PENDING;
+    const isCombo = t.type === "combo" && Array.isArray(t.legs);
+    const title = isCombo ? "🔗 COMBO • " + t.legs.length + " match" : sportIcon(t.sport) + " " + escapeHtml(t.sport) + " • " + escapeHtml(t.game);
+    const nu = netUnits(t);
+    const cls = nu > 0 ? "green" : (nu < 0 ? "red" : "gray");
+    return '<article class="card" data-open-detail="' + escapeHtml(t.id) + '">' +
+      '<div class="row">' +
+        '<div><div class="title" style="font-size:14px">' + title + '</div><div class="muted small">🕒 ' + escapeHtml(fmtKickoff(t.resolvedAt || t.commenceTime)) + '</div></div>' +
+        '<div style="text-align:right"><div class="odds" style="font-size:16px">' + fmtOdds(t.odds) + '</div><div class="' + st.cls + '">' + st.label + '</div></div>' +
+      '</div>' +
+      '<div class="muted small" style="margin-top:6px">Inite: <b class="' + cls + '">' + fmtSigned(nu) + '</b></div>' +
+    '</article>';
+  }).join("") : '<div class="empty">Pa gen match ki fini ankò.</div>';
+
+  el.innerHTML =
+    statsTilesHtml() +
+    '<div class="stat" style="margin-top:8px;text-align:center;padding:14px"><div class="muted small">Rekò An Inite</div><b class="' + totalCls + '" style="font-size:20px">' + fmtSigned(totalUnits) + '</b></div>' +
+    '<div class="section-title">Istwa Match</div>' +
+    rowsHtml;
 }
 
-document.getElementById("tabs").addEventListener("click", function (e) {
-  const btn = e.target.closest("button[data-filter]");
-  if (!btn) return;
-  document.querySelectorAll("#tabs button").forEach(function (b) { b.classList.remove("active"); });
-  btn.classList.add("active");
-  activeFilter = Number(btn.dataset.filter);
-  render();
+function renderAlerts() {
+  const el = document.getElementById("screen-alerts");
+  const recent = allTips.slice()
+    .sort(function (a, b) { return new Date(b.createdAt || 0) - new Date(a.createdAt || 0); })
+    .slice(0, 30);
+
+  const html = recent.length ? recent.map(function (t) {
+    const isCombo = t.type === "combo" && Array.isArray(t.legs);
+    const text = isCombo
+      ? "Nouvo combo ajoute: " + t.legs.length + " match (" + fmtOdds(t.odds) + ")"
+      : "Nouvo pick ajoute: " + escapeHtml(t.sport) + " • " + escapeHtml(t.game) + " (" + fmtOdds(t.odds) + ")";
+    return '<div class="activityitem" data-open-detail="' + escapeHtml(t.id) + '">' +
+      '<div>' + (isCombo ? "🔗" : sportIcon(t.sport)) + '</div>' +
+      '<div style="flex:1"><div>' + text + '</div><div class="muted small">' + timeAgo(t.createdAt) + '</div></div>' +
+    '</div>';
+  }).join("") : '<div class="empty">Poko gen aktivite.</div>';
+
+  el.innerHTML = '<div class="section-title">Aktivite Resan</div><div class="card" style="padding:0;cursor:default">' + html + '</div>';
+}
+
+function renderProfile() {
+  const el = document.getElementById("screen-profile");
+  const updated = updatedAt ? new Date(updatedAt).toLocaleString() : "—";
+  el.innerHTML =
+    '<div class="section-title">Profil</div>' +
+    '<div class="card" style="cursor:default">' +
+      '<div class="title">🏆 Sports Tip Bot V2</div>' +
+      '<div class="muted small" style="margin-top:6px">Dashboard mobil ki konekte ak The Odds API pou kòt ak rezilta anrejistre otomatikman.</div>' +
+      '<div class="muted small" style="margin-top:10px">Dènye mizajou: ' + escapeHtml(updated) + '</div>' +
+      '<button class="btn" style="margin-top:14px;width:100%" data-action="refresh">🔄 Rafrechi Done</button>' +
+    '</div>' +
+    '<div class="note">⏳ Kont itilizatè ak Premium poko disponib pou kounye a — tout pick yo gratis pou tout moun. Sa ap prepare pou pi devan san sa pa afekte fonksyonalite ki la kounye a.</div>';
+}
+
+// ---------- navigation ----------
+function renderScreen(name) {
+  if (name === "home") renderHome();
+  else if (name === "picks") renderPicks();
+  else if (name === "results") renderResults();
+  else if (name === "alerts") renderAlerts();
+  else if (name === "profile") renderProfile();
+  else if (name === "detail") renderDetail();
+  else if (name === "filters") renderFilters();
+}
+
+function displayScreen(name) {
+  document.querySelectorAll(".screen").forEach(function (s) { s.hidden = true; });
+  document.getElementById("screen-" + name).hidden = false;
+  document.querySelectorAll("#bottomnav button").forEach(function (b) {
+    b.classList.toggle("active", b.dataset.screen === name);
+  });
+  renderScreen(name);
+}
+
+function navTo(name) {
+  screenStack = [name];
+  displayScreen(name);
+}
+function goToScreen(name) {
+  screenStack.push(name);
+  displayScreen(name);
+}
+function goBack() {
+  if (screenStack.length > 1) screenStack.pop();
+  displayScreen(screenStack[screenStack.length - 1]);
+}
+
+document.body.addEventListener("click", function (e) {
+  if (e.target.closest("[data-external]")) return;
+
+  const navBtn = e.target.closest("#bottomnav button[data-screen]");
+  if (navBtn) { navTo(navBtn.dataset.screen); return; }
+
+  const backBtn = e.target.closest('[data-action="back"]');
+  if (backBtn) { goBack(); return; }
+
+  const refreshBtn = e.target.closest('[data-action="refresh"]');
+  if (refreshBtn) { load(); return; }
+
+  const openFiltersBtn = e.target.closest('[data-action="open-filters"]');
+  if (openFiltersBtn) { goToScreen("filters"); return; }
+
+  const resetFiltersBtn = e.target.closest('[data-action="reset-filters"]');
+  if (resetFiltersBtn) { filters = defaultFilters(); renderFilters(); return; }
+
+  const filterChip = e.target.closest("[data-filter-group]");
+  if (filterChip) {
+    const group = filterChip.dataset.filterGroup;
+    const val = filterChip.dataset.filterValue;
+    filters[group] = group === "minOdds" ? Number(val) : val;
+    renderFilters();
+    return;
+  }
+
+  const homeChip = e.target.closest("[data-home-sport]");
+  if (homeChip) { homeSportFilter = homeChip.dataset.homeSport; renderHome(); return; }
+
+  const oddsChip = e.target.closest("[data-odds-chip]");
+  if (oddsChip) { filters.minOdds = Number(oddsChip.dataset.oddsChip); renderPicks(); return; }
+
+  const dayChip = e.target.closest("[data-day-chip]");
+  if (dayChip) { filters.day = dayChip.dataset.dayChip; renderPicks(); return; }
+
+  const openDetail = e.target.closest("[data-open-detail]");
+  if (openDetail) { detailTipId = openDetail.dataset.openDetail; goToScreen("detail"); return; }
 });
 
+// ---------- data load ----------
 function load() {
   fetch("tips.json?_=" + Date.now())
     .then(function (res) {
@@ -113,25 +542,18 @@ function load() {
     })
     .then(function (data) {
       allTips = Array.isArray(data.tips) ? data.tips : [];
-      applyStats(data.stats || { won: 0, lost: 0, winRate: 0, totalTips: 0 });
-      render();
-
-      const pill = document.getElementById("statusPill");
-      const note = document.getElementById("note");
-      pill.textContent = "LIVE";
-      if (allTips.length === 0) {
-        note.textContent = "Konekte ak The Odds API. Poko gen match/kòt disponib — tips ap parèt otomatikman lè gen match k ap vini.";
-      } else {
-        const updated = data.updatedAt ? new Date(data.updatedAt).toLocaleString() : "—";
-        note.textContent = "Done reyèl soti nan The Odds API. Dènye mizajou: " + updated + ". Dashboard la refrechi otomatikman chak 2 èdtan.";
-      }
+      stats = data.stats || emptyStatsClient();
+      updatedAt = data.updatedAt || null;
+      document.getElementById("statusPill").textContent = "LIVE";
+      renderScreen(screenStack[screenStack.length - 1]);
     })
     .catch(function () {
       document.getElementById("statusPill").textContent = "OFFLINE";
-      document.getElementById("note").textContent = "Pa kapab chaje tips.json kounye a. Verifye ke GitHub Action lan te kouri omwen yon fwa.";
-      document.getElementById("cards").innerHTML = '<div class="empty">Pa gen done pou kounye a.</div>';
+      renderScreen(screenStack[screenStack.length - 1]);
     });
 }
 
+displayScreen("home");
 load();
-</script></body></html>
+</script>
+</body></html>
