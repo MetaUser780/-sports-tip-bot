@@ -1,10 +1,10 @@
 {
-  "updatedAt": "2026-08-28T02:06:46.654Z",
+  "updatedAt": "2026-08-28T02:07:19.157Z",
   "stats": {
     "won": 0,
-    "lost": 0,
+    "lost": 1,
     "push": 0,
-    "pending": 377,
+    "pending": 376,
     "winRate": 0,
     "totalTips": 377
   },
@@ -1660,10 +1660,10 @@
       "pick": "New York Yankees",
       "odds": 3300,
       "bookmaker": "BetMGM",
-      "status": "PENDING",
+      "status": "LOST",
       "tier": "free",
       "createdAt": "2026-08-28T02:06:46.290Z",
-      "resolvedAt": null
+      "resolvedAt": "2026-08-28T02:07:18.531Z"
     },
     {
       "id": "baseball_mlb:9c67e5d6aa08977aa9e9818a83cc6d79:h2h",
