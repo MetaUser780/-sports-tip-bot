@@ -64,8 +64,8 @@ async function getScores(sportKey) {
   return response.json();
 }
 
-function makeTipId(sportKey, eventId, pick) {
-  return `${sportKey}:${eventId}:${pick}`;
+function makeTipId(sportKey, eventId, market) {
+  return `${sportKey}:${eventId}:${market}`;
 }
 
 function buildNewTips(sportKey, label, games, existingIds) {
@@ -85,7 +85,7 @@ function buildNewTips(sportKey, label, games, existingIds) {
       Number(a.price) > Number(b.price) ? a : b
     );
 
-    const id = makeTipId(sportKey, game.id, best.name);
+    const id = makeTipId(sportKey, game.id, market.key);
     if (existingIds.has(id)) continue;
 
     tips.push({
