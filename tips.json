@@ -1,12 +1,12 @@
 {
-  "updatedAt": "2026-08-28T02:37:38.638Z",
+  "updatedAt": "2026-08-28T03:03:44.808Z",
   "stats": {
     "won": 0,
     "lost": 1,
     "push": 0,
-    "pending": 38,
+    "pending": 40,
     "winRate": 0,
-    "totalTips": 39
+    "totalTips": 41
   },
   "tips": [
     {
@@ -709,6 +709,101 @@
       "status": "PENDING",
       "tier": "free",
       "createdAt": "2026-08-28T02:06:46.290Z",
+      "resolvedAt": null
+    },
+    {
+      "id": "combo:baseball_mlb:a6d63d072ba391db5be1a628a064656c:h2h|soccer_epl:373cc6e2fb57f471cd2deab9a28a6edb:h2h",
+      "type": "combo",
+      "sport": "COMBO",
+      "legs": [
+        {
+          "sportKey": "baseball_mlb",
+          "sport": "MLB",
+          "eventId": "a6d63d072ba391db5be1a628a064656c",
+          "game": "Cincinnati Reds @ Chicago Cubs",
+          "homeTeam": "Chicago Cubs",
+          "awayTeam": "Cincinnati Reds",
+          "commenceTime": "2026-08-28T18:21:00Z",
+          "market": "h2h",
+          "pick": "Cincinnati Reds",
+          "odds": 164,
+          "bookmaker": "FanDuel"
+        },
+        {
+          "sportKey": "soccer_epl",
+          "sport": "EPL",
+          "eventId": "373cc6e2fb57f471cd2deab9a28a6edb",
+          "game": "Manchester City @ Crystal Palace",
+          "homeTeam": "Crystal Palace",
+          "awayTeam": "Manchester City",
+          "commenceTime": "2026-08-28T19:00:00Z",
+          "market": "h2h",
+          "pick": "Crystal Palace",
+          "odds": 380,
+          "bookmaker": "MyBookie.ag"
+        }
+      ],
+      "commenceTime": "2026-08-28T18:21:00Z",
+      "market": "combo",
+      "odds": 1167,
+      "bookmaker": "Multiple",
+      "status": "PENDING",
+      "tier": "free",
+      "createdAt": "2026-08-28T03:03:44.807Z",
+      "resolvedAt": null
+    },
+    {
+      "id": "combo:baseball_mlb:a6d63d072ba391db5be1a628a064656c:h2h|baseball_mlb:bb28f14c5f48561498ab3fabd1ebf47b:h2h|soccer_epl:373cc6e2fb57f471cd2deab9a28a6edb:h2h",
+      "type": "combo",
+      "sport": "COMBO",
+      "legs": [
+        {
+          "sportKey": "baseball_mlb",
+          "sport": "MLB",
+          "eventId": "a6d63d072ba391db5be1a628a064656c",
+          "game": "Cincinnati Reds @ Chicago Cubs",
+          "homeTeam": "Chicago Cubs",
+          "awayTeam": "Cincinnati Reds",
+          "commenceTime": "2026-08-28T18:21:00Z",
+          "market": "h2h",
+          "pick": "Cincinnati Reds",
+          "odds": 164,
+          "bookmaker": "FanDuel"
+        },
+        {
+          "sportKey": "soccer_epl",
+          "sport": "EPL",
+          "eventId": "373cc6e2fb57f471cd2deab9a28a6edb",
+          "game": "Manchester City @ Crystal Palace",
+          "homeTeam": "Crystal Palace",
+          "awayTeam": "Manchester City",
+          "commenceTime": "2026-08-28T19:00:00Z",
+          "market": "h2h",
+          "pick": "Crystal Palace",
+          "odds": 380,
+          "bookmaker": "MyBookie.ag"
+        },
+        {
+          "sportKey": "baseball_mlb",
+          "sport": "MLB",
+          "eventId": "bb28f14c5f48561498ab3fabd1ebf47b",
+          "game": "Los Angeles Dodgers @ Detroit Tigers",
+          "homeTeam": "Detroit Tigers",
+          "awayTeam": "Los Angeles Dodgers",
+          "commenceTime": "2026-08-28T22:41:00Z",
+          "market": "h2h",
+          "pick": "Detroit Tigers",
+          "odds": 180,
+          "bookmaker": "FanDuel"
+        }
+      ],
+      "commenceTime": "2026-08-28T18:21:00Z",
+      "market": "combo",
+      "odds": 3448,
+      "bookmaker": "Multiple",
+      "status": "PENDING",
+      "tier": "free",
+      "createdAt": "2026-08-28T03:03:44.807Z",
       "resolvedAt": null
     }
   ]
