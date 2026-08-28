@@ -27,10 +27,15 @@ h1{font-size:24px;margin:0}
 .probbadge{display:inline-block;background:#0f1725;border:1px solid #202d42;border-radius:9px;padding:5px 9px;font-size:11px;color:#9db3d8;margin-top:10px}
 .actions{display:flex;gap:8px;margin-top:13px}
 .actions .btn,.actions a.btn{flex:1;text-align:center;text-decoration:none;font-size:12px;color:#e7ebf3}
-.green{color:#4ddd83}
-.red{color:#ff657d}
+.green{color:#22c55e}
+.red{color:#ff3b3b}
 .yellow{color:#f3c85d}
 .gray{color:#8d98aa}
+.badge{display:inline-block;padding:4px 10px;border-radius:999px;font-size:11px;font-weight:800;letter-spacing:.02em}
+.badge.green{background:rgba(34,197,94,.16);color:#22c55e}
+.badge.red{background:rgba(255,59,59,.16);color:#ff3b3b}
+.badge.yellow{background:rgba(243,200,93,.16);color:#f3c85d}
+.badge.gray{background:rgba(141,152,170,.16);color:#8d98aa}
 .note{background:#0f1725;border-radius:13px;padding:11px;margin-top:14px;font-size:12px;color:#9da8bb}
 .empty{text-align:center;padding:30px 10px;color:#8d98aa;font-size:13px}
 .backbtn{background:none;border:none;color:#9db3d8;font-size:13px;font-weight:800;cursor:pointer;padding:6px 0 14px;display:block}
@@ -43,7 +48,7 @@ h1{font-size:24px;margin:0}
 .bottomnav{position:fixed;left:0;right:0;bottom:0;display:flex;background:#0f1725;border-top:1px solid #202d42;padding:6px 4px calc(6px + env(safe-area-inset-bottom));z-index:10;max-width:760px;margin:auto}
 .bottomnav button{flex:1;background:none;border:none;color:#8d98aa;font-size:18px;display:flex;flex-direction:column;align-items:center;gap:2px;padding:6px 2px;cursor:pointer}
 .bottomnav button span{font-size:10px;font-weight:700}
-.bottomnav button.active{color:#4ddd83}
+.bottomnav button.active{color:#22c55e}
 </style></head>
 <body>
 <main class="app">
@@ -223,7 +228,7 @@ function pickCardHtml(tip) {
     '<article class="card" data-open-detail="' + escapeHtml(tip.id) + '">' +
       '<div class="row">' +
         '<div><div class="title">' + titleHtml + '</div><div class="muted small">' + subHtml + '</div></div>' +
-        '<div style="text-align:right"><div class="odds">' + fmtOdds(tip.odds) + '</div><div class="' + st.cls + '">' + st.label + '</div></div>' +
+        '<div style="text-align:right"><div class="odds">' + fmtOdds(tip.odds) + '</div><div class="badge ' + st.cls + '">' + st.label + '</div></div>' +
       '</div>' +
       '<div class="probbadge">Pwobabilite (implied): ' + prob + '</div>' +
       '<div class="actions">' +
@@ -380,7 +385,7 @@ function renderDetail() {
         '<div><div class="title">' + (isCombo ? "🔗 COMBO • " + tip.legs.length + " match" : sportIcon(tip.sport) + " " + escapeHtml(tip.sport) + " • " + escapeHtml(tip.game)) + '</div>' +
           (isCombo ? "" : '<div class="muted small">🕒 ' + escapeHtml(fmtKickoff(tip.commenceTime)) + '</div>') +
         '</div>' +
-        '<div style="text-align:right"><div class="odds">' + fmtOdds(tip.odds) + '</div><div class="' + st.cls + '">' + st.label + '</div></div>' +
+        '<div style="text-align:right"><div class="odds">' + fmtOdds(tip.odds) + '</div><div class="badge ' + st.cls + '">' + st.label + '</div></div>' +
       '</div>' +
       '<div class="probbadge">Pwobabilite (implied): ' + prob + '</div>' +
       legsHtml +
@@ -413,7 +418,7 @@ function renderResults() {
     return '<article class="card" data-open-detail="' + escapeHtml(t.id) + '">' +
       '<div class="row">' +
         '<div><div class="title" style="font-size:14px">' + title + '</div><div class="muted small">🕒 ' + escapeHtml(fmtKickoff(t.resolvedAt || t.commenceTime)) + '</div></div>' +
-        '<div style="text-align:right"><div class="odds" style="font-size:16px">' + fmtOdds(t.odds) + '</div><div class="' + st.cls + '">' + st.label + '</div></div>' +
+        '<div style="text-align:right"><div class="odds" style="font-size:16px">' + fmtOdds(t.odds) + '</div><div class="badge ' + st.cls + '">' + st.label + '</div></div>' +
       '</div>' +
       '<div class="muted small" style="margin-top:6px">Inite: <b class="' + cls + '">' + fmtSigned(nu) + '</b></div>' +
     '</article>';
