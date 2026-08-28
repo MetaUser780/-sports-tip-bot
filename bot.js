@@ -7,6 +7,7 @@ if (!API_KEY) {
 }
 
 const TIPS_FILE = "tips.json";
+const WINDOW_DAYS = 5; // only track games starting within this many days
 
 const SPORTS = [
   { key: "soccer_epl", label: "EPL" },
@@ -35,10 +36,15 @@ function writeTips(data) {
   fs.writeFileSync(TIPS_FILE, JSON.stringify(data, null, 2) + "\n");
 }
 
-async function getOdds(sportKey) {
+function isoNoMillis(date) {
+  return date.toISOString().split(".")[0] + "Z";
+}
+
+async function getOdds(sportKey, fromIso, toIso) {
   const url =
     `https://api.the-odds-api.com/v4/sports/${sportKey}/odds` +
     `?regions=us&markets=h2h&oddsFormat=american` +
+    `&commenceTimeFrom=${fromIso}&commenceTimeTo=${toIso}` +
     `&apiKey=${API_KEY}`;
 
   const response = await fetch(url);
@@ -111,6 +117,20 @@ function buildNewTips(sportKey, label, games, existingIds) {
   return tips;
 }
 
+function pruneFarFutureTips(tips, now) {
+  const cutoff = new Date(now.getTime() + WINDOW_DAYS * 24 * 60 * 60 * 1000);
+  // Keep every resolved tip (history for the stats/record). Only drop
+  // still-pending placeholders that are further out than the active window -
+  // they get recreated automatically once they fall back inside it.
+  return tips.filter(tip => tip.status !== "PENDING" || new Date(tip.commenceTime) <= cutoff);
+}
+
+function sportNeedsScoreCheck(sportKey, tips, now) {
+  return tips.some(
+    t => t.sportKey === sportKey && t.status === "PENDING" && new Date(t.commenceTime) <= now
+  );
+}
+
 function resolveTips(pendingTips, scoresBySport) {
   for (const tip of pendingTips) {
     if (tip.status !== "PENDING") continue;
@@ -159,12 +179,33 @@ function computeStats(tips) {
 async function main() {
   console.log("SPORTS TIP BOT STARTING...");
 
+  const now = new Date();
+  const nowIso = isoNoMillis(now);
+  const windowEndIso = isoNoMillis(new Date(now.getTime() + WINDOW_DAYS * 24 * 60 * 60 * 1000));
+
   const data = loadTips();
+
+  // Drop still-pending placeholders for games further out than the active
+  // window, so the dashboard (and tips.json) stay focused on upcoming games.
+  // History (WON/LOST/PUSH) is never touched by this.
+  const beforePrune = data.tips.length;
+  data.tips = pruneFarFutureTips(data.tips, now);
+  if (beforePrune !== data.tips.length) {
+    console.log(`Pruned ${beforePrune - data.tips.length} far-future pending tip(s)`);
+  }
+
   const existingIds = new Set(data.tips.map(t => t.id));
 
-  // 1. Try to resolve tips that are still pending using completed scores.
+  // 1. Resolve pending tips using completed scores - but only spend a scores
+  //    request on a sport if it actually has a pending tip whose game has
+  //    already started. Most sports most of the time won't, so this avoids
+  //    a lot of unnecessary API calls.
   const scoresBySport = {};
   for (const sport of SPORTS) {
+    if (!sportNeedsScoreCheck(sport.key, data.tips, now)) {
+      console.log(`Skipping scores for ${sport.label} (nothing pending has started)`);
+      continue;
+    }
     try {
       scoresBySport[sport.key] = await getScores(sport.key);
       console.log(`Fetched scores for ${sport.label}`);
@@ -175,15 +216,16 @@ async function main() {
   }
   resolveTips(data.tips, scoresBySport);
 
-  // 2. Fetch live odds and add tips only for games we haven't posted yet.
+  // 2. Fetch live odds - limited to the next WINDOW_DAYS days - and add tips
+  //    only for games we haven't posted yet.
   let newTips = [];
   for (const sport of SPORTS) {
     try {
-      const games = await getOdds(sport.key);
+      const games = await getOdds(sport.key, nowIso, windowEndIso);
       const generated = buildNewTips(sport.key, sport.label, games, existingIds);
       generated.forEach(t => existingIds.add(t.id));
       newTips = newTips.concat(generated);
-      console.log(`${sport.label}: ${games.length} games, ${generated.length} new tip(s)`);
+      console.log(`${sport.label}: ${games.length} games in window, ${generated.length} new tip(s)`);
     } catch (error) {
       console.log(`WARNING: ${error.message}`);
     }
