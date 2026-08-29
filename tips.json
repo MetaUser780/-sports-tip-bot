@@ -1,12 +1,12 @@
 {
-  "updatedAt": "2026-08-29T00:28:00.154Z",
+  "updatedAt": "2026-08-29T08:41:00.751Z",
   "stats": {
-    "won": 1,
-    "lost": 2,
+    "won": 11,
+    "lost": 6,
     "push": 0,
-    "pending": 54,
-    "winRate": 33.3,
-    "totalTips": 57
+    "pending": 46,
+    "winRate": 64.7,
+    "totalTips": 63
   },
   "tips": [
     {
@@ -723,10 +723,10 @@
       "pick": "Los Angeles Dodgers",
       "odds": -215,
       "bookmaker": "FanDuel",
-      "status": "PENDING",
+      "status": "WON",
       "tier": "free",
       "createdAt": "2026-08-28T04:32:02.207Z",
-      "resolvedAt": null
+      "resolvedAt": "2026-08-29T08:41:00.430Z"
     },
     {
       "id": "baseball_mlb:1d34c8ba40aec1ca9cadb1ff7ef37e42:h2h",
@@ -742,10 +742,10 @@
       "pick": "Miami Marlins",
       "odds": -156,
       "bookmaker": "FanDuel",
-      "status": "PENDING",
+      "status": "LOST",
       "tier": "free",
       "createdAt": "2026-08-28T04:32:02.207Z",
-      "resolvedAt": null
+      "resolvedAt": "2026-08-29T08:41:00.430Z"
     },
     {
       "id": "baseball_mlb:fab839164ecf4aec65df50e5ee9bbed3:h2h",
@@ -761,10 +761,10 @@
       "pick": "Cleveland Guardians",
       "odds": -138,
       "bookmaker": "FanDuel",
-      "status": "PENDING",
+      "status": "LOST",
       "tier": "free",
       "createdAt": "2026-08-28T04:32:02.207Z",
-      "resolvedAt": null
+      "resolvedAt": "2026-08-29T08:41:00.430Z"
     },
     {
       "id": "baseball_mlb:233ffa284e1672e4866733dd85fac3e5:h2h",
@@ -780,10 +780,10 @@
       "pick": "Houston Astros",
       "odds": -126,
       "bookmaker": "FanDuel",
-      "status": "PENDING",
+      "status": "WON",
       "tier": "free",
       "createdAt": "2026-08-28T04:32:02.207Z",
-      "resolvedAt": null
+      "resolvedAt": "2026-08-29T08:41:00.430Z"
     },
     {
       "id": "baseball_mlb:0b16c66db57136bcbe0cb430b3315572:h2h",
@@ -799,10 +799,10 @@
       "pick": "Tampa Bay Rays",
       "odds": -134,
       "bookmaker": "FanDuel",
-      "status": "PENDING",
+      "status": "WON",
       "tier": "free",
       "createdAt": "2026-08-28T04:32:02.207Z",
-      "resolvedAt": null
+      "resolvedAt": "2026-08-29T08:41:00.431Z"
     },
     {
       "id": "baseball_mlb:6e66851b93b3cdcc4578b23ae9b93d6d:h2h",
@@ -818,10 +818,10 @@
       "pick": "Atlanta Braves",
       "odds": -220,
       "bookmaker": "FanDuel",
-      "status": "PENDING",
+      "status": "WON",
       "tier": "free",
       "createdAt": "2026-08-28T04:32:02.208Z",
-      "resolvedAt": null
+      "resolvedAt": "2026-08-29T08:41:00.431Z"
     },
     {
       "id": "baseball_mlb:2458fd8fd2cc9241175e46181d9b3066:h2h",
@@ -837,10 +837,10 @@
       "pick": "New York Yankees",
       "odds": -174,
       "bookmaker": "FanDuel",
-      "status": "PENDING",
+      "status": "WON",
       "tier": "free",
       "createdAt": "2026-08-28T04:32:02.208Z",
-      "resolvedAt": null
+      "resolvedAt": "2026-08-29T08:41:00.431Z"
     },
     {
       "id": "baseball_mlb:57c478eb2e6623a9a63b654b20634fa1:h2h",
@@ -856,10 +856,10 @@
       "pick": "Milwaukee Brewers",
       "odds": -184,
       "bookmaker": "FanDuel",
-      "status": "PENDING",
+      "status": "WON",
       "tier": "free",
       "createdAt": "2026-08-28T04:32:02.208Z",
-      "resolvedAt": null
+      "resolvedAt": "2026-08-29T08:41:00.431Z"
     },
     {
       "id": "baseball_mlb:58cbf4ef2d32ebf1fa4fa41564b795c0:h2h",
@@ -875,10 +875,10 @@
       "pick": "Minnesota Twins",
       "odds": -118,
       "bookmaker": "FanDuel",
-      "status": "PENDING",
+      "status": "LOST",
       "tier": "free",
       "createdAt": "2026-08-28T04:32:02.208Z",
-      "resolvedAt": null
+      "resolvedAt": "2026-08-29T08:41:00.431Z"
     },
     {
       "id": "baseball_mlb:886fd41b6e8045d61119b579793ffbcc:h2h",
@@ -894,10 +894,10 @@
       "pick": "Pittsburgh Pirates",
       "odds": -116,
       "bookmaker": "FanDuel",
-      "status": "PENDING",
+      "status": "LOST",
       "tier": "free",
       "createdAt": "2026-08-28T04:32:02.208Z",
-      "resolvedAt": null
+      "resolvedAt": "2026-08-29T08:41:00.431Z"
     },
     {
       "id": "baseball_mlb:36f6301129991d3a13de99fc29f5d4bf:h2h",
@@ -913,10 +913,10 @@
       "pick": "Philadelphia Phillies",
       "odds": -134,
       "bookmaker": "FanDuel",
-      "status": "PENDING",
+      "status": "WON",
       "tier": "free",
       "createdAt": "2026-08-28T04:32:02.208Z",
-      "resolvedAt": null
+      "resolvedAt": "2026-08-29T08:41:00.431Z"
     },
     {
       "id": "baseball_mlb:365be8fc27b2eb31c003fc150dde54a5:h2h",
@@ -932,10 +932,10 @@
       "pick": "Toronto Blue Jays",
       "odds": -146,
       "bookmaker": "FanDuel",
-      "status": "PENDING",
+      "status": "WON",
       "tier": "free",
       "createdAt": "2026-08-28T15:56:09.424Z",
-      "resolvedAt": null
+      "resolvedAt": "2026-08-29T08:41:00.431Z"
     },
     {
       "id": "baseball_mlb:ef43a82246c16635651619951f3fb493:h2h",
@@ -951,10 +951,10 @@
       "pick": "Baltimore Orioles",
       "odds": -108,
       "bookmaker": "FanDuel",
-      "status": "PENDING",
+      "status": "WON",
       "tier": "free",
       "createdAt": "2026-08-28T15:56:09.424Z",
-      "resolvedAt": null
+      "resolvedAt": "2026-08-29T08:41:00.431Z"
     },
     {
       "id": "baseball_mlb:94fdf397f1e71919d8a7a9db4c9f81d8:h2h",
@@ -970,10 +970,10 @@
       "pick": "Arizona Diamondbacks",
       "odds": -116,
       "bookmaker": "FanDuel",
-      "status": "PENDING",
+      "status": "WON",
       "tier": "free",
       "createdAt": "2026-08-28T15:56:09.424Z",
-      "resolvedAt": null
+      "resolvedAt": "2026-08-29T08:41:00.431Z"
     },
     {
       "id": "combo:baseball_mlb:6e66851b93b3cdcc4578b23ae9b93d6d:h2h|soccer_epl:2c49e9d1ef855f62962b915e773f906d:h2h|soccer_epl:5759167055d94ba38e145ab92188abbf:h2h|soccer_epl:feafb731d0307bc91a58e18187aa2eab:h2h|soccer_usa_mls:1ef7214244fa34acdaaafcc299cf9ca1:h2h|soccer_usa_mls:47162eeb7df0608a3dd63213f0c7c526:h2h",
@@ -1391,7 +1391,178 @@
       "tier": "free",
       "createdAt": "2026-08-29T00:28:00.154Z",
       "resolvedAt": null
+    },
+    {
+      "id": "baseball_mlb:ef5ae47c92d83c4feec38fd6e38ce4ae:h2h",
+      "type": "single",
+      "sport": "MLB",
+      "sportKey": "baseball_mlb",
+      "eventId": "ef5ae47c92d83c4feec38fd6e38ce4ae",
+      "game": "Boston Red Sox @ New York Yankees",
+      "homeTeam": "New York Yankees",
+      "awayTeam": "Boston Red Sox",
+      "commenceTime": "2026-08-29T17:06:00Z",
+      "market": "h2h",
+      "pick": "New York Yankees",
+      "odds": -116,
+      "bookmaker": "FanDuel",
+      "status": "PENDING",
+      "tier": "free",
+      "createdAt": "2026-08-29T08:41:00.633Z",
+      "resolvedAt": null
+    },
+    {
+      "id": "baseball_mlb:36793e7e4ba4b8f8902fb3b7f99c3083:h2h",
+      "type": "single",
+      "sport": "MLB",
+      "sportKey": "baseball_mlb",
+      "eventId": "36793e7e4ba4b8f8902fb3b7f99c3083",
+      "game": "Pittsburgh Pirates @ St. Louis Cardinals",
+      "homeTeam": "St. Louis Cardinals",
+      "awayTeam": "Pittsburgh Pirates",
+      "commenceTime": "2026-08-29T18:16:00Z",
+      "market": "h2h",
+      "pick": "St. Louis Cardinals",
+      "odds": -122,
+      "bookmaker": "FanDuel",
+      "status": "PENDING",
+      "tier": "free",
+      "createdAt": "2026-08-29T08:41:00.634Z",
+      "resolvedAt": null
+    },
+    {
+      "id": "baseball_mlb:263ea76f8b365e6d8c84baff2fab2b70:h2h",
+      "type": "single",
+      "sport": "MLB",
+      "sportKey": "baseball_mlb",
+      "eventId": "263ea76f8b365e6d8c84baff2fab2b70",
+      "game": "Houston Astros @ New York Mets",
+      "homeTeam": "New York Mets",
+      "awayTeam": "Houston Astros",
+      "commenceTime": "2026-08-29T20:11:00Z",
+      "market": "h2h",
+      "pick": "New York Mets",
+      "odds": -138,
+      "bookmaker": "FanDuel",
+      "status": "PENDING",
+      "tier": "free",
+      "createdAt": "2026-08-29T08:41:00.634Z",
+      "resolvedAt": null
+    },
+    {
+      "id": "baseball_mlb:03a0ddbd6b3c88cdb2490d592317291f:h2h",
+      "type": "single",
+      "sport": "MLB",
+      "sportKey": "baseball_mlb",
+      "eventId": "03a0ddbd6b3c88cdb2490d592317291f",
+      "game": "Boston Red Sox @ New York Yankees",
+      "homeTeam": "New York Yankees",
+      "awayTeam": "Boston Red Sox",
+      "commenceTime": "2026-08-29T23:16:00Z",
+      "market": "h2h",
+      "pick": "New York Yankees",
+      "odds": -130,
+      "bookmaker": "FanDuel",
+      "status": "PENDING",
+      "tier": "free",
+      "createdAt": "2026-08-29T08:41:00.634Z",
+      "resolvedAt": null
+    },
+    {
+      "id": "combo:soccer_epl:5759167055d94ba38e145ab92188abbf:h2h|soccer_usa_mls:1ef7214244fa34acdaaafcc299cf9ca1:h2h",
+      "type": "combo",
+      "sport": "COMBO",
+      "legs": [
+        {
+          "sportKey": "soccer_usa_mls",
+          "sport": "MLS",
+          "eventId": "1ef7214244fa34acdaaafcc299cf9ca1",
+          "game": "CF Montreal @ Inter Miami CF",
+          "homeTeam": "Inter Miami CF",
+          "awayTeam": "CF Montreal",
+          "commenceTime": "2026-08-29T23:30:00Z",
+          "market": "h2h",
+          "pick": "Inter Miami CF",
+          "odds": -265,
+          "bookmaker": "BetRivers"
+        },
+        {
+          "sportKey": "soccer_epl",
+          "sport": "EPL",
+          "eventId": "5759167055d94ba38e145ab92188abbf",
+          "game": "Ipswich Town @ Manchester United",
+          "homeTeam": "Manchester United",
+          "awayTeam": "Ipswich Town",
+          "commenceTime": "2026-08-30T15:30:00Z",
+          "market": "h2h",
+          "pick": "Manchester United",
+          "odds": -255,
+          "bookmaker": "MyBookie.ag"
+        }
+      ],
+      "commenceTime": "2026-08-29T23:30:00Z",
+      "market": "combo",
+      "odds": -109,
+      "bookmaker": "Multiple",
+      "status": "PENDING",
+      "tier": "free",
+      "createdAt": "2026-08-29T08:41:00.751Z",
+      "resolvedAt": null
+    },
+    {
+      "id": "combo:baseball_mlb:24be08805f9e6d828810ae8435d2563a:h2h|soccer_epl:5759167055d94ba38e145ab92188abbf:h2h|soccer_usa_mls:1ef7214244fa34acdaaafcc299cf9ca1:h2h",
+      "type": "combo",
+      "sport": "COMBO",
+      "legs": [
+        {
+          "sportKey": "soccer_usa_mls",
+          "sport": "MLS",
+          "eventId": "1ef7214244fa34acdaaafcc299cf9ca1",
+          "game": "CF Montreal @ Inter Miami CF",
+          "homeTeam": "Inter Miami CF",
+          "awayTeam": "CF Montreal",
+          "commenceTime": "2026-08-29T23:30:00Z",
+          "market": "h2h",
+          "pick": "Inter Miami CF",
+          "odds": -265,
+          "bookmaker": "BetRivers"
+        },
+        {
+          "sportKey": "soccer_epl",
+          "sport": "EPL",
+          "eventId": "5759167055d94ba38e145ab92188abbf",
+          "game": "Ipswich Town @ Manchester United",
+          "homeTeam": "Manchester United",
+          "awayTeam": "Ipswich Town",
+          "commenceTime": "2026-08-30T15:30:00Z",
+          "market": "h2h",
+          "pick": "Manchester United",
+          "odds": -255,
+          "bookmaker": "MyBookie.ag"
+        },
+        {
+          "sportKey": "baseball_mlb",
+          "sport": "MLB",
+          "eventId": "24be08805f9e6d828810ae8435d2563a",
+          "game": "Philadelphia Phillies @ Los Angeles Angels",
+          "homeTeam": "Los Angeles Angels",
+          "awayTeam": "Philadelphia Phillies",
+          "commenceTime": "2026-08-30T02:08:00Z",
+          "market": "h2h",
+          "pick": "Philadelphia Phillies",
+          "odds": -245,
+          "bookmaker": "FanDuel"
+        }
+      ],
+      "commenceTime": "2026-08-29T23:30:00Z",
+      "market": "combo",
+      "odds": 170,
+      "bookmaker": "Multiple",
+      "status": "PENDING",
+      "tier": "free",
+      "createdAt": "2026-08-29T08:41:00.751Z",
+      "resolvedAt": null
     }
   ],
-  "extraMarketsLastRun": "2026-08-29T00:27:59Z"
+  "extraMarketsLastRun": "2026-08-29T08:41:00Z"
 }
