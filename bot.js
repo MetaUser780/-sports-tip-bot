@@ -8,7 +8,14 @@ if (!API_KEY) {
 
 const TIPS_FILE = "tips.json";
 const WINDOW_DAYS = 5; // only track games starting within this many days
-const COMBO_SIZES = [2, 3, 6]; // generate one combo tip per size, per run
+
+// "Mega-parlay" strategy: only use very heavy favorites (American odds at
+// or beyond this threshold, e.g. -800, -900, -1200 ...) and combine at
+// least MIN_SELECTIONS of them (up to MAX_SELECTIONS) into a single combo
+// tip per run. This replaces the old fixed-size (2/3/6-leg) combo builder.
+const ODDS_THRESHOLD_AMERICAN = -800;
+const MIN_SELECTIONS = 10;
+const MAX_SELECTIONS = 15;
 
 const SPORTS = [
   { key: "soccer_epl", label: "EPL" },
@@ -114,10 +121,7 @@ function impliedProbability(odds) {
 
 // Pulls the h2h outcome most likely to win (the favorite - lowest price,
 // i.e. highest implied probability) out of a game's odds, shared by
-// single-game tips and by combo legs. Historically this picked the
-// highest-price (biggest underdog / lowest chance) outcome; product
-// decision is now to prioritize the team's real chance of winning over
-// the size of the payout.
+// single-game tips and by combo legs.
 function extractLegCandidate(sportKey, label, game) {
   const bookmaker = game.bookmakers?.[0];
   if (!bookmaker) return null;
@@ -227,7 +231,7 @@ function extractExtraMarketCandidates(sportKey, label, game) {
     if (outcome) {
       candidates.push(Object.assign({}, base, {
         market: "totals",
-        pick: `Over ${outcome.point} Gòl`,
+        pick: `Over ${outcome.point} GÃ²l`,
         line: Number(outcome.point),
         odds: Number(outcome.price),
         bookmaker: totalsHit.bookmaker.title
@@ -300,71 +304,79 @@ function comboId(legs) {
   return "combo:" + ids.join("|");
 }
 
-// Builds multi-game combo ("parlay") tips out of the safest available legs
-// across every sport and market - safest meaning highest real implied
-// probability from the odds, not the highest payout. Each combo only uses
-// one leg per game, so legs stay statistically independent (no same-game
-// correlated bets stacked into one ticket).
+// Builds ONE "mega-parlay" combo tip per run out of only the safest legs
+// available across every sport and market: legs must clear
+// ODDS_THRESHOLD_AMERICAN (e.g. -800 or more negative) to even be
+// considered, and we need at least MIN_SELECTIONS of them (capped at
+// MAX_SELECTIONS) or we skip building a combo this run entirely. Each
+// combo only uses one leg per game, so legs stay statistically
+// independent (no same-game correlated bets stacked into one ticket).
 function buildComboTips(legCandidates, existingIds) {
-  const combos = [];
-  const bySafestFirst = legCandidates
+  const safeCandidates = legCandidates.filter(
+    c => Number.isFinite(Number(c.odds)) && Number(c.odds) <= ODDS_THRESHOLD_AMERICAN
+  );
+
+  const bySafestFirst = safeCandidates
     .slice()
     .sort((a, b) => impliedProbability(b.odds) - impliedProbability(a.odds));
 
-  for (const size of COMBO_SIZES) {
-    const legs = [];
-    const usedEvents = new Set();
+  const legs = [];
+  const usedEvents = new Set();
 
-    for (const candidate of bySafestFirst) {
-      if (legs.length >= size) break;
-      if (usedEvents.has(candidate.eventId)) continue;
-      legs.push(candidate);
-      usedEvents.add(candidate.eventId);
-    }
-
-    if (legs.length < size) continue; // not enough distinct games yet
-
-    const id = comboId(legs);
-    if (existingIds.has(id)) continue;
-
-    const decimal = legs.reduce((acc, l) => acc * americanToDecimal(l.odds), 1);
-    const earliest = legs.reduce(
-      (min, l) => (new Date(l.commenceTime) < new Date(min) ? l.commenceTime : min),
-      legs[0].commenceTime
-    );
-
-    combos.push({
-      id,
-      type: "combo",
-      sport: "COMBO",
-      legs: legs.map(l => ({
-        sportKey: l.sportKey,
-        sport: l.sport,
-        eventId: l.eventId,
-        game: l.game,
-        homeTeam: l.homeTeam,
-        awayTeam: l.awayTeam,
-        commenceTime: l.commenceTime,
-        market: l.market,
-        pick: l.pick,
-        line: l.line,
-        odds: l.odds,
-        bookmaker: l.bookmaker
-      })),
-      commenceTime: earliest,
-      market: "combo",
-      odds: decimalToAmerican(decimal),
-      bookmaker: "Multiple",
-      status: "PENDING",
-      tier: "free",
-      createdAt: new Date().toISOString(),
-      resolvedAt: null
-    });
-
-    existingIds.add(id);
+  for (const candidate of bySafestFirst) {
+    if (legs.length >= MAX_SELECTIONS) break;
+    if (usedEvents.has(candidate.eventId)) continue;
+    legs.push(candidate);
+    usedEvents.add(candidate.eventId);
   }
 
-  return combos;
+  if (legs.length < MIN_SELECTIONS) {
+    console.log(
+      `Pa ase seleksyon ki pi sekirize pase ${ODDS_THRESHOLD_AMERICAN} (${legs.length}/${MIN_SELECTIONS}) - pa gen mega-parlay fwa sa a.`
+    );
+    return [];
+  }
+
+  const id = comboId(legs);
+  if (existingIds.has(id)) return [];
+
+  const decimal = legs.reduce((acc, l) => acc * americanToDecimal(l.odds), 1);
+  const earliest = legs.reduce(
+    (min, l) => (new Date(l.commenceTime) < new Date(min) ? l.commenceTime : min),
+    legs[0].commenceTime
+  );
+
+  const combo = {
+    id,
+    type: "combo",
+    sport: "COMBO",
+    legs: legs.map(l => ({
+      sportKey: l.sportKey,
+      sport: l.sport,
+      eventId: l.eventId,
+      game: l.game,
+      homeTeam: l.homeTeam,
+      awayTeam: l.awayTeam,
+      commenceTime: l.commenceTime,
+      market: l.market,
+      pick: l.pick,
+      line: l.line,
+      odds: l.odds,
+      bookmaker: l.bookmaker
+    })),
+    commenceTime: earliest,
+    market: "combo",
+    odds: decimalToAmerican(decimal),
+    bookmaker: "Multiple",
+    status: "PENDING",
+    tier: "free",
+    createdAt: new Date().toISOString(),
+    resolvedAt: null
+  };
+
+  existingIds.add(id);
+  console.log(`Bati yon mega-parlay ${legs.length} pati (odds konbine ${decimalToAmerican(decimal)}).`);
+  return [combo];
 }
 
 function pruneFarFutureTips(tips, now) {
@@ -499,8 +511,8 @@ async function main() {
   resolveTips(data.tips, scoresBySport);
 
   // 2. Fetch live odds - limited to the next WINDOW_DAYS days - and add tips
-  //    only for games we haven't posted yet. The h2h pick is now the
-  //    favorite (highest real chance to win), not the biggest payout.
+  //    only for games we haven't posted yet. The h2h pick is the favorite
+  //    (highest real chance to win), not the biggest payout.
   let newTips = [];
   let allLegCandidates = [];
   for (const sport of SPORTS) {
@@ -547,8 +559,8 @@ async function main() {
     console.log(`Skipping extra soccer markets (runs every ${EXTRA_MARKETS_INTERVAL_HOURS}h, last run ${data.extraMarketsLastRun})`);
   }
 
-  // 4. Build combo ("parlay") tips (2, 3, and 6 legs) from the safest legs
-  //    across every sport and market pooled above.
+  // 4. Build ONE "mega-parlay" combo tip (>= MIN_SELECTIONS legs, all at or
+  //    beyond ODDS_THRESHOLD_AMERICAN) from the safest legs pooled above.
   const newCombos = buildComboTips(allLegCandidates, existingIds);
   if (newCombos.length > 0) {
     console.log(`Added ${newCombos.length} combo tip(s)`);
