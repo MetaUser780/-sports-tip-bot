@@ -13,7 +13,7 @@ const WINDOW_DAYS = 5; // only track games starting within this many days
 // or beyond this threshold, e.g. -800, -900, -1200 ...) and combine at
 // least MIN_SELECTIONS of them (up to MAX_SELECTIONS) into a single combo
 // tip per run. This replaces the old fixed-size (2/3/6-leg) combo builder.
-const ODDS_THRESHOLD_AMERICAN = -800;
+const ODDS_THRESHOLD_AMERICAN = -500;
 const MIN_SELECTIONS = 10;
 const MAX_SELECTIONS = 15;
 
