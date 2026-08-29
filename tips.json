@@ -1,11 +1,11 @@
 {
-  "updatedAt": "2026-08-29T22:25:45.642Z",
+  "updatedAt": "2026-08-29T23:09:52.711Z",
   "stats": {
-    "won": 13,
-    "lost": 12,
-    "push": 2,
-    "pending": 55,
-    "winRate": 52,
+    "won": 16,
+    "lost": 14,
+    "push": 3,
+    "pending": 49,
+    "winRate": 53.3,
     "totalTips": 82
   },
   "tips": [
@@ -419,10 +419,10 @@
       "pick": "Chicago Fire",
       "odds": 132,
       "bookmaker": "BetRivers",
-      "status": "PENDING",
+      "status": "PUSH",
       "tier": "free",
       "createdAt": "2026-08-28T04:32:02.071Z",
-      "resolvedAt": null
+      "resolvedAt": "2026-08-29T23:09:52.088Z"
     },
     {
       "id": "soccer_usa_mls:314428b06f2c4e4296d064693aaf0958:h2h",
@@ -1158,10 +1158,10 @@
       "pick": "Washington Nationals",
       "odds": -112,
       "bookmaker": "FanDuel",
-      "status": "PENDING",
+      "status": "WON",
       "tier": "free",
       "createdAt": "2026-08-29T00:28:00.048Z",
-      "resolvedAt": null
+      "resolvedAt": "2026-08-29T23:09:52.088Z"
     },
     {
       "id": "baseball_mlb:f09fa6908679cc62186874d19386d9ae:h2h",
@@ -1196,10 +1196,10 @@
       "pick": "Cleveland Guardians",
       "odds": -152,
       "bookmaker": "FanDuel",
-      "status": "PENDING",
+      "status": "LOST",
       "tier": "free",
       "createdAt": "2026-08-29T00:28:00.048Z",
-      "resolvedAt": null
+      "resolvedAt": "2026-08-29T23:09:52.088Z"
     },
     {
       "id": "baseball_mlb:a4558d70afe6992060734e6ea21ca616:h2h",
@@ -1215,10 +1215,10 @@
       "pick": "Tampa Bay Rays",
       "odds": -130,
       "bookmaker": "FanDuel",
-      "status": "PENDING",
+      "status": "WON",
       "tier": "free",
       "createdAt": "2026-08-29T00:28:00.048Z",
-      "resolvedAt": null
+      "resolvedAt": "2026-08-29T23:09:52.088Z"
     },
     {
       "id": "baseball_mlb:52d2d3c67d49f8908f4acb9bfc013533:h2h",
@@ -1444,10 +1444,10 @@
       "pick": "New York Mets",
       "odds": -138,
       "bookmaker": "FanDuel",
-      "status": "PENDING",
+      "status": "WON",
       "tier": "free",
       "createdAt": "2026-08-29T08:41:00.634Z",
-      "resolvedAt": null
+      "resolvedAt": "2026-08-29T23:09:52.088Z"
     },
     {
       "id": "baseball_mlb:03a0ddbd6b3c88cdb2490d592317291f:h2h",
@@ -1577,10 +1577,10 @@
       "pick": "San Francisco Giants",
       "odds": -108,
       "bookmaker": "FanDuel",
-      "status": "PENDING",
+      "status": "LOST",
       "tier": "free",
       "createdAt": "2026-08-29T14:56:22.165Z",
-      "resolvedAt": null
+      "resolvedAt": "2026-08-29T23:09:52.088Z"
     },
     {
       "id": "baseball_mlb:f007a8d44c9c2b52df9d2e68b822e580:h2h",
