@@ -1,11 +1,11 @@
 {
-  "updatedAt": "2026-08-29T23:09:52.711Z",
+  "updatedAt": "2026-08-29T23:34:25.927Z",
   "stats": {
-    "won": 16,
+    "won": 17,
     "lost": 14,
     "push": 3,
-    "pending": 49,
-    "winRate": 53.3,
+    "pending": 48,
+    "winRate": 54.8,
     "totalTips": 82
   },
   "tips": [
@@ -1177,10 +1177,10 @@
       "pick": "Atlanta Braves",
       "odds": -205,
       "bookmaker": "FanDuel",
-      "status": "PENDING",
+      "status": "WON",
       "tier": "free",
       "createdAt": "2026-08-29T00:28:00.048Z",
-      "resolvedAt": null
+      "resolvedAt": "2026-08-29T23:34:24.737Z"
     },
     {
       "id": "baseball_mlb:a4fe71fcdb68ebdb641116734d66ebb7:h2h",
