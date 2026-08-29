@@ -311,6 +311,20 @@ function comboId(legs) {
 // MAX_SELECTIONS) or we skip building a combo this run entirely. Each
 // combo only uses one leg per game, so legs stay statistically
 // independent (no same-game correlated bets stacked into one ticket).
+// Diagnostic only: shows how many favorite legs are currently available at
+// each odds cutoff, so ODDS_THRESHOLD_AMERICAN can be tuned to match what
+// the market actually offers instead of guessing blind.
+function logThresholdDistribution(legCandidates) {
+  const thresholds = [-150, -200, -300, -400, -500, -600, -700, -800];
+  const parts = thresholds.map(t => {
+    const count = legCandidates.filter(
+      c => Number.isFinite(Number(c.odds)) && Number(c.odds) <= t
+    ).length;
+    return `${t}:${count}`;
+  });
+  console.log(`Distribisyon favori disponib (odds <= X: konbyen) - ${parts.join(", ")} (sou ${legCandidates.length} total)`);
+}
+
 function buildComboTips(legCandidates, existingIds) {
   const safeCandidates = legCandidates.filter(
     c => Number.isFinite(Number(c.odds)) && Number(c.odds) <= ODDS_THRESHOLD_AMERICAN
@@ -561,6 +575,7 @@ async function main() {
 
   // 4. Build ONE "mega-parlay" combo tip (>= MIN_SELECTIONS legs, all at or
   //    beyond ODDS_THRESHOLD_AMERICAN) from the safest legs pooled above.
+  logThresholdDistribution(allLegCandidates);
   const newCombos = buildComboTips(allLegCandidates, existingIds);
   if (newCombos.length > 0) {
     console.log(`Added ${newCombos.length} combo tip(s)`);
