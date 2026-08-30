@@ -110,6 +110,44 @@ async function getEvents(sportKey, fromIso, toIso) {
   return response.json();
 }
 
+// Decides which soccer events are worth spending a per-event odds call on
+// when fetching extra markets (double chance especially). A team that is
+// only a WEAK h2h favorite (say -120, -150 ... anything worse than
+// ODDS_THRESHOLD_AMERICAN) is exactly the case where double chance helps
+// most: covering 2 of the 3 possible results on a moderate favorite often
+// prices out around -700/-800+, turning a leg that couldn't join the
+// mega-parlay on its own into one that can. A game whose h2h favorite
+// already clears ODDS_THRESHOLD_AMERICAN doesn't need that boost (it
+// already qualifies), and a game with no known h2h price yet is checked
+// last since we can't tell if double chance would even help. This just
+// reorders the (free) events list before slicing to
+// EXTRA_MARKETS_MAX_EVENTS_PER_SPORT, so the same number of per-event API
+// calls get spent on the games most likely to turn into new safe legs.
+function prioritizeExtraMarketsEvents(events, sportKey, h2hLegCandidates) {
+  const oddsByEvent = new Map();
+  for (const leg of h2hLegCandidates) {
+    if (leg.sportKey === sportKey && leg.market === "h2h") {
+      oddsByEvent.set(leg.eventId, Number(leg.odds));
+    }
+  }
+
+  function priority(eventId) {
+    const odds = oddsByEvent.get(eventId);
+    if (!Number.isFinite(odds)) return { tier: 2, odds: 0 };
+    if (odds <= ODDS_THRESHOLD_AMERICAN) return { tier: 1, odds };
+    return { tier: 0, odds };
+  }
+
+  return events
+    .slice()
+    .sort((a, b) => {
+      const pa = priority(a.id);
+      const pb = priority(b.id);
+      if (pa.tier !== pb.tier) return pa.tier - pb.tier;
+      return pa.odds - pb.odds;
+    });
+}
+
 // Fetches soccer-only "safer bet" markets (flexible goal totals, double
 // chance, total corners) for ONE event from EU bookmakers. These are
 // additional markets that The Odds API only serves through this per-event
@@ -652,7 +690,8 @@ async function main() {
     for (const sport of EXTRA_MARKETS_SPORTS) {
       try {
         const events = await getEvents(sport.key, nowIso, windowEndIso);
-        const eventsToCheck = events.slice(0, EXTRA_MARKETS_MAX_EVENTS_PER_SPORT);
+        const orderedEvents = prioritizeExtraMarketsEvents(events, sport.key, allLegCandidates);
+        const eventsToCheck = orderedEvents.slice(0, EXTRA_MARKETS_MAX_EVENTS_PER_SPORT);
         let found = [];
         let cornersFound = [];
         for (const event of eventsToCheck) {
