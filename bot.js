@@ -25,15 +25,32 @@ const SPORTS = [
   { key: "americanfootball_nfl", label: "NFL" }
 ];
 
-// Extra soccer-only markets (totals/BTTS) used to build safer combo legs.
-// Kept on a much slower schedule than the main h2h fetch (see
-// EXTRA_MARKETS_INTERVAL_HOURS) because each region+market combo is billed
-// separately by The Odds API, and these markets mostly live with EU
-// bookmakers rather than the "us" region already used for h2h.
+// Extra soccer-only markets (goal totals, double chance, total corners)
+// used to build safer combo legs. Kept on a much slower schedule than the
+// main h2h fetch (see EXTRA_MARKETS_INTERVAL_HOURS) because each
+// region+market combo is billed separately by The Odds API, and these
+// markets mostly live with EU bookmakers rather than the "us" region
+// already used for h2h.
+//
+// IMPORTANT: "alternate_totals", "double_chance" and "alternate_totals_corners"
+// are "additional" markets on The Odds API - they 422 (INVALID_MARKET) on the
+// bulk /sports/{sport}/odds endpoint used for h2h. They only exist on the
+// per-event endpoint (/sports/{sport}/events/{eventId}/odds), so this
+// feature fetches the event list first (free) and then asks for odds one
+// event at a time.
+//
+// "totals_corners" (total corners) is fetched for visibility/logging ONLY -
+// The Odds API's /scores endpoint never returns corner counts, only the
+// final goal score, so a corners leg could never auto-resolve WON/LOST. Per
+// explicit user decision, corners odds are never turned into a tip and
+// never added to the combo-leg pool - see extractExtraMarketCandidates().
 const EXTRA_MARKETS_SPORTS = SPORTS.filter(s => s.key.startsWith("soccer_"));
 const EXTRA_MARKETS_REGIONS = "eu";
-const EXTRA_MARKETS_KEYS = "alternate_totals,btts";
-const EXTRA_MARKETS_INTERVAL_HOURS = 0; // TEMP: forced to 0 for a one-time diagnostic run
+const EXTRA_MARKETS_KEYS = "alternate_totals,double_chance,alternate_totals_corners";
+const EXTRA_MARKETS_INTERVAL_HOURS = 4; // ~ every other 2h cron run
+// Per-event odds cost separate API quota each, so cap how many events per
+// sport get checked on a single extra-markets run.
+const EXTRA_MARKETS_MAX_EVENTS_PER_SPORT = 10;
 
 function emptyStats() {
   return { won: 0, lost: 0, push: 0, pending: 0, winRate: 0, totalTips: 0 };
@@ -74,21 +91,41 @@ async function getOdds(sportKey, fromIso, toIso) {
   return response.json();
 }
 
-// Fetches soccer-only "safer bet" markets (flexible goal totals + both
-// teams to score) from EU bookmakers. Gated separately from getOdds() so
-// it only runs a few times a day instead of every run.
-async function getExtraSoccerOdds(sportKey, fromIso, toIso) {
+// Lightweight list of upcoming events (id + teams + start time) for a
+// sport in the window. This "events" endpoint does not return odds and is
+// not billed against the odds-market quota, so it's safe/cheap to call
+// before spending real quota on per-event odds below.
+async function getEvents(sportKey, fromIso, toIso) {
   const url =
-    `https://api.the-odds-api.com/v4/sports/${sportKey}/odds` +
+    `https://api.the-odds-api.com/v4/sports/${sportKey}/events` +
+    `?commenceTimeFrom=${fromIso}&commenceTimeTo=${toIso}` +
+    `&apiKey=${API_KEY}`;
+
+  const response = await fetch(url);
+
+  if (!response.ok) {
+    throw new Error(`${sportKey}: events API error ${response.status}`);
+  }
+
+  return response.json();
+}
+
+// Fetches soccer-only "safer bet" markets (flexible goal totals, double
+// chance, total corners) for ONE event from EU bookmakers. These are
+// additional markets that The Odds API only serves through this per-event
+// endpoint (they 422 on the bulk odds endpoint). Gated separately from
+// getOdds() so it only runs a few times a day instead of every run.
+async function getExtraSoccerOddsForEvent(sportKey, eventId) {
+  const url =
+    `https://api.the-odds-api.com/v4/sports/${sportKey}/events/${eventId}/odds` +
     `?regions=${EXTRA_MARKETS_REGIONS}&markets=${EXTRA_MARKETS_KEYS}&oddsFormat=american` +
-    `&commenceTimeFrom=${fromIso}&commenceTimeTo=${toIso}` +
     `&apiKey=${API_KEY}`;
 
   const response = await fetch(url);
 
   if (!response.ok) {
     const body = await response.text().catch(() => "");
-    throw new Error(`${sportKey}: extra-markets odds API error ${response.status} - ${body.slice(0, 300)}`);
+    throw new Error(`${sportKey} event ${eventId}: extra-markets odds API error ${response.status} - ${body.slice(0, 300)}`);
   }
 
   return response.json();
@@ -212,10 +249,29 @@ function pickOverOutcome(market, targetPoints) {
   return overs.reduce((a, b) => (Number(a.point) < Number(b.point) ? a : b));
 }
 
-// Builds extra "safer bet" leg candidates (goal totals + BTTS) for a single
-// soccer game. These feed both their own single tips and the combo pool.
+// Classifies a "double_chance" outcome name against the two team names in
+// the game, so the actual result can be checked later purely from the
+// final score (home/away/draw) instead of re-parsing the API's exact
+// outcome-name wording every time.
+function classifyDoubleChanceOutcome(outcomeName, homeTeam, awayTeam) {
+  const name = String(outcomeName || "");
+  const hasHome = name.includes(homeTeam);
+  const hasAway = name.includes(awayTeam);
+  const hasDraw = /draw/i.test(name);
+  if (hasHome && hasAway) return "home_or_away";
+  if (hasHome && hasDraw) return "home_or_draw";
+  if (hasAway && hasDraw) return "away_or_draw";
+  return null;
+}
+
+// Builds extra "safer bet" leg candidates (goal totals, double chance) for a
+// single soccer game, plus a separate info-only list of total-corners odds
+// (see the EXTRA_MARKETS_KEYS comment above for why corners never become a
+// tip/combo leg). These candidates feed both their own single tips and the
+// combo pool.
 function extractExtraMarketCandidates(sportKey, label, game) {
   const candidates = [];
+  const cornersInfo = [];
   const base = {
     sportKey,
     sport: label,
@@ -226,13 +282,15 @@ function extractExtraMarketCandidates(sportKey, label, game) {
     commenceTime: game.commence_time
   };
 
+  // Goal totals - prefer the "Over 1.5 goals" line (per user request) over
+  // "Over 0.5", falling back to whatever line is offered/safest otherwise.
   const totalsHit = findMarketAcrossBookmakers(game, "alternate_totals");
   if (totalsHit) {
-    const outcome = pickOverOutcome(totalsHit.market, [0.5, 1.5]);
+    const outcome = pickOverOutcome(totalsHit.market, [1.5, 0.5]);
     if (outcome) {
       candidates.push(Object.assign({}, base, {
         market: "totals",
-        pick: `Over ${outcome.point} GÃ²l`,
+        pick: `Over ${outcome.point} Gòl`,
         line: Number(outcome.point),
         odds: Number(outcome.price),
         bookmaker: totalsHit.bookmaker.title
@@ -240,20 +298,47 @@ function extractExtraMarketCandidates(sportKey, label, game) {
     }
   }
 
-  const bttsHit = findMarketAcrossBookmakers(game, "btts");
-  if (bttsHit) {
-    const yesOutcome = (bttsHit.market.outcomes || []).find(o => o.name === "Yes");
-    if (yesOutcome) {
+  // Double chance - pick whichever of the 3 combos (home-or-draw,
+  // away-or-draw, home-or-away) is priced safest for this game.
+  const dcHit = findMarketAcrossBookmakers(game, "double_chance");
+  if (dcHit) {
+    const classified = (dcHit.market.outcomes || [])
+      .map(o => ({ outcome: o, code: classifyDoubleChanceOutcome(o.name, game.home_team, game.away_team) }))
+      .filter(x => x.code && Number.isFinite(Number(x.outcome.price)));
+    if (classified.length > 0) {
+      const safest = classified.reduce((a, b) =>
+        Number(a.outcome.price) < Number(b.outcome.price) ? a : b
+      );
       candidates.push(Object.assign({}, base, {
-        market: "btts",
-        pick: "De Ekip Make (BTTS: Wi)",
-        odds: Number(yesOutcome.price),
-        bookmaker: bttsHit.bookmaker.title
+        market: "double_chance",
+        pick: `Doub Chans: ${safest.outcome.name}`,
+        line: safest.code,
+        odds: Number(safest.outcome.price),
+        bookmaker: dcHit.bookmaker.title
       }));
     }
   }
 
-  return candidates;
+  // Total corners - info/logging only, NEVER a tip or combo leg. The Odds
+  // API's /scores endpoint has no corner-count data, so a corners leg could
+  // never auto-resolve WON/LOST (and would leave any combo containing it
+  // stuck on PENDING forever). Kept here so the odds are still visible in
+  // the run log for manual review.
+  const cornersHit = findMarketAcrossBookmakers(game, "alternate_totals_corners");
+  if (cornersHit) {
+    const outcome = pickOverOutcome(cornersHit.market, []);
+    if (outcome) {
+      cornersInfo.push(Object.assign({}, base, {
+        market: "totals_corners",
+        pick: `Over ${outcome.point} Kòn (enfo sèlman - pa gen nan konbo)`,
+        line: Number(outcome.point),
+        odds: Number(outcome.price),
+        bookmaker: cornersHit.bookmaker.title
+      }));
+    }
+  }
+
+  return { candidates, cornersInfo };
 }
 
 function buildExtraMarketTips(candidates, existingIds) {
@@ -434,8 +519,19 @@ function resolveLeg(leg, scoresBySport) {
     return "PUSH";
   }
 
-  if (leg.market === "btts") {
-    return home > 0 && away > 0 ? "WON" : "LOST";
+  if (leg.market === "double_chance") {
+    let winner = "draw";
+    if (home > away) winner = "home";
+    else if (away > home) winner = "away";
+
+    const covers = {
+      home_or_draw: ["home", "draw"],
+      away_or_draw: ["away", "draw"],
+      home_or_away: ["home", "away"]
+    }[leg.line];
+
+    if (!covers) return "PENDING";
+    return covers.includes(winner) ? "WON" : "LOST";
   }
 
   // h2h
@@ -548,23 +644,40 @@ async function main() {
   }
 
   // 3. Every few hours, also pull soccer-only "safer bet" markets (goal
-  //    totals, BTTS) to widen the pool of safe combo legs beyond h2h
-  //    favorites - kept rare because each extra region+market combo costs
-  //    separate API quota.
+  //    totals, double chance - plus total corners for info only) to widen
+  //    the pool of safe combo legs beyond h2h favorites - kept rare because
+  //    each extra region+market combo costs separate API quota.
   if (shouldRunExtraMarkets(data, now)) {
-    console.log(`Fetching extra soccer markets (totals/BTTS) - last run: ${data.extraMarketsLastRun || "never"}`);
+    console.log(`Fetching extra soccer markets (totals/double chance/corners) - last run: ${data.extraMarketsLastRun || "never"}`);
     for (const sport of EXTRA_MARKETS_SPORTS) {
       try {
-        const games = await getExtraSoccerOdds(sport.key, nowIso, windowEndIso);
+        const events = await getEvents(sport.key, nowIso, windowEndIso);
+        const eventsToCheck = events.slice(0, EXTRA_MARKETS_MAX_EVENTS_PER_SPORT);
         let found = [];
-        for (const game of games) {
-          found = found.concat(extractExtraMarketCandidates(sport.key, sport.label, game));
+        let cornersFound = [];
+        for (const event of eventsToCheck) {
+          try {
+            const game = await getExtraSoccerOddsForEvent(sport.key, event.id);
+            const { candidates, cornersInfo } = extractExtraMarketCandidates(sport.key, sport.label, game);
+            found = found.concat(candidates);
+            cornersFound = cornersFound.concat(cornersInfo);
+          } catch (eventError) {
+            console.log(`WARNING: ${eventError.message}`);
+          }
         }
         const generated = buildExtraMarketTips(found, existingIds);
         generated.forEach(t => existingIds.add(t.id));
         newTips = newTips.concat(generated);
         allLegCandidates = allLegCandidates.concat(found);
-        console.log(`${sport.label}: ${found.length} extra-market candidate(s), ${generated.length} new tip(s)`);
+        console.log(`${sport.label}: ${events.length} event(s) in window, checked ${eventsToCheck.length}, ${found.length} extra-market candidate(s), ${generated.length} new tip(s)`);
+        if (cornersFound.length > 0) {
+          const safeCorners = cornersFound.filter(
+            c => Number.isFinite(Number(c.odds)) && Number(c.odds) <= ODDS_THRESHOLD_AMERICAN
+          );
+          console.log(
+            `${sport.label}: ${cornersFound.length} total-corners odds seen (enfo sèlman, pa antre nan tip/konbo) - ${safeCorners.length} ta kalifye pou -${Math.abs(ODDS_THRESHOLD_AMERICAN)} si nou te enkli yo`
+          );
+        }
       } catch (error) {
         console.log(`WARNING: ${error.message}`);
       }
