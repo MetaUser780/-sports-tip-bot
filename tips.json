@@ -1,11 +1,11 @@
 {
-  "updatedAt": "2026-08-30T11:24:07.951Z",
+  "updatedAt": "2026-08-30T16:10:42.133Z",
   "stats": {
-    "won": 31,
-    "lost": 19,
-    "push": 7,
-    "pending": 35,
-    "winRate": 62,
+    "won": 37,
+    "lost": 21,
+    "push": 8,
+    "pending": 26,
+    "winRate": 63.8,
     "totalTips": 92
   },
   "tips": [
@@ -136,10 +136,10 @@
       "pick": "Leeds United",
       "odds": 155,
       "bookmaker": "FanDuel",
-      "status": "PENDING",
+      "status": "PUSH",
       "tier": "free",
       "createdAt": "2026-08-28T04:32:02.026Z",
-      "resolvedAt": null
+      "resolvedAt": "2026-08-30T16:10:41.094Z"
     },
     {
       "id": "soccer_epl:6a4c946a61ddb5ef4703eb4528ccdef1:h2h",
@@ -155,10 +155,10 @@
       "pick": "Chelsea",
       "odds": -130,
       "bookmaker": "FanDuel",
-      "status": "PENDING",
+      "status": "WON",
       "tier": "free",
       "createdAt": "2026-08-28T04:32:02.026Z",
-      "resolvedAt": null
+      "resolvedAt": "2026-08-30T16:10:41.094Z"
     },
     {
       "id": "soccer_epl:9becb395ad634de55caec620f9d713fa:h2h",
@@ -174,10 +174,10 @@
       "pick": "Sunderland",
       "odds": 140,
       "bookmaker": "FanDuel",
-      "status": "PENDING",
+      "status": "WON",
       "tier": "free",
       "createdAt": "2026-08-28T04:32:02.026Z",
-      "resolvedAt": null
+      "resolvedAt": "2026-08-30T16:10:41.094Z"
     },
     {
       "id": "soccer_epl:5759167055d94ba38e145ab92188abbf:h2h",
@@ -1372,10 +1372,10 @@
       "line": 1.5,
       "odds": -400,
       "bookmaker": "1xBet",
-      "status": "PENDING",
+      "status": "WON",
       "tier": "free",
       "createdAt": "2026-08-30T01:25:27.420Z",
-      "resolvedAt": null
+      "resolvedAt": "2026-08-30T16:10:41.094Z"
     },
     {
       "id": "soccer_epl:e479c08421b8549c6959c2b84f6f3f79:double_chance",
@@ -1392,10 +1392,10 @@
       "line": "home_or_away",
       "odds": -284,
       "bookmaker": "1xBet",
-      "status": "PENDING",
+      "status": "LOST",
       "tier": "free",
       "createdAt": "2026-08-30T01:25:27.420Z",
-      "resolvedAt": null
+      "resolvedAt": "2026-08-30T16:10:41.094Z"
     },
     {
       "id": "soccer_epl:6a4c946a61ddb5ef4703eb4528ccdef1:totals",
@@ -1412,10 +1412,10 @@
       "line": 1.5,
       "odds": -505,
       "bookmaker": "1xBet",
-      "status": "PENDING",
+      "status": "WON",
       "tier": "free",
       "createdAt": "2026-08-30T01:25:27.420Z",
-      "resolvedAt": null
+      "resolvedAt": "2026-08-30T16:10:41.094Z"
     },
     {
       "id": "soccer_epl:6a4c946a61ddb5ef4703eb4528ccdef1:double_chance",
@@ -1432,10 +1432,10 @@
       "line": "home_or_away",
       "odds": -346,
       "bookmaker": "1xBet",
-      "status": "PENDING",
+      "status": "WON",
       "tier": "free",
       "createdAt": "2026-08-30T01:25:27.420Z",
-      "resolvedAt": null
+      "resolvedAt": "2026-08-30T16:10:41.094Z"
     },
     {
       "id": "soccer_epl:9becb395ad634de55caec620f9d713fa:totals",
@@ -1452,10 +1452,10 @@
       "line": 1.5,
       "odds": -333,
       "bookmaker": "1xBet",
-      "status": "PENDING",
+      "status": "LOST",
       "tier": "free",
       "createdAt": "2026-08-30T01:25:27.420Z",
-      "resolvedAt": null
+      "resolvedAt": "2026-08-30T16:10:41.094Z"
     },
     {
       "id": "soccer_epl:9becb395ad634de55caec620f9d713fa:double_chance",
@@ -1472,10 +1472,10 @@
       "line": "home_or_away",
       "odds": -270,
       "bookmaker": "1xBet",
-      "status": "PENDING",
+      "status": "WON",
       "tier": "free",
       "createdAt": "2026-08-30T01:25:27.420Z",
-      "resolvedAt": null
+      "resolvedAt": "2026-08-30T16:10:41.094Z"
     },
     {
       "id": "soccer_epl:5759167055d94ba38e145ab92188abbf:totals",
@@ -1777,5 +1777,5 @@
       "resolvedAt": null
     }
   ],
-  "extraMarketsLastRun": "2026-08-30T11:24:04Z"
+  "extraMarketsLastRun": "2026-08-30T16:10:40Z"
 }
