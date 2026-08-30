@@ -87,7 +87,8 @@ async function getExtraSoccerOdds(sportKey, fromIso, toIso) {
   const response = await fetch(url);
 
   if (!response.ok) {
-    throw new Error(`${sportKey}: extra-markets odds API error ${response.status}`);
+    const body = await response.text().catch(() => "");
+    throw new Error(`${sportKey}: extra-markets odds API error ${response.status} - ${body.slice(0, 300)}`);
   }
 
   return response.json();
