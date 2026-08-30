@@ -1,12 +1,12 @@
 {
-  "updatedAt": "2026-08-30T01:25:28.311Z",
+  "updatedAt": "2026-08-30T04:00:27.540Z",
   "stats": {
-    "won": 17,
-    "lost": 14,
-    "push": 3,
-    "pending": 57,
-    "winRate": 54.8,
-    "totalTips": 91
+    "won": 25,
+    "lost": 16,
+    "push": 7,
+    "pending": 44,
+    "winRate": 61,
+    "totalTips": 92
   },
   "tips": [
     {
@@ -250,10 +250,10 @@
       "pick": "Atlanta United FC",
       "odds": 123,
       "bookmaker": "BetRivers",
-      "status": "PENDING",
+      "status": "LOST",
       "tier": "free",
       "createdAt": "2026-08-28T04:32:02.071Z",
-      "resolvedAt": null
+      "resolvedAt": "2026-08-30T04:00:26.579Z"
     },
     {
       "id": "soccer_usa_mls:1ef7214244fa34acdaaafcc299cf9ca1:h2h",
@@ -269,10 +269,10 @@
       "pick": "Inter Miami CF",
       "odds": -250,
       "bookmaker": "BetRivers",
-      "status": "PENDING",
+      "status": "WON",
       "tier": "free",
       "createdAt": "2026-08-28T04:32:02.071Z",
-      "resolvedAt": null
+      "resolvedAt": "2026-08-30T04:00:26.579Z"
     },
     {
       "id": "soccer_usa_mls:7ea9ef41237050ed7f01c1a8658006d9:h2h",
@@ -288,10 +288,10 @@
       "pick": "Los Angeles FC",
       "odds": -110,
       "bookmaker": "BetRivers",
-      "status": "PENDING",
+      "status": "PUSH",
       "tier": "free",
       "createdAt": "2026-08-28T04:32:02.071Z",
-      "resolvedAt": null
+      "resolvedAt": "2026-08-30T04:00:26.579Z"
     },
     {
       "id": "soccer_usa_mls:84dd5483fdeb272a8f839615638b4d98:h2h",
@@ -307,10 +307,10 @@
       "pick": "Toronto FC",
       "odds": 145,
       "bookmaker": "BetRivers",
-      "status": "PENDING",
+      "status": "PUSH",
       "tier": "free",
       "createdAt": "2026-08-28T04:32:02.071Z",
-      "resolvedAt": null
+      "resolvedAt": "2026-08-30T04:00:26.579Z"
     },
     {
       "id": "soccer_usa_mls:33d36a37a9eff4794ec764f5ef12a3c4:h2h",
@@ -326,10 +326,10 @@
       "pick": "Philadelphia Union",
       "odds": 114,
       "bookmaker": "BetRivers",
-      "status": "PENDING",
+      "status": "WON",
       "tier": "free",
       "createdAt": "2026-08-28T04:32:02.071Z",
-      "resolvedAt": null
+      "resolvedAt": "2026-08-30T04:00:26.579Z"
     },
     {
       "id": "soccer_usa_mls:cf6c4472b6f414ddeda2d0f76f62fed0:h2h",
@@ -345,10 +345,10 @@
       "pick": "Nashville SC",
       "odds": -143,
       "bookmaker": "BetRivers",
-      "status": "PENDING",
+      "status": "WON",
       "tier": "free",
       "createdAt": "2026-08-28T04:32:02.071Z",
-      "resolvedAt": null
+      "resolvedAt": "2026-08-30T04:00:26.579Z"
     },
     {
       "id": "soccer_usa_mls:b06640d18b1a8a8e7769139694b15ba5:h2h",
@@ -364,10 +364,10 @@
       "pick": "Houston Dynamo",
       "odds": -143,
       "bookmaker": "BetRivers",
-      "status": "PENDING",
+      "status": "PUSH",
       "tier": "free",
       "createdAt": "2026-08-28T04:32:02.071Z",
-      "resolvedAt": null
+      "resolvedAt": "2026-08-30T04:00:26.579Z"
     },
     {
       "id": "soccer_usa_mls:207150d2d858378b2b801c9ab4961d14:h2h",
@@ -383,10 +383,10 @@
       "pick": "Minnesota United FC",
       "odds": -121,
       "bookmaker": "BetRivers",
-      "status": "PENDING",
+      "status": "PUSH",
       "tier": "free",
       "createdAt": "2026-08-28T04:32:02.071Z",
-      "resolvedAt": null
+      "resolvedAt": "2026-08-30T04:00:26.579Z"
     },
     {
       "id": "soccer_usa_mls:47162eeb7df0608a3dd63213f0c7c526:h2h",
@@ -402,10 +402,10 @@
       "pick": "Vancouver Whitecaps FC",
       "odds": -265,
       "bookmaker": "BetRivers",
-      "status": "PENDING",
+      "status": "WON",
       "tier": "free",
       "createdAt": "2026-08-28T04:32:02.071Z",
-      "resolvedAt": null
+      "resolvedAt": "2026-08-30T04:00:26.579Z"
     },
     {
       "id": "soccer_usa_mls:33de67b507b5f5a00968648f26e652de:h2h",
@@ -421,10 +421,10 @@
       "pick": "Colorado Rapids",
       "odds": -104,
       "bookmaker": "BetRivers",
-      "status": "PENDING",
+      "status": "WON",
       "tier": "free",
       "createdAt": "2026-08-28T04:32:02.071Z",
-      "resolvedAt": null
+      "resolvedAt": "2026-08-30T04:00:26.579Z"
     },
     {
       "id": "soccer_usa_mls:fc5a1bd610953485e8bd2534777e9b89:h2h",
@@ -953,10 +953,10 @@
       "pick": "Milwaukee Brewers",
       "odds": -162,
       "bookmaker": "FanDuel",
-      "status": "PENDING",
+      "status": "WON",
       "tier": "free",
       "createdAt": "2026-08-29T00:28:00.048Z",
-      "resolvedAt": null
+      "resolvedAt": "2026-08-30T04:00:26.580Z"
     },
     {
       "id": "baseball_mlb:24be08805f9e6d828810ae8435d2563a:h2h",
@@ -1048,10 +1048,10 @@
       "pick": "New York Yankees",
       "odds": -130,
       "bookmaker": "FanDuel",
-      "status": "PENDING",
+      "status": "WON",
       "tier": "free",
       "createdAt": "2026-08-29T08:41:00.634Z",
-      "resolvedAt": null
+      "resolvedAt": "2026-08-30T04:00:26.580Z"
     },
     {
       "id": "baseball_mlb:147cde54c2c64f6e17c1f5a1ec9fadf7:h2h",
@@ -1572,10 +1572,10 @@
       "line": 1.5,
       "odds": -435,
       "bookmaker": "Coolbet",
-      "status": "PENDING",
+      "status": "LOST",
       "tier": "free",
       "createdAt": "2026-08-30T01:25:28.310Z",
-      "resolvedAt": null
+      "resolvedAt": "2026-08-30T04:00:26.580Z"
     },
     {
       "id": "soccer_usa_mls:33de67b507b5f5a00968648f26e652de:double_chance",
@@ -1592,10 +1592,10 @@
       "line": "home_or_draw",
       "odds": -340,
       "bookmaker": "Pinnacle",
-      "status": "PENDING",
+      "status": "WON",
       "tier": "free",
       "createdAt": "2026-08-30T01:25:28.310Z",
-      "resolvedAt": null
+      "resolvedAt": "2026-08-30T04:00:26.580Z"
     },
     {
       "id": "soccer_usa_mls:fc5a1bd610953485e8bd2534777e9b89:totals",
@@ -1755,6 +1755,25 @@
       "status": "PENDING",
       "tier": "free",
       "createdAt": "2026-08-30T01:25:28.310Z",
+      "resolvedAt": null
+    },
+    {
+      "id": "baseball_mlb:008f42799432660532a3e011a06b8356:h2h",
+      "type": "single",
+      "sport": "MLB",
+      "sportKey": "baseball_mlb",
+      "eventId": "008f42799432660532a3e011a06b8356",
+      "game": "Chicago White Sox @ Minnesota Twins",
+      "homeTeam": "Minnesota Twins",
+      "awayTeam": "Chicago White Sox",
+      "commenceTime": "2026-08-30T18:11:00Z",
+      "market": "h2h",
+      "pick": "Minnesota Twins",
+      "odds": -122,
+      "bookmaker": "FanDuel",
+      "status": "PENDING",
+      "tier": "free",
+      "createdAt": "2026-08-30T04:00:27.447Z",
       "resolvedAt": null
     }
   ],
