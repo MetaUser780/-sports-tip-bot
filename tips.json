@@ -1,11 +1,11 @@
 {
-  "updatedAt": "2026-08-30T04:00:27.540Z",
+  "updatedAt": "2026-08-30T11:24:07.951Z",
   "stats": {
-    "won": 25,
-    "lost": 16,
+    "won": 31,
+    "lost": 19,
     "push": 7,
-    "pending": 44,
-    "winRate": 61,
+    "pending": 35,
+    "winRate": 62,
     "totalTips": 92
   },
   "tips": [
@@ -440,10 +440,10 @@
       "pick": "Portland Timbers",
       "odds": -180,
       "bookmaker": "BetRivers",
-      "status": "PENDING",
+      "status": "LOST",
       "tier": "free",
       "createdAt": "2026-08-28T04:32:02.071Z",
-      "resolvedAt": null
+      "resolvedAt": "2026-08-30T11:24:05.337Z"
     },
     {
       "id": "soccer_usa_mls:0a4e4b417fc148126a68dbef070c7898:h2h",
@@ -459,10 +459,10 @@
       "pick": "San Diego FC",
       "odds": -134,
       "bookmaker": "BetRivers",
-      "status": "PENDING",
+      "status": "WON",
       "tier": "free",
       "createdAt": "2026-08-28T04:32:02.071Z",
-      "resolvedAt": null
+      "resolvedAt": "2026-08-30T11:24:05.337Z"
     },
     {
       "id": "soccer_usa_mls:8f1aec488d5a6ce92622071ffbcf53ff:h2h",
@@ -972,10 +972,10 @@
       "pick": "Philadelphia Phillies",
       "odds": -245,
       "bookmaker": "FanDuel",
-      "status": "PENDING",
+      "status": "WON",
       "tier": "free",
       "createdAt": "2026-08-29T00:28:00.048Z",
-      "resolvedAt": null
+      "resolvedAt": "2026-08-30T11:24:05.337Z"
     },
     {
       "id": "baseball_mlb:ef5ae47c92d83c4feec38fd6e38ce4ae:h2h",
@@ -1086,10 +1086,10 @@
       "pick": "Arizona Diamondbacks",
       "odds": -116,
       "bookmaker": "FanDuel",
-      "status": "PENDING",
+      "status": "LOST",
       "tier": "free",
       "createdAt": "2026-08-29T14:56:22.166Z",
-      "resolvedAt": null
+      "resolvedAt": "2026-08-30T11:24:05.337Z"
     },
     {
       "id": "baseball_mlb:a6d2e445575c033726a0824697fe8033:h2h",
@@ -1105,10 +1105,10 @@
       "pick": "Baltimore Orioles",
       "odds": -136,
       "bookmaker": "FanDuel",
-      "status": "PENDING",
+      "status": "WON",
       "tier": "free",
       "createdAt": "2026-08-29T14:56:22.166Z",
-      "resolvedAt": null
+      "resolvedAt": "2026-08-30T11:24:05.337Z"
     },
     {
       "id": "baseball_mlb:9d137e890c8e3337cf83b0d6d1fea2fb:h2h",
@@ -1612,10 +1612,10 @@
       "line": 1.5,
       "odds": -714,
       "bookmaker": "Coolbet",
-      "status": "PENDING",
+      "status": "WON",
       "tier": "free",
       "createdAt": "2026-08-30T01:25:28.310Z",
-      "resolvedAt": null
+      "resolvedAt": "2026-08-30T11:24:05.337Z"
     },
     {
       "id": "soccer_usa_mls:fc5a1bd610953485e8bd2534777e9b89:double_chance",
@@ -1632,10 +1632,10 @@
       "line": "home_or_draw",
       "odds": -502,
       "bookmaker": "Pinnacle",
-      "status": "PENDING",
+      "status": "LOST",
       "tier": "free",
       "createdAt": "2026-08-30T01:25:28.310Z",
-      "resolvedAt": null
+      "resolvedAt": "2026-08-30T11:24:05.337Z"
     },
     {
       "id": "soccer_usa_mls:0a4e4b417fc148126a68dbef070c7898:totals",
@@ -1652,10 +1652,10 @@
       "line": 1.5,
       "odds": -833,
       "bookmaker": "Coolbet",
-      "status": "PENDING",
+      "status": "WON",
       "tier": "free",
       "createdAt": "2026-08-30T01:25:28.310Z",
-      "resolvedAt": null
+      "resolvedAt": "2026-08-30T11:24:05.338Z"
     },
     {
       "id": "soccer_usa_mls:0a4e4b417fc148126a68dbef070c7898:double_chance",
@@ -1672,10 +1672,10 @@
       "line": "home_or_draw",
       "odds": -549,
       "bookmaker": "MyBookie.ag",
-      "status": "PENDING",
+      "status": "WON",
       "tier": "free",
       "createdAt": "2026-08-30T01:25:28.310Z",
-      "resolvedAt": null
+      "resolvedAt": "2026-08-30T11:24:05.338Z"
     },
     {
       "id": "soccer_usa_mls:8f1aec488d5a6ce92622071ffbcf53ff:totals",
@@ -1777,5 +1777,5 @@
       "resolvedAt": null
     }
   ],
-  "extraMarketsLastRun": "2026-08-30T01:25:25Z"
+  "extraMarketsLastRun": "2026-08-30T11:24:04Z"
 }
