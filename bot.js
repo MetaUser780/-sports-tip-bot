@@ -47,7 +47,7 @@ const SPORTS = [
 const EXTRA_MARKETS_SPORTS = SPORTS.filter(s => s.key.startsWith("soccer_"));
 const EXTRA_MARKETS_REGIONS = "eu";
 const EXTRA_MARKETS_KEYS = "alternate_totals,double_chance,alternate_totals_corners";
-const EXTRA_MARKETS_INTERVAL_HOURS = 4; // ~ every other 2h cron run // ~ every other 2h cron run
+const EXTRA_MARKETS_INTERVAL_HOURS = 4; // ~ every other 2h cron run
 // Per-event odds cost separate API quota each, so cap how many events per
 // sport get checked on a single extra-markets run.
 const EXTRA_MARKETS_MAX_EVENTS_PER_SPORT = 10;
