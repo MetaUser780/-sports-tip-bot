@@ -13,7 +13,7 @@ const WINDOW_DAYS = 5; // only track games starting within this many days
 // or beyond this threshold, e.g. -800, -900, -1200 ...) and combine at
 // least MIN_SELECTIONS of them (up to MAX_SELECTIONS) into a single combo
 // tip per run. This replaces the old fixed-size (2/3/6-leg) combo builder.
-const ODDS_THRESHOLD_AMERICAN = -500;
+const ODDS_THRESHOLD_AMERICAN = -800;
 const MIN_SELECTIONS = 10;
 const MAX_SELECTIONS = 15;
 
@@ -33,7 +33,7 @@ const SPORTS = [
 const EXTRA_MARKETS_SPORTS = SPORTS.filter(s => s.key.startsWith("soccer_"));
 const EXTRA_MARKETS_REGIONS = "eu";
 const EXTRA_MARKETS_KEYS = "alternate_totals,btts";
-const EXTRA_MARKETS_INTERVAL_HOURS = 8;
+const EXTRA_MARKETS_INTERVAL_HOURS = 0; // TEMP: forced to 0 for a one-time diagnostic run
 
 function emptyStats() {
   return { won: 0, lost: 0, push: 0, pending: 0, winRate: 0, totalTips: 0 };
