@@ -1,12 +1,12 @@
 {
-  "updatedAt": "2026-08-31T00:13:54.935Z",
+  "updatedAt": "2026-08-31T08:11:14.069Z",
   "stats": {
-    "won": 50,
-    "lost": 27,
-    "push": 8,
-    "pending": 23,
-    "winRate": 64.9,
-    "totalTips": 108
+    "won": 52,
+    "lost": 28,
+    "push": 9,
+    "pending": 21,
+    "winRate": 65,
+    "totalTips": 110
   },
   "tips": [
     {
@@ -497,10 +497,10 @@
       "pick": "St. Louis City SC",
       "odds": -107,
       "bookmaker": "BetRivers",
-      "status": "PENDING",
+      "status": "PUSH",
       "tier": "free",
       "createdAt": "2026-08-28T04:32:02.071Z",
-      "resolvedAt": null
+      "resolvedAt": "2026-08-31T08:11:13.584Z"
     },
     {
       "id": "baseball_mlb:a6d63d072ba391db5be1a628a064656c:h2h",
@@ -1352,10 +1352,10 @@
       "pick": "Chicago Cubs",
       "odds": -142,
       "bookmaker": "FanDuel",
-      "status": "PENDING",
+      "status": "LOST",
       "tier": "free",
       "createdAt": "2026-08-29T19:14:25.380Z",
-      "resolvedAt": null
+      "resolvedAt": "2026-08-31T08:11:13.585Z"
     },
     {
       "id": "soccer_epl:e479c08421b8549c6959c2b84f6f3f79:totals",
@@ -1732,10 +1732,10 @@
       "line": 1.5,
       "odds": -617,
       "bookmaker": "1xBet",
-      "status": "PENDING",
+      "status": "WON",
       "tier": "free",
       "createdAt": "2026-08-30T01:25:28.310Z",
-      "resolvedAt": null
+      "resolvedAt": "2026-08-31T08:11:13.585Z"
     },
     {
       "id": "soccer_usa_mls:69a49618d3f7a646e92462ab28c27111:double_chance",
@@ -1752,10 +1752,10 @@
       "line": "home_or_draw",
       "odds": -441,
       "bookmaker": "MyBookie.ag",
-      "status": "PENDING",
+      "status": "WON",
       "tier": "free",
       "createdAt": "2026-08-30T01:25:28.310Z",
-      "resolvedAt": null
+      "resolvedAt": "2026-08-31T08:11:13.585Z"
     },
     {
       "id": "baseball_mlb:008f42799432660532a3e011a06b8356:h2h",
@@ -2081,7 +2081,47 @@
       "tier": "free",
       "createdAt": "2026-08-31T00:13:54.779Z",
       "resolvedAt": null
+    },
+    {
+      "id": "soccer_usa_mls:6b5aa4cdc3e4394a2ba8b106d48947d5:totals",
+      "type": "single",
+      "sport": "MLS",
+      "sportKey": "soccer_usa_mls",
+      "eventId": "6b5aa4cdc3e4394a2ba8b106d48947d5",
+      "game": "Nashville SC @ New York City FC",
+      "homeTeam": "New York City FC",
+      "awayTeam": "Nashville SC",
+      "commenceTime": "2026-09-04T23:30:00Z",
+      "market": "totals",
+      "pick": "Over 1.5 Gòl",
+      "line": 1.5,
+      "odds": -400,
+      "bookmaker": "Coolbet",
+      "status": "PENDING",
+      "tier": "free",
+      "createdAt": "2026-08-31T08:11:14.068Z",
+      "resolvedAt": null
+    },
+    {
+      "id": "soccer_usa_mls:6b5aa4cdc3e4394a2ba8b106d48947d5:double_chance",
+      "type": "single",
+      "sport": "MLS",
+      "sportKey": "soccer_usa_mls",
+      "eventId": "6b5aa4cdc3e4394a2ba8b106d48947d5",
+      "game": "Nashville SC @ New York City FC",
+      "homeTeam": "New York City FC",
+      "awayTeam": "Nashville SC",
+      "commenceTime": "2026-09-04T23:30:00Z",
+      "market": "double_chance",
+      "pick": "Doub Chans: Nashville SC or New York City FC",
+      "line": "home_or_away",
+      "odds": -353,
+      "bookmaker": "1xBet",
+      "status": "PENDING",
+      "tier": "free",
+      "createdAt": "2026-08-31T08:11:14.068Z",
+      "resolvedAt": null
     }
   ],
-  "extraMarketsLastRun": "2026-08-30T20:39:40Z"
+  "extraMarketsLastRun": "2026-08-31T08:11:13Z"
 }
