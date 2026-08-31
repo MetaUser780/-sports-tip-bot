@@ -1,12 +1,12 @@
 {
-  "updatedAt": "2026-08-30T20:39:42.892Z",
+  "updatedAt": "2026-08-31T00:13:54.935Z",
   "stats": {
-    "won": 44,
-    "lost": 23,
+    "won": 50,
+    "lost": 27,
     "push": 8,
-    "pending": 31,
-    "winRate": 65.7,
-    "totalTips": 106
+    "pending": 23,
+    "winRate": 64.9,
+    "totalTips": 108
   },
   "tips": [
     {
@@ -478,10 +478,10 @@
       "pick": "Columbus Crew SC",
       "odds": 102,
       "bookmaker": "BetRivers",
-      "status": "PENDING",
+      "status": "LOST",
       "tier": "free",
       "createdAt": "2026-08-28T04:32:02.071Z",
-      "resolvedAt": null
+      "resolvedAt": "2026-08-31T00:13:54.166Z"
     },
     {
       "id": "soccer_usa_mls:69a49618d3f7a646e92462ab28c27111:h2h",
@@ -1219,10 +1219,10 @@
       "pick": "Los Angeles Dodgers",
       "odds": -162,
       "bookmaker": "FanDuel",
-      "status": "PENDING",
+      "status": "WON",
       "tier": "free",
       "createdAt": "2026-08-29T19:14:25.380Z",
-      "resolvedAt": null
+      "resolvedAt": "2026-08-31T00:13:54.166Z"
     },
     {
       "id": "baseball_mlb:726da57c20b076baecbbed501a78e728:h2h",
@@ -1238,10 +1238,10 @@
       "pick": "Tampa Bay Rays",
       "odds": -164,
       "bookmaker": "FanDuel",
-      "status": "PENDING",
+      "status": "WON",
       "tier": "free",
       "createdAt": "2026-08-29T19:14:25.380Z",
-      "resolvedAt": null
+      "resolvedAt": "2026-08-31T00:13:54.166Z"
     },
     {
       "id": "baseball_mlb:a91d64137833f64718d0174df935abdb:h2h",
@@ -1257,10 +1257,10 @@
       "pick": "Milwaukee Brewers",
       "odds": -162,
       "bookmaker": "FanDuel",
-      "status": "PENDING",
+      "status": "LOST",
       "tier": "free",
       "createdAt": "2026-08-29T19:14:25.380Z",
-      "resolvedAt": null
+      "resolvedAt": "2026-08-31T00:13:54.166Z"
     },
     {
       "id": "baseball_mlb:d487524ecd9c4b4fcea5c92c7f2081a4:h2h",
@@ -1276,10 +1276,10 @@
       "pick": "Pittsburgh Pirates",
       "odds": -120,
       "bookmaker": "FanDuel",
-      "status": "PENDING",
+      "status": "WON",
       "tier": "free",
       "createdAt": "2026-08-29T19:14:25.380Z",
-      "resolvedAt": null
+      "resolvedAt": "2026-08-31T00:13:54.166Z"
     },
     {
       "id": "baseball_mlb:799823f7421c5a5c018435aa85a7b250:h2h",
@@ -1295,10 +1295,10 @@
       "pick": "New York Mets",
       "odds": -120,
       "bookmaker": "FanDuel",
-      "status": "PENDING",
+      "status": "LOST",
       "tier": "free",
       "createdAt": "2026-08-29T19:14:25.380Z",
-      "resolvedAt": null
+      "resolvedAt": "2026-08-31T00:13:54.167Z"
     },
     {
       "id": "baseball_mlb:5421f226ba19cb1198c31f339c373ad2:h2h",
@@ -1314,10 +1314,10 @@
       "pick": "Baltimore Orioles",
       "odds": -154,
       "bookmaker": "FanDuel",
-      "status": "PENDING",
+      "status": "WON",
       "tier": "free",
       "createdAt": "2026-08-29T19:14:25.380Z",
-      "resolvedAt": null
+      "resolvedAt": "2026-08-31T00:13:54.167Z"
     },
     {
       "id": "baseball_mlb:cd304593a01b05fbfdceca7ab3654067:h2h",
@@ -1333,10 +1333,10 @@
       "pick": "Philadelphia Phillies",
       "odds": -199,
       "bookmaker": "DraftKings",
-      "status": "PENDING",
+      "status": "WON",
       "tier": "free",
       "createdAt": "2026-08-29T19:14:25.380Z",
-      "resolvedAt": null
+      "resolvedAt": "2026-08-31T00:13:54.167Z"
     },
     {
       "id": "baseball_mlb:fad352c2e9cdf4ad800e2693f20256b7:h2h",
@@ -1692,10 +1692,10 @@
       "line": 1.5,
       "odds": -459,
       "bookmaker": "Coolbet",
-      "status": "PENDING",
+      "status": "WON",
       "tier": "free",
       "createdAt": "2026-08-30T01:25:28.310Z",
-      "resolvedAt": null
+      "resolvedAt": "2026-08-31T00:13:54.167Z"
     },
     {
       "id": "soccer_usa_mls:8f1aec488d5a6ce92622071ffbcf53ff:double_chance",
@@ -1712,10 +1712,10 @@
       "line": "home_or_draw",
       "odds": -429,
       "bookmaker": "MyBookie.ag",
-      "status": "PENDING",
+      "status": "LOST",
       "tier": "free",
       "createdAt": "2026-08-30T01:25:28.310Z",
-      "resolvedAt": null
+      "resolvedAt": "2026-08-31T00:13:54.167Z"
     },
     {
       "id": "soccer_usa_mls:69a49618d3f7a646e92462ab28c27111:totals",
@@ -2042,6 +2042,44 @@
       "status": "PENDING",
       "tier": "free",
       "createdAt": "2026-08-30T20:39:42.453Z",
+      "resolvedAt": null
+    },
+    {
+      "id": "soccer_usa_mls:6b5aa4cdc3e4394a2ba8b106d48947d5:h2h",
+      "type": "single",
+      "sport": "MLS",
+      "sportKey": "soccer_usa_mls",
+      "eventId": "6b5aa4cdc3e4394a2ba8b106d48947d5",
+      "game": "Nashville SC @ New York City FC",
+      "homeTeam": "New York City FC",
+      "awayTeam": "Nashville SC",
+      "commenceTime": "2026-09-04T23:30:00Z",
+      "market": "h2h",
+      "pick": "New York City FC",
+      "odds": 147,
+      "bookmaker": "MyBookie.ag",
+      "status": "PENDING",
+      "tier": "free",
+      "createdAt": "2026-08-31T00:13:54.469Z",
+      "resolvedAt": null
+    },
+    {
+      "id": "baseball_mlb:07d39d9ad653030c4c89d9a08c4071f5:h2h",
+      "type": "single",
+      "sport": "MLB",
+      "sportKey": "baseball_mlb",
+      "eventId": "07d39d9ad653030c4c89d9a08c4071f5",
+      "game": "San Francisco Giants @ Atlanta Braves",
+      "homeTeam": "Atlanta Braves",
+      "awayTeam": "San Francisco Giants",
+      "commenceTime": "2026-08-31T22:06:00Z",
+      "market": "h2h",
+      "pick": "Atlanta Braves",
+      "odds": -154,
+      "bookmaker": "FanDuel",
+      "status": "PENDING",
+      "tier": "free",
+      "createdAt": "2026-08-31T00:13:54.779Z",
       "resolvedAt": null
     }
   ],
