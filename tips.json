@@ -1,12 +1,12 @@
 {
-  "updatedAt": "2026-09-01T03:54:35.574Z",
+  "updatedAt": "2026-09-01T09:13:46.847Z",
   "stats": {
-    "won": 60,
-    "lost": 32,
+    "won": 62,
+    "lost": 33,
     "push": 9,
-    "pending": 78,
-    "winRate": 65.2,
-    "totalTips": 179
+    "pending": 76,
+    "winRate": 65.3,
+    "totalTips": 180
   },
   "tips": [
     {
@@ -1961,10 +1961,10 @@
       "pick": "Baltimore Orioles",
       "odds": -136,
       "bookmaker": "FanDuel",
-      "status": "PENDING",
+      "status": "WON",
       "tier": "free",
       "createdAt": "2026-08-30T20:39:41.909Z",
-      "resolvedAt": null
+      "resolvedAt": "2026-09-01T09:13:42.882Z"
     },
     {
       "id": "baseball_mlb:1a445560d2b4ababdc8ae392129d42cb:h2h",
@@ -1980,10 +1980,10 @@
       "pick": "New York Yankees",
       "odds": -138,
       "bookmaker": "FanDuel",
-      "status": "PENDING",
+      "status": "LOST",
       "tier": "free",
       "createdAt": "2026-08-30T20:39:41.909Z",
-      "resolvedAt": null
+      "resolvedAt": "2026-09-01T09:13:42.882Z"
     },
     {
       "id": "baseball_mlb:a7e19db363201c4f9f334c8e70c4ae71:h2h",
@@ -1999,10 +1999,10 @@
       "pick": "Philadelphia Phillies",
       "odds": -118,
       "bookmaker": "FanDuel",
-      "status": "PENDING",
+      "status": "WON",
       "tier": "free",
       "createdAt": "2026-08-30T20:39:41.909Z",
-      "resolvedAt": null
+      "resolvedAt": "2026-09-01T09:13:42.882Z"
     },
     {
       "id": "soccer_epl:625c096fabb6047cbeb082dab9affce4:totals",
@@ -3466,7 +3466,26 @@
       "tier": "free",
       "createdAt": "2026-09-01T03:54:35.573Z",
       "resolvedAt": null
+    },
+    {
+      "id": "baseball_mlb:2a66ecfafefe10812f1ef722c242a75f:h2h",
+      "type": "single",
+      "sport": "MLB",
+      "sportKey": "baseball_mlb",
+      "eventId": "2a66ecfafefe10812f1ef722c242a75f",
+      "game": "Chicago White Sox @ Houston Astros",
+      "homeTeam": "Houston Astros",
+      "awayTeam": "Chicago White Sox",
+      "commenceTime": "2026-09-02T00:11:00Z",
+      "market": "h2h",
+      "pick": "Chicago White Sox",
+      "odds": -112,
+      "bookmaker": "FanDuel",
+      "status": "PENDING",
+      "tier": "free",
+      "createdAt": "2026-09-01T09:13:43.528Z",
+      "resolvedAt": null
     }
   ],
-  "extraMarketsLastRun": "2026-09-01T03:54:29Z"
+  "extraMarketsLastRun": "2026-09-01T09:13:42Z"
 }
