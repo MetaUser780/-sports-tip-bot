@@ -1,12 +1,12 @@
 {
-  "updatedAt": "2026-09-01T09:13:46.847Z",
+  "updatedAt": "2026-09-01T14:34:14.362Z",
   "stats": {
     "won": 62,
     "lost": 33,
     "push": 9,
-    "pending": 76,
+    "pending": 79,
     "winRate": 65.3,
-    "totalTips": 180
+    "totalTips": 183
   },
   "tips": [
     {
@@ -3485,7 +3485,66 @@
       "tier": "free",
       "createdAt": "2026-09-01T09:13:43.528Z",
       "resolvedAt": null
+    },
+    {
+      "id": "soccer_epl:8ea6c863f1852654399073b518b0a1f8:h2h",
+      "type": "single",
+      "sport": "EPL",
+      "sportKey": "soccer_epl",
+      "eventId": "8ea6c863f1852654399073b518b0a1f8",
+      "game": "Manchester United @ Everton",
+      "homeTeam": "Everton",
+      "awayTeam": "Manchester United",
+      "commenceTime": "2026-09-06T13:00:00Z",
+      "market": "h2h",
+      "pick": "Manchester United",
+      "odds": 120,
+      "bookmaker": "FanDuel",
+      "status": "PENDING",
+      "tier": "free",
+      "createdAt": "2026-09-01T14:34:10.267Z",
+      "resolvedAt": null
+    },
+    {
+      "id": "soccer_epl:8ea6c863f1852654399073b518b0a1f8:totals",
+      "type": "single",
+      "sport": "EPL",
+      "sportKey": "soccer_epl",
+      "eventId": "8ea6c863f1852654399073b518b0a1f8",
+      "game": "Manchester United @ Everton",
+      "homeTeam": "Everton",
+      "awayTeam": "Manchester United",
+      "commenceTime": "2026-09-06T13:00:00Z",
+      "market": "totals",
+      "pick": "Over 1.5 Gòl",
+      "line": 1.5,
+      "odds": -521,
+      "bookmaker": "1xBet",
+      "status": "PENDING",
+      "tier": "free",
+      "createdAt": "2026-09-01T14:34:12.614Z",
+      "resolvedAt": null
+    },
+    {
+      "id": "soccer_epl:8ea6c863f1852654399073b518b0a1f8:double_chance",
+      "type": "single",
+      "sport": "EPL",
+      "sportKey": "soccer_epl",
+      "eventId": "8ea6c863f1852654399073b518b0a1f8",
+      "game": "Manchester United @ Everton",
+      "homeTeam": "Everton",
+      "awayTeam": "Manchester United",
+      "commenceTime": "2026-09-06T13:00:00Z",
+      "market": "double_chance",
+      "pick": "Doub Chans: Everton or Manchester United",
+      "line": "home_or_away",
+      "odds": -299,
+      "bookmaker": "1xBet",
+      "status": "PENDING",
+      "tier": "free",
+      "createdAt": "2026-09-01T14:34:12.614Z",
+      "resolvedAt": null
     }
   ],
-  "extraMarketsLastRun": "2026-09-01T09:13:42Z"
+  "extraMarketsLastRun": "2026-09-01T14:34:10Z"
 }
