@@ -1,12 +1,12 @@
 {
-  "updatedAt": "2026-09-01T19:14:10.857Z",
+  "updatedAt": "2026-09-01T22:25:24.156Z",
   "stats": {
     "won": 62,
     "lost": 33,
     "push": 9,
-    "pending": 92,
+    "pending": 95,
     "winRate": 65.3,
-    "totalTips": 196
+    "totalTips": 199
   },
   "tips": [
     {
@@ -3792,6 +3792,63 @@
       "status": "PENDING",
       "tier": "free",
       "createdAt": "2026-09-01T19:14:09.839Z",
+      "resolvedAt": null
+    },
+    {
+      "id": "baseball_mlb:0b0373954f04c35c2aaee9aed8171c17:h2h",
+      "type": "single",
+      "sport": "MLB",
+      "sportKey": "baseball_mlb",
+      "eventId": "0b0373954f04c35c2aaee9aed8171c17",
+      "game": "Seattle Mariners @ Boston Red Sox",
+      "homeTeam": "Boston Red Sox",
+      "awayTeam": "Seattle Mariners",
+      "commenceTime": "2026-09-02T20:11:00Z",
+      "market": "h2h",
+      "pick": "Boston Red Sox",
+      "odds": -134,
+      "bookmaker": "FanDuel",
+      "status": "PENDING",
+      "tier": "free",
+      "createdAt": "2026-09-01T22:25:24.114Z",
+      "resolvedAt": null
+    },
+    {
+      "id": "baseball_mlb:0f008463e07ac89253cf7559eae28606:h2h",
+      "type": "single",
+      "sport": "MLB",
+      "sportKey": "baseball_mlb",
+      "eventId": "0f008463e07ac89253cf7559eae28606",
+      "game": "New York Mets @ Tampa Bay Rays",
+      "homeTeam": "Tampa Bay Rays",
+      "awayTeam": "New York Mets",
+      "commenceTime": "2026-09-02T22:41:00Z",
+      "market": "h2h",
+      "pick": "Tampa Bay Rays",
+      "odds": -162,
+      "bookmaker": "FanDuel",
+      "status": "PENDING",
+      "tier": "free",
+      "createdAt": "2026-09-01T22:25:24.114Z",
+      "resolvedAt": null
+    },
+    {
+      "id": "baseball_mlb:5315049742364f1f962411a129153260:h2h",
+      "type": "single",
+      "sport": "MLB",
+      "sportKey": "baseball_mlb",
+      "eventId": "5315049742364f1f962411a129153260",
+      "game": "Chicago White Sox @ Houston Astros",
+      "homeTeam": "Houston Astros",
+      "awayTeam": "Chicago White Sox",
+      "commenceTime": "2026-09-03T00:11:00Z",
+      "market": "h2h",
+      "pick": "Houston Astros",
+      "odds": -132,
+      "bookmaker": "FanDuel",
+      "status": "PENDING",
+      "tier": "free",
+      "createdAt": "2026-09-01T22:25:24.114Z",
       "resolvedAt": null
     }
   ],
