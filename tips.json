@@ -1,11 +1,11 @@
 {
-  "updatedAt": "2026-09-02T19:14:52.508Z",
+  "updatedAt": "2026-09-02T22:24:38.694Z",
   "stats": {
-    "won": 69,
-    "lost": 41,
+    "won": 70,
+    "lost": 44,
     "push": 9,
-    "pending": 92,
-    "winRate": 62.7,
+    "pending": 88,
+    "winRate": 61.4,
     "totalTips": 211
   },
   "tips": [
@@ -3578,10 +3578,10 @@
       "pick": "San Diego Padres",
       "odds": -144,
       "bookmaker": "FanDuel",
-      "status": "PENDING",
+      "status": "LOST",
       "tier": "free",
       "createdAt": "2026-09-01T19:14:08.775Z",
-      "resolvedAt": null
+      "resolvedAt": "2026-09-02T22:24:38.358Z"
     },
     {
       "id": "baseball_mlb:174a988fce36a476af3e712057a97ebe:h2h",
@@ -3597,10 +3597,10 @@
       "pick": "Atlanta Braves",
       "odds": -154,
       "bookmaker": "FanDuel",
-      "status": "PENDING",
+      "status": "WON",
       "tier": "free",
       "createdAt": "2026-09-01T19:14:08.775Z",
-      "resolvedAt": null
+      "resolvedAt": "2026-09-02T22:24:38.359Z"
     },
     {
       "id": "baseball_mlb:a5c57f0a71bfbec1df5c314f86bb79cd:h2h",
@@ -3616,10 +3616,10 @@
       "pick": "Texas Rangers",
       "odds": -154,
       "bookmaker": "FanDuel",
-      "status": "PENDING",
+      "status": "LOST",
       "tier": "free",
       "createdAt": "2026-09-01T19:14:08.775Z",
-      "resolvedAt": null
+      "resolvedAt": "2026-09-02T22:24:38.359Z"
     },
     {
       "id": "baseball_mlb:2d7536dbc5a92a909f419ec55b9c6fb1:h2h",
@@ -3884,10 +3884,10 @@
       "pick": "Philadelphia Phillies",
       "odds": -112,
       "bookmaker": "FanDuel",
-      "status": "PENDING",
+      "status": "LOST",
       "tier": "free",
       "createdAt": "2026-09-02T08:28:13.990Z",
-      "resolvedAt": null
+      "resolvedAt": "2026-09-02T22:24:38.359Z"
     },
     {
       "id": "baseball_mlb:f857ea6771bf681398b05379f108f0c5:h2h",
