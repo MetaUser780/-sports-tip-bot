@@ -1,11 +1,11 @@
 {
-  "updatedAt": "2026-09-03T03:16:38.283Z",
+  "updatedAt": "2026-09-03T08:36:38.039Z",
   "stats": {
-    "won": 73,
-    "lost": 49,
+    "won": 74,
+    "lost": 51,
     "push": 9,
-    "pending": 80,
-    "winRate": 59.8,
+    "pending": 77,
+    "winRate": 59.2,
     "totalTips": 211
   },
   "tips": [
@@ -3711,10 +3711,10 @@
       "pick": "Minnesota Twins",
       "odds": -112,
       "bookmaker": "FanDuel",
-      "status": "PENDING",
+      "status": "LOST",
       "tier": "free",
       "createdAt": "2026-09-01T19:14:08.776Z",
-      "resolvedAt": null
+      "resolvedAt": "2026-09-03T08:36:36.044Z"
     },
     {
       "id": "baseball_mlb:865b5161840c3b0f959eaa526c8ac629:h2h",
@@ -3749,10 +3749,10 @@
       "pick": "New York Yankees",
       "odds": -162,
       "bookmaker": "FanDuel",
-      "status": "PENDING",
+      "status": "WON",
       "tier": "free",
       "createdAt": "2026-09-01T19:14:08.776Z",
-      "resolvedAt": null
+      "resolvedAt": "2026-09-03T08:36:36.044Z"
     },
     {
       "id": "soccer_epl:78d4dfda8c2dc27bdc3ec26c2654f8fc:totals",
@@ -3865,10 +3865,10 @@
       "pick": "Los Angeles Dodgers",
       "odds": -240,
       "bookmaker": "FanDuel",
-      "status": "PENDING",
+      "status": "LOST",
       "tier": "free",
       "createdAt": "2026-09-02T03:14:27.521Z",
-      "resolvedAt": null
+      "resolvedAt": "2026-09-03T08:36:36.044Z"
     },
     {
       "id": "baseball_mlb:a09e4cef3ad772a51e4f166de8ac96b8:h2h",
@@ -4216,5 +4216,5 @@
       "resolvedAt": null
     }
   ],
-  "extraMarketsLastRun": "2026-09-03T03:16:36Z"
+  "extraMarketsLastRun": "2026-09-03T08:36:35Z"
 }
