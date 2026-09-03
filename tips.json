@@ -1,11 +1,11 @@
 {
-  "updatedAt": "2026-09-02T22:24:38.694Z",
+  "updatedAt": "2026-09-03T03:16:38.283Z",
   "stats": {
-    "won": 70,
-    "lost": 44,
+    "won": 73,
+    "lost": 49,
     "push": 9,
-    "pending": 88,
-    "winRate": 61.4,
+    "pending": 80,
+    "winRate": 59.8,
     "totalTips": 211
   },
   "tips": [
@@ -3635,10 +3635,10 @@
       "pick": "Baltimore Orioles",
       "odds": -162,
       "bookmaker": "FanDuel",
-      "status": "PENDING",
+      "status": "LOST",
       "tier": "free",
       "createdAt": "2026-09-01T19:14:08.775Z",
-      "resolvedAt": null
+      "resolvedAt": "2026-09-03T03:16:37.101Z"
     },
     {
       "id": "baseball_mlb:5552db2bbb6ea8db5548a0b2bd77cc77:h2h",
@@ -3654,10 +3654,10 @@
       "pick": "Toronto Blue Jays",
       "odds": -122,
       "bookmaker": "FanDuel",
-      "status": "PENDING",
+      "status": "WON",
       "tier": "free",
       "createdAt": "2026-09-01T19:14:08.775Z",
-      "resolvedAt": null
+      "resolvedAt": "2026-09-03T03:16:37.101Z"
     },
     {
       "id": "baseball_mlb:a081961893797b7b0bda834791610d56:h2h",
@@ -3673,10 +3673,10 @@
       "pick": "Pittsburgh Pirates",
       "odds": -154,
       "bookmaker": "FanDuel",
-      "status": "PENDING",
+      "status": "LOST",
       "tier": "free",
       "createdAt": "2026-09-01T19:14:08.775Z",
-      "resolvedAt": null
+      "resolvedAt": "2026-09-03T03:16:37.101Z"
     },
     {
       "id": "baseball_mlb:e5573b0492ef2f689b729412d3bde508:h2h",
@@ -3692,10 +3692,10 @@
       "pick": "Milwaukee Brewers",
       "odds": -162,
       "bookmaker": "FanDuel",
-      "status": "PENDING",
+      "status": "WON",
       "tier": "free",
       "createdAt": "2026-09-01T19:14:08.776Z",
-      "resolvedAt": null
+      "resolvedAt": "2026-09-03T03:16:37.101Z"
     },
     {
       "id": "baseball_mlb:af7b25a4d0428e7f04b74c6c3a75c59d:h2h",
@@ -3730,10 +3730,10 @@
       "pick": "Kansas City Royals",
       "odds": -112,
       "bookmaker": "FanDuel",
-      "status": "PENDING",
+      "status": "LOST",
       "tier": "free",
       "createdAt": "2026-09-01T19:14:08.776Z",
-      "resolvedAt": null
+      "resolvedAt": "2026-09-03T03:16:37.101Z"
     },
     {
       "id": "baseball_mlb:6467c41d2b7da8c9e8efcda4c5d5f7b8:h2h",
@@ -3808,10 +3808,10 @@
       "pick": "Boston Red Sox",
       "odds": -134,
       "bookmaker": "FanDuel",
-      "status": "PENDING",
+      "status": "LOST",
       "tier": "free",
       "createdAt": "2026-09-01T22:25:24.114Z",
-      "resolvedAt": null
+      "resolvedAt": "2026-09-03T03:16:37.101Z"
     },
     {
       "id": "baseball_mlb:0f008463e07ac89253cf7559eae28606:h2h",
@@ -3827,10 +3827,10 @@
       "pick": "Tampa Bay Rays",
       "odds": -162,
       "bookmaker": "FanDuel",
-      "status": "PENDING",
+      "status": "LOST",
       "tier": "free",
       "createdAt": "2026-09-01T22:25:24.114Z",
-      "resolvedAt": null
+      "resolvedAt": "2026-09-03T03:16:37.101Z"
     },
     {
       "id": "baseball_mlb:5315049742364f1f962411a129153260:h2h",
@@ -3846,10 +3846,10 @@
       "pick": "Houston Astros",
       "odds": -132,
       "bookmaker": "FanDuel",
-      "status": "PENDING",
+      "status": "WON",
       "tier": "free",
       "createdAt": "2026-09-01T22:25:24.114Z",
-      "resolvedAt": null
+      "resolvedAt": "2026-09-03T03:16:37.101Z"
     },
     {
       "id": "baseball_mlb:8cc27a7b0c6903978e605ba541bed625:h2h",
@@ -4216,5 +4216,5 @@
       "resolvedAt": null
     }
   ],
-  "extraMarketsLastRun": "2026-09-02T19:14:48Z"
+  "extraMarketsLastRun": "2026-09-03T03:16:36Z"
 }
