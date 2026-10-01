@@ -1,12 +1,12 @@
 {
-  "updatedAt": "2026-10-01T04:32:03.213Z",
+  "updatedAt": "2026-10-01T12:34:21.459Z",
   "stats": {
     "won": 74,
     "lost": 51,
     "push": 9,
-    "pending": 99,
+    "pending": 101,
     "winRate": 59.2,
-    "totalTips": 233
+    "totalTips": 235
   },
   "tips": [
     {
@@ -4634,7 +4634,45 @@
       "tier": "free",
       "createdAt": "2026-10-01T04:32:03.212Z",
       "resolvedAt": null
+    },
+    {
+      "id": "baseball_mlb:5524c44b05e28aa899909c9e001184ec:h2h",
+      "type": "single",
+      "sport": "MLB",
+      "sportKey": "baseball_mlb",
+      "eventId": "5524c44b05e28aa899909c9e001184ec",
+      "game": "Philadelphia Phillies @ Atlanta Braves",
+      "homeTeam": "Atlanta Braves",
+      "awayTeam": "Philadelphia Phillies",
+      "commenceTime": "2026-10-02T00:11:00Z",
+      "market": "h2h",
+      "pick": "Philadelphia Phillies",
+      "odds": -116,
+      "bookmaker": "FanDuel",
+      "status": "PENDING",
+      "tier": "free",
+      "createdAt": "2026-10-01T12:34:20.733Z",
+      "resolvedAt": null
+    },
+    {
+      "id": "baseball_mlb:347a2e725dd11a54a1d964eae3d04dd2:h2h",
+      "type": "single",
+      "sport": "MLB",
+      "sportKey": "baseball_mlb",
+      "eventId": "347a2e725dd11a54a1d964eae3d04dd2",
+      "game": "San Diego Padres @ Milwaukee Brewers",
+      "homeTeam": "Milwaukee Brewers",
+      "awayTeam": "San Diego Padres",
+      "commenceTime": "2026-10-04T00:30:00Z",
+      "market": "h2h",
+      "pick": "Milwaukee Brewers",
+      "odds": -227,
+      "bookmaker": "DraftKings",
+      "status": "PENDING",
+      "tier": "free",
+      "createdAt": "2026-10-01T12:34:20.733Z",
+      "resolvedAt": null
     }
   ],
-  "extraMarketsLastRun": "2026-10-01T04:32:01Z"
+  "extraMarketsLastRun": "2026-10-01T12:34:19Z"
 }
