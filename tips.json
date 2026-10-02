@@ -1,12 +1,12 @@
 {
-  "updatedAt": "2026-10-01T23:42:58.950Z",
+  "updatedAt": "2026-10-02T04:24:43.954Z",
   "stats": {
-    "won": 74,
-    "lost": 51,
+    "won": 77,
+    "lost": 53,
     "push": 9,
-    "pending": 101,
+    "pending": 100,
     "winRate": 59.2,
-    "totalTips": 235
+    "totalTips": 239
   },
   "tips": [
     {
@@ -4229,10 +4229,10 @@
       "pick": "Seattle Sounders FC",
       "odds": -189,
       "bookmaker": "MyBookie.ag",
-      "status": "PENDING",
+      "status": "WON",
       "tier": "free",
       "createdAt": "2026-10-01T04:32:02.354Z",
-      "resolvedAt": null
+      "resolvedAt": "2026-10-02T04:24:42.612Z"
     },
     {
       "id": "baseball_mlb:2b7c78b3c1a232ece3e9752493924b6c:h2h",
@@ -4305,10 +4305,10 @@
       "pick": "Pittsburgh Steelers",
       "odds": -148,
       "bookmaker": "DraftKings",
-      "status": "PENDING",
+      "status": "LOST",
       "tier": "free",
       "createdAt": "2026-10-01T04:32:02.660Z",
-      "resolvedAt": null
+      "resolvedAt": "2026-10-02T04:24:42.612Z"
     },
     {
       "id": "americanfootball_nfl:c9d8ed8aa4889486eaf10a630138ede0:h2h",
@@ -4610,10 +4610,10 @@
       "line": 1.5,
       "odds": -909,
       "bookmaker": "Coolbet",
-      "status": "PENDING",
+      "status": "WON",
       "tier": "free",
       "createdAt": "2026-10-01T04:32:03.212Z",
-      "resolvedAt": null
+      "resolvedAt": "2026-10-02T04:24:42.612Z"
     },
     {
       "id": "soccer_usa_mls:c68442e0bfc400d8e7ee97ec662e13e0:double_chance",
@@ -4630,10 +4630,10 @@
       "line": "home_or_draw",
       "odds": -752,
       "bookmaker": "MyBookie.ag",
-      "status": "PENDING",
+      "status": "WON",
       "tier": "free",
       "createdAt": "2026-10-01T04:32:03.212Z",
-      "resolvedAt": null
+      "resolvedAt": "2026-10-02T04:24:42.612Z"
     },
     {
       "id": "baseball_mlb:5524c44b05e28aa899909c9e001184ec:h2h",
@@ -4649,10 +4649,10 @@
       "pick": "Philadelphia Phillies",
       "odds": -116,
       "bookmaker": "FanDuel",
-      "status": "PENDING",
+      "status": "LOST",
       "tier": "free",
       "createdAt": "2026-10-01T12:34:20.733Z",
-      "resolvedAt": null
+      "resolvedAt": "2026-10-02T04:24:42.612Z"
     },
     {
       "id": "baseball_mlb:347a2e725dd11a54a1d964eae3d04dd2:h2h",
@@ -4672,7 +4672,85 @@
       "tier": "free",
       "createdAt": "2026-10-01T12:34:20.733Z",
       "resolvedAt": null
+    },
+    {
+      "id": "soccer_usa_mls:0d9ff865c4599c72a746da08260279b3:h2h",
+      "type": "single",
+      "sport": "MLS",
+      "sportKey": "soccer_usa_mls",
+      "eventId": "0d9ff865c4599c72a746da08260279b3",
+      "game": "Vancouver Whitecaps FC @ Chicago Fire",
+      "homeTeam": "Chicago Fire",
+      "awayTeam": "Vancouver Whitecaps FC",
+      "commenceTime": "2026-10-07T00:30:00Z",
+      "market": "h2h",
+      "pick": "Vancouver Whitecaps FC",
+      "odds": 145,
+      "bookmaker": "FanDuel",
+      "status": "PENDING",
+      "tier": "free",
+      "createdAt": "2026-10-02T04:24:42.945Z",
+      "resolvedAt": null
+    },
+    {
+      "id": "baseball_mlb:1632ced04d65127cf6172d3a2c2e2d16:h2h",
+      "type": "single",
+      "sport": "MLB",
+      "sportKey": "baseball_mlb",
+      "eventId": "1632ced04d65127cf6172d3a2c2e2d16",
+      "game": "Atlanta Braves @ Los Angeles Dodgers",
+      "homeTeam": "Los Angeles Dodgers",
+      "awayTeam": "Atlanta Braves",
+      "commenceTime": "2026-10-03T20:00:00Z",
+      "market": "h2h",
+      "pick": "Los Angeles Dodgers",
+      "odds": -205,
+      "bookmaker": "DraftKings",
+      "status": "PENDING",
+      "tier": "free",
+      "createdAt": "2026-10-02T04:24:43.251Z",
+      "resolvedAt": null
+    },
+    {
+      "id": "soccer_usa_mls:0d9ff865c4599c72a746da08260279b3:totals",
+      "type": "single",
+      "sport": "MLS",
+      "sportKey": "soccer_usa_mls",
+      "eventId": "0d9ff865c4599c72a746da08260279b3",
+      "game": "Vancouver Whitecaps FC @ Chicago Fire",
+      "homeTeam": "Chicago Fire",
+      "awayTeam": "Vancouver Whitecaps FC",
+      "commenceTime": "2026-10-07T00:30:00Z",
+      "market": "totals",
+      "pick": "Over 1.5 Gòl",
+      "line": 1.5,
+      "odds": -800,
+      "bookmaker": "William Hill",
+      "status": "PENDING",
+      "tier": "free",
+      "createdAt": "2026-10-02T04:24:43.953Z",
+      "resolvedAt": null
+    },
+    {
+      "id": "soccer_usa_mls:0d9ff865c4599c72a746da08260279b3:double_chance",
+      "type": "single",
+      "sport": "MLS",
+      "sportKey": "soccer_usa_mls",
+      "eventId": "0d9ff865c4599c72a746da08260279b3",
+      "game": "Vancouver Whitecaps FC @ Chicago Fire",
+      "homeTeam": "Chicago Fire",
+      "awayTeam": "Vancouver Whitecaps FC",
+      "commenceTime": "2026-10-07T00:30:00Z",
+      "market": "double_chance",
+      "pick": "Doub Chans: Chicago Fire or Vancouver Whitecaps FC",
+      "line": "home_or_away",
+      "odds": -400,
+      "bookmaker": "William Hill",
+      "status": "PENDING",
+      "tier": "free",
+      "createdAt": "2026-10-02T04:24:43.953Z",
+      "resolvedAt": null
     }
   ],
-  "extraMarketsLastRun": "2026-10-01T23:42:57Z"
+  "extraMarketsLastRun": "2026-10-02T04:24:41Z"
 }
