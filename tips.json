@@ -1,12 +1,12 @@
 {
-  "updatedAt": "2026-10-03T17:49:14.077Z",
+  "updatedAt": "2026-10-03T20:40:21.179Z",
   "stats": {
     "won": 77,
-    "lost": 53,
+    "lost": 54,
     "push": 9,
     "pending": 100,
-    "winRate": 59.2,
-    "totalTips": 239
+    "winRate": 58.8,
+    "totalTips": 240
   },
   "tips": [
     {
@@ -4267,10 +4267,10 @@
       "pick": "Cleveland Guardians",
       "odds": -154,
       "bookmaker": "FanDuel",
-      "status": "PENDING",
+      "status": "LOST",
       "tier": "free",
       "createdAt": "2026-10-01T04:32:02.550Z",
-      "resolvedAt": null
+      "resolvedAt": "2026-10-03T20:40:20.727Z"
     },
     {
       "id": "baseball_mlb:cb4d07dc15440acf3d9ebe1ad41756c1:h2h",
@@ -4749,6 +4749,25 @@
       "status": "PENDING",
       "tier": "free",
       "createdAt": "2026-10-02T04:24:43.953Z",
+      "resolvedAt": null
+    },
+    {
+      "id": "baseball_mlb:ccd487a87bb73145e3f12dd3a765ad47:h2h",
+      "type": "single",
+      "sport": "MLB",
+      "sportKey": "baseball_mlb",
+      "eventId": "ccd487a87bb73145e3f12dd3a765ad47",
+      "game": "Chicago White Sox @ Cleveland Guardians",
+      "homeTeam": "Cleveland Guardians",
+      "awayTeam": "Chicago White Sox",
+      "commenceTime": "2026-10-05T21:10:00Z",
+      "market": "h2h",
+      "pick": "Cleveland Guardians",
+      "odds": -152,
+      "bookmaker": "FanDuel",
+      "status": "PENDING",
+      "tier": "free",
+      "createdAt": "2026-10-03T20:40:21.094Z",
       "resolvedAt": null
     }
   ],
