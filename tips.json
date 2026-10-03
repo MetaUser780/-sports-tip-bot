@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-03T13:06:05.166Z",
+  "updatedAt": "2026-10-03T17:49:14.077Z",
   "stats": {
     "won": 77,
     "lost": 53,
@@ -4752,5 +4752,5 @@
       "resolvedAt": null
     }
   ],
-  "extraMarketsLastRun": "2026-10-03T13:06:04Z"
+  "extraMarketsLastRun": "2026-10-03T17:49:12Z"
 }
