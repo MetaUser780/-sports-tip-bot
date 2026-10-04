@@ -1,12 +1,12 @@
 {
-  "updatedAt": "2026-10-03T20:40:21.179Z",
+  "updatedAt": "2026-10-04T00:22:29.616Z",
   "stats": {
-    "won": 77,
+    "won": 78,
     "lost": 54,
     "push": 9,
-    "pending": 100,
-    "winRate": 58.8,
-    "totalTips": 240
+    "pending": 101,
+    "winRate": 59.1,
+    "totalTips": 242
   },
   "tips": [
     {
@@ -4706,10 +4706,10 @@
       "pick": "Los Angeles Dodgers",
       "odds": -205,
       "bookmaker": "DraftKings",
-      "status": "PENDING",
+      "status": "WON",
       "tier": "free",
       "createdAt": "2026-10-02T04:24:43.251Z",
-      "resolvedAt": null
+      "resolvedAt": "2026-10-04T00:22:28.550Z"
     },
     {
       "id": "soccer_usa_mls:0d9ff865c4599c72a746da08260279b3:totals",
@@ -4769,7 +4769,45 @@
       "tier": "free",
       "createdAt": "2026-10-03T20:40:21.094Z",
       "resolvedAt": null
+    },
+    {
+      "id": "baseball_mlb:583202487b52f61769b2404a64e01c77:h2h",
+      "type": "single",
+      "sport": "MLB",
+      "sportKey": "baseball_mlb",
+      "eventId": "583202487b52f61769b2404a64e01c77",
+      "game": "Atlanta Braves @ Los Angeles Dodgers",
+      "homeTeam": "Los Angeles Dodgers",
+      "awayTeam": "Atlanta Braves",
+      "commenceTime": "2026-10-05T00:00:00Z",
+      "market": "h2h",
+      "pick": "Los Angeles Dodgers",
+      "odds": -154,
+      "bookmaker": "FanDuel",
+      "status": "PENDING",
+      "tier": "free",
+      "createdAt": "2026-10-04T00:22:29.159Z",
+      "resolvedAt": null
+    },
+    {
+      "id": "americanfootball_nfl:259b5df9aa0d10257f56de78523495e0:h2h",
+      "type": "single",
+      "sport": "NFL",
+      "sportKey": "americanfootball_nfl",
+      "eventId": "259b5df9aa0d10257f56de78523495e0",
+      "game": "Tampa Bay Buccaneers @ Dallas Cowboys",
+      "homeTeam": "Dallas Cowboys",
+      "awayTeam": "Tampa Bay Buccaneers",
+      "commenceTime": "2026-10-09T00:15:00Z",
+      "market": "h2h",
+      "pick": "Dallas Cowboys",
+      "odds": -535,
+      "bookmaker": "DraftKings",
+      "status": "PENDING",
+      "tier": "free",
+      "createdAt": "2026-10-04T00:22:29.239Z",
+      "resolvedAt": null
     }
   ],
-  "extraMarketsLastRun": "2026-10-03T17:49:12Z"
+  "extraMarketsLastRun": "2026-10-04T00:22:28Z"
 }
