@@ -1,11 +1,11 @@
 {
-  "updatedAt": "2026-10-04T18:00:03.848Z",
+  "updatedAt": "2026-10-04T21:15:24.661Z",
   "stats": {
-    "won": 81,
-    "lost": 54,
+    "won": 85,
+    "lost": 58,
     "push": 9,
-    "pending": 100,
-    "winRate": 60,
+    "pending": 92,
+    "winRate": 59.4,
     "totalTips": 244
   },
   "tips": [
@@ -4343,10 +4343,10 @@
       "pick": "Arizona Cardinals",
       "odds": -142,
       "bookmaker": "DraftKings",
-      "status": "PENDING",
+      "status": "LOST",
       "tier": "free",
       "createdAt": "2026-10-01T04:32:02.660Z",
-      "resolvedAt": null
+      "resolvedAt": "2026-10-04T21:15:24.219Z"
     },
     {
       "id": "americanfootball_nfl:f01589b0e7e6dd4f4ac1220a1db81f53:h2h",
@@ -4362,10 +4362,10 @@
       "pick": "Baltimore Ravens",
       "odds": -675,
       "bookmaker": "DraftKings",
-      "status": "PENDING",
+      "status": "WON",
       "tier": "free",
       "createdAt": "2026-10-01T04:32:02.660Z",
-      "resolvedAt": null
+      "resolvedAt": "2026-10-04T21:15:24.219Z"
     },
     {
       "id": "americanfootball_nfl:573cc0ef39631a4f6673ec843a8bedd4:h2h",
@@ -4381,10 +4381,10 @@
       "pick": "Buffalo Bills",
       "odds": -290,
       "bookmaker": "DraftKings",
-      "status": "PENDING",
+      "status": "LOST",
       "tier": "free",
       "createdAt": "2026-10-01T04:32:02.660Z",
-      "resolvedAt": null
+      "resolvedAt": "2026-10-04T21:15:24.219Z"
     },
     {
       "id": "americanfootball_nfl:164e6eb68f31bac190381903c3cccd31:h2h",
@@ -4400,10 +4400,10 @@
       "pick": "Chicago Bears",
       "odds": -175,
       "bookmaker": "DraftKings",
-      "status": "PENDING",
+      "status": "WON",
       "tier": "free",
       "createdAt": "2026-10-01T04:32:02.660Z",
-      "resolvedAt": null
+      "resolvedAt": "2026-10-04T21:15:24.219Z"
     },
     {
       "id": "americanfootball_nfl:2ea94ddf20f66432b9024fe2e2eaba5f:h2h",
@@ -4419,10 +4419,10 @@
       "pick": "Cincinnati Bengals",
       "odds": -142,
       "bookmaker": "DraftKings",
-      "status": "PENDING",
+      "status": "LOST",
       "tier": "free",
       "createdAt": "2026-10-01T04:32:02.660Z",
-      "resolvedAt": null
+      "resolvedAt": "2026-10-04T21:15:24.219Z"
     },
     {
       "id": "americanfootball_nfl:daf55e2df5341c007fee5a0fc5bbc2d4:h2h",
@@ -4438,10 +4438,10 @@
       "pick": "Houston Texans",
       "odds": -162,
       "bookmaker": "DraftKings",
-      "status": "PENDING",
+      "status": "LOST",
       "tier": "free",
       "createdAt": "2026-10-01T04:32:02.660Z",
-      "resolvedAt": null
+      "resolvedAt": "2026-10-04T21:15:24.219Z"
     },
     {
       "id": "americanfootball_nfl:99a9bae4dc0dc2590496bd3102b211f2:h2h",
@@ -4457,10 +4457,10 @@
       "pick": "Green Bay Packers",
       "odds": -180,
       "bookmaker": "DraftKings",
-      "status": "PENDING",
+      "status": "WON",
       "tier": "free",
       "createdAt": "2026-10-01T04:32:02.660Z",
-      "resolvedAt": null
+      "resolvedAt": "2026-10-04T21:15:24.219Z"
     },
     {
       "id": "americanfootball_nfl:1b4f2e60ce83fa1d63a5dff83769d27c:h2h",
@@ -4476,10 +4476,10 @@
       "pick": "Los Angeles Rams",
       "odds": -162,
       "bookmaker": "DraftKings",
-      "status": "PENDING",
+      "status": "WON",
       "tier": "free",
       "createdAt": "2026-10-01T04:32:02.660Z",
-      "resolvedAt": null
+      "resolvedAt": "2026-10-04T21:15:24.219Z"
     },
     {
       "id": "americanfootball_nfl:c327223d76a3b7b0db8c6c104442f44b:h2h",
