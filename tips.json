@@ -1,12 +1,12 @@
 {
-  "updatedAt": "2026-10-04T00:22:29.616Z",
+  "updatedAt": "2026-10-04T07:50:09.902Z",
   "stats": {
-    "won": 78,
+    "won": 80,
     "lost": 54,
     "push": 9,
     "pending": 101,
-    "winRate": 59.1,
-    "totalTips": 242
+    "winRate": 59.7,
+    "totalTips": 244
   },
   "tips": [
     {
@@ -4286,10 +4286,10 @@
       "pick": "Tampa Bay Rays",
       "odds": -134,
       "bookmaker": "FanDuel",
-      "status": "PENDING",
+      "status": "WON",
       "tier": "free",
       "createdAt": "2026-10-01T04:32:02.550Z",
-      "resolvedAt": null
+      "resolvedAt": "2026-10-04T07:50:08.794Z"
     },
     {
       "id": "americanfootball_nfl:d55cb69fed50a09170560b5b75d8de86:h2h",
@@ -4668,10 +4668,10 @@
       "pick": "Milwaukee Brewers",
       "odds": -227,
       "bookmaker": "DraftKings",
-      "status": "PENDING",
+      "status": "WON",
       "tier": "free",
       "createdAt": "2026-10-01T12:34:20.733Z",
-      "resolvedAt": null
+      "resolvedAt": "2026-10-04T07:50:08.794Z"
     },
     {
       "id": "soccer_usa_mls:0d9ff865c4599c72a746da08260279b3:h2h",
@@ -4807,7 +4807,45 @@
       "tier": "free",
       "createdAt": "2026-10-04T00:22:29.239Z",
       "resolvedAt": null
+    },
+    {
+      "id": "baseball_mlb:6da40e91a31110e51e84ba5671996deb:h2h",
+      "type": "single",
+      "sport": "MLB",
+      "sportKey": "baseball_mlb",
+      "eventId": "6da40e91a31110e51e84ba5671996deb",
+      "game": "San Diego Padres @ Milwaukee Brewers",
+      "homeTeam": "Milwaukee Brewers",
+      "awayTeam": "San Diego Padres",
+      "commenceTime": "2026-10-04T20:00:00Z",
+      "market": "h2h",
+      "pick": "Milwaukee Brewers",
+      "odds": -144,
+      "bookmaker": "FanDuel",
+      "status": "PENDING",
+      "tier": "free",
+      "createdAt": "2026-10-04T07:50:09.346Z",
+      "resolvedAt": null
+    },
+    {
+      "id": "baseball_mlb:4be245ad03895bcafcdc42d7d926b675:h2h",
+      "type": "single",
+      "sport": "MLB",
+      "sportKey": "baseball_mlb",
+      "eventId": "4be245ad03895bcafcdc42d7d926b675",
+      "game": "New York Yankees @ Tampa Bay Rays",
+      "homeTeam": "Tampa Bay Rays",
+      "awayTeam": "New York Yankees",
+      "commenceTime": "2026-10-06T00:00:00Z",
+      "market": "h2h",
+      "pick": "New York Yankees",
+      "odds": -126,
+      "bookmaker": "FanDuel",
+      "status": "PENDING",
+      "tier": "free",
+      "createdAt": "2026-10-04T07:50:09.346Z",
+      "resolvedAt": null
     }
   ],
-  "extraMarketsLastRun": "2026-10-04T00:22:28Z"
+  "extraMarketsLastRun": "2026-10-04T07:50:08Z"
 }
