@@ -1,11 +1,11 @@
 {
-  "updatedAt": "2026-10-04T13:44:40.180Z",
+  "updatedAt": "2026-10-04T18:00:03.848Z",
   "stats": {
-    "won": 80,
+    "won": 81,
     "lost": 54,
     "push": 9,
-    "pending": 101,
-    "winRate": 59.7,
+    "pending": 100,
+    "winRate": 60,
     "totalTips": 244
   },
   "tips": [
@@ -4324,10 +4324,10 @@
       "pick": "Indianapolis Colts",
       "odds": -192,
       "bookmaker": "DraftKings",
-      "status": "PENDING",
+      "status": "WON",
       "tier": "free",
       "createdAt": "2026-10-01T04:32:02.660Z",
-      "resolvedAt": null
+      "resolvedAt": "2026-10-04T17:59:59.409Z"
     },
     {
       "id": "americanfootball_nfl:664e6bda5721dc63be16bcf7d962a436:h2h",
@@ -4847,5 +4847,5 @@
       "resolvedAt": null
     }
   ],
-  "extraMarketsLastRun": "2026-10-04T13:44:39Z"
+  "extraMarketsLastRun": "2026-10-04T17:59:58Z"
 }
