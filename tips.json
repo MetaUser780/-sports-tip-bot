@@ -1,12 +1,12 @@
 {
-  "updatedAt": "2026-10-05T00:28:34.753Z",
+  "updatedAt": "2026-10-05T08:28:53.160Z",
   "stats": {
     "won": 90,
-    "lost": 58,
+    "lost": 60,
     "push": 9,
-    "pending": 88,
-    "winRate": 60.8,
-    "totalTips": 245
+    "pending": 87,
+    "winRate": 60,
+    "totalTips": 246
   },
   "tips": [
     {
@@ -4571,10 +4571,10 @@
       "pick": "Detroit Lions",
       "odds": -180,
       "bookmaker": "DraftKings",
-      "status": "PENDING",
+      "status": "LOST",
       "tier": "free",
       "createdAt": "2026-10-01T04:32:02.660Z",
-      "resolvedAt": null
+      "resolvedAt": "2026-10-05T08:28:52.555Z"
     },
     {
       "id": "americanfootball_nfl:8bd90781e17e6d97df3941063cedae1e:h2h",
@@ -4784,10 +4784,10 @@
       "pick": "Los Angeles Dodgers",
       "odds": -154,
       "bookmaker": "FanDuel",
-      "status": "PENDING",
+      "status": "LOST",
       "tier": "free",
       "createdAt": "2026-10-04T00:22:29.159Z",
-      "resolvedAt": null
+      "resolvedAt": "2026-10-05T08:28:52.555Z"
     },
     {
       "id": "americanfootball_nfl:259b5df9aa0d10257f56de78523495e0:h2h",
@@ -4864,7 +4864,26 @@
       "tier": "free",
       "createdAt": "2026-10-05T00:28:34.402Z",
       "resolvedAt": null
+    },
+    {
+      "id": "baseball_mlb:1bc3bf1d3034010bdfb31d928a71177a:h2h",
+      "type": "single",
+      "sport": "MLB",
+      "sportKey": "baseball_mlb",
+      "eventId": "1bc3bf1d3034010bdfb31d928a71177a",
+      "game": "Los Angeles Dodgers @ Atlanta Braves",
+      "homeTeam": "Atlanta Braves",
+      "awayTeam": "Los Angeles Dodgers",
+      "commenceTime": "2026-10-06T22:00:00Z",
+      "market": "h2h",
+      "pick": "Los Angeles Dodgers",
+      "odds": -113,
+      "bookmaker": "DraftKings",
+      "status": "PENDING",
+      "tier": "free",
+      "createdAt": "2026-10-05T08:28:52.852Z",
+      "resolvedAt": null
     }
   ],
-  "extraMarketsLastRun": "2026-10-05T00:28:33Z"
+  "extraMarketsLastRun": "2026-10-05T08:28:52Z"
 }
