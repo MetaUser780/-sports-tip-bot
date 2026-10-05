@@ -1,12 +1,12 @@
 {
-  "updatedAt": "2026-10-04T21:15:24.661Z",
+  "updatedAt": "2026-10-05T00:28:34.753Z",
   "stats": {
-    "won": 85,
+    "won": 90,
     "lost": 58,
     "push": 9,
-    "pending": 92,
-    "winRate": 59.4,
-    "totalTips": 244
+    "pending": 88,
+    "winRate": 60.8,
+    "totalTips": 245
   },
   "tips": [
     {
@@ -4495,10 +4495,10 @@
       "pick": "Minnesota Vikings",
       "odds": -600,
       "bookmaker": "DraftKings",
-      "status": "PENDING",
+      "status": "WON",
       "tier": "free",
       "createdAt": "2026-10-01T04:32:02.660Z",
-      "resolvedAt": null
+      "resolvedAt": "2026-10-05T00:28:33.932Z"
     },
     {
       "id": "americanfootball_nfl:a7e7efb75a9792ac63480ae6328dca18:h2h",
@@ -4514,10 +4514,10 @@
       "pick": "San Francisco 49ers",
       "odds": -148,
       "bookmaker": "DraftKings",
-      "status": "PENDING",
+      "status": "WON",
       "tier": "free",
       "createdAt": "2026-10-01T04:32:02.660Z",
-      "resolvedAt": null
+      "resolvedAt": "2026-10-05T00:28:33.932Z"
     },
     {
       "id": "americanfootball_nfl:e0cbd266dcf997089203a1b33ba0333d:h2h",
@@ -4533,10 +4533,10 @@
       "pick": "Kansas City Chiefs",
       "odds": -218,
       "bookmaker": "DraftKings",
-      "status": "PENDING",
+      "status": "WON",
       "tier": "free",
       "createdAt": "2026-10-01T04:32:02.660Z",
-      "resolvedAt": null
+      "resolvedAt": "2026-10-05T00:28:33.932Z"
     },
     {
       "id": "americanfootball_nfl:96d2373cda647873b971f268482bced0:h2h",
@@ -4552,10 +4552,10 @@
       "pick": "Seattle Seahawks",
       "odds": -380,
       "bookmaker": "DraftKings",
-      "status": "PENDING",
+      "status": "WON",
       "tier": "free",
       "createdAt": "2026-10-01T04:32:02.660Z",
-      "resolvedAt": null
+      "resolvedAt": "2026-10-05T00:28:33.932Z"
     },
     {
       "id": "americanfootball_nfl:a73a76599a4f3422803e57bd8f61b626:h2h",
@@ -4822,10 +4822,10 @@
       "pick": "Milwaukee Brewers",
       "odds": -144,
       "bookmaker": "FanDuel",
-      "status": "PENDING",
+      "status": "WON",
       "tier": "free",
       "createdAt": "2026-10-04T07:50:09.346Z",
-      "resolvedAt": null
+      "resolvedAt": "2026-10-05T00:28:33.932Z"
     },
     {
       "id": "baseball_mlb:4be245ad03895bcafcdc42d7d926b675:h2h",
@@ -4845,7 +4845,26 @@
       "tier": "free",
       "createdAt": "2026-10-04T07:50:09.346Z",
       "resolvedAt": null
+    },
+    {
+      "id": "baseball_mlb:62d8e1c18355ab6b3913d7a28fa677c2:h2h",
+      "type": "single",
+      "sport": "MLB",
+      "sportKey": "baseball_mlb",
+      "eventId": "62d8e1c18355ab6b3913d7a28fa677c2",
+      "game": "Milwaukee Brewers @ San Diego Padres",
+      "homeTeam": "San Diego Padres",
+      "awayTeam": "Milwaukee Brewers",
+      "commenceTime": "2026-10-07T01:30:00Z",
+      "market": "h2h",
+      "pick": "San Diego Padres",
+      "odds": -126,
+      "bookmaker": "FanDuel",
+      "status": "PENDING",
+      "tier": "free",
+      "createdAt": "2026-10-05T00:28:34.402Z",
+      "resolvedAt": null
     }
   ],
-  "extraMarketsLastRun": "2026-10-04T17:59:58Z"
+  "extraMarketsLastRun": "2026-10-05T00:28:33Z"
 }
