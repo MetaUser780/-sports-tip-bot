@@ -1,12 +1,12 @@
 {
-  "updatedAt": "2026-11-01T16:36:12.087Z",
+  "updatedAt": "2026-11-01T21:45:46.937Z",
   "stats": {
-    "won": 90,
-    "lost": 64,
+    "won": 98,
+    "lost": 67,
     "push": 9,
-    "pending": 201,
-    "winRate": 58.4,
-    "totalTips": 364
+    "pending": 193,
+    "winRate": 59.4,
+    "totalTips": 367
   },
   "tips": [
     {
@@ -6361,10 +6361,10 @@
       "pick": "Arsenal",
       "odds": 140,
       "bookmaker": "FanDuel",
-      "status": "PENDING",
+      "status": "WON",
       "tier": "free",
       "createdAt": "2026-11-01T00:44:29.342Z",
-      "resolvedAt": null
+      "resolvedAt": "2026-11-01T21:45:45.680Z"
     },
     {
       "id": "soccer_epl:0f552d9c6990c69474f50ff2fb54e9a3:h2h",
@@ -6532,10 +6532,10 @@
       "pick": "Dallas Cowboys",
       "odds": -310,
       "bookmaker": "DraftKings",
-      "status": "PENDING",
+      "status": "LOST",
       "tier": "free",
       "createdAt": "2026-11-01T00:44:29.898Z",
-      "resolvedAt": null
+      "resolvedAt": "2026-11-01T21:45:45.680Z"
     },
     {
       "id": "americanfootball_nfl:921859689f5f8b3b8b1caf4248bdb1ec:h2h",
@@ -6551,10 +6551,10 @@
       "pick": "Tampa Bay Buccaneers",
       "odds": -135,
       "bookmaker": "DraftKings",
-      "status": "PENDING",
+      "status": "WON",
       "tier": "free",
       "createdAt": "2026-11-01T00:44:29.898Z",
-      "resolvedAt": null
+      "resolvedAt": "2026-11-01T21:45:45.680Z"
     },
     {
       "id": "americanfootball_nfl:c93c421e5fa46031a43162d111d981d0:h2h",
@@ -6570,10 +6570,10 @@
       "pick": "Buffalo Bills",
       "odds": -166,
       "bookmaker": "DraftKings",
-      "status": "PENDING",
+      "status": "WON",
       "tier": "free",
       "createdAt": "2026-11-01T00:44:29.898Z",
-      "resolvedAt": null
+      "resolvedAt": "2026-11-01T21:45:45.680Z"
     },
     {
       "id": "americanfootball_nfl:9c5d8f57e0ba0fbd9ef436c1f0898f99:h2h",
@@ -6589,10 +6589,10 @@
       "pick": "Cincinnati Bengals",
       "odds": -675,
       "bookmaker": "DraftKings",
-      "status": "PENDING",
+      "status": "WON",
       "tier": "free",
       "createdAt": "2026-11-01T00:44:29.898Z",
-      "resolvedAt": null
+      "resolvedAt": "2026-11-01T21:45:45.680Z"
     },
     {
       "id": "americanfootball_nfl:ab5ab731ab655bd6308bc7a922275518:h2h",
@@ -6608,10 +6608,10 @@
       "pick": "Pittsburgh Steelers",
       "odds": -192,
       "bookmaker": "DraftKings",
-      "status": "PENDING",
+      "status": "WON",
       "tier": "free",
       "createdAt": "2026-11-01T00:44:29.898Z",
-      "resolvedAt": null
+      "resolvedAt": "2026-11-01T21:45:45.680Z"
     },
     {
       "id": "americanfootball_nfl:52e7ee9c42525e6deec02da32dc2fad8:h2h",
@@ -6627,10 +6627,10 @@
       "pick": "Detroit Lions",
       "odds": -170,
       "bookmaker": "DraftKings",
-      "status": "PENDING",
+      "status": "WON",
       "tier": "free",
       "createdAt": "2026-11-01T00:44:29.898Z",
-      "resolvedAt": null
+      "resolvedAt": "2026-11-01T21:45:45.680Z"
     },
     {
       "id": "americanfootball_nfl:159dbf0253dd2038eda2212f84387f0c:h2h",
@@ -6646,10 +6646,10 @@
       "pick": "Jacksonville Jaguars",
       "odds": -500,
       "bookmaker": "DraftKings",
-      "status": "PENDING",
+      "status": "WON",
       "tier": "free",
       "createdAt": "2026-11-01T00:44:29.898Z",
-      "resolvedAt": null
+      "resolvedAt": "2026-11-01T21:45:45.680Z"
     },
     {
       "id": "americanfootball_nfl:98f1b121b793977434c046e76c707145:h2h",
@@ -6665,10 +6665,10 @@
       "pick": "New York Jets",
       "odds": -122,
       "bookmaker": "DraftKings",
-      "status": "PENDING",
+      "status": "LOST",
       "tier": "free",
       "createdAt": "2026-11-01T00:44:29.898Z",
-      "resolvedAt": null
+      "resolvedAt": "2026-11-01T21:45:45.680Z"
     },
     {
       "id": "americanfootball_nfl:2ff84d3f6053d083c8c0a5bebf7cdd4c:h2h",
@@ -6915,10 +6915,10 @@
       "line": 1.5,
       "odds": -400,
       "bookmaker": "William Hill",
-      "status": "PENDING",
+      "status": "LOST",
       "tier": "free",
       "createdAt": "2026-11-01T08:48:55.029Z",
-      "resolvedAt": null
+      "resolvedAt": "2026-11-01T21:45:45.680Z"
     },
     {
       "id": "soccer_epl:6a3819cdbe2ba2fe5a3d8f9b4b459965:double_chance",
@@ -6935,10 +6935,10 @@
       "line": "home_or_away",
       "odds": -300,
       "bookmaker": "William Hill",
-      "status": "PENDING",
+      "status": "WON",
       "tier": "free",
       "createdAt": "2026-11-01T08:48:55.029Z",
-      "resolvedAt": null
+      "resolvedAt": "2026-11-01T21:45:45.680Z"
     },
     {
       "id": "soccer_usa_mls:54bf2a52e2dd2f8b9212f4816dceaada:totals",
@@ -7179,7 +7179,66 @@
       "tier": "free",
       "createdAt": "2026-11-01T08:48:55.584Z",
       "resolvedAt": null
+    },
+    {
+      "id": "soccer_epl:586bec023ee8ac2f0645d963bd2c9d25:h2h",
+      "type": "single",
+      "sport": "EPL",
+      "sportKey": "soccer_epl",
+      "eventId": "586bec023ee8ac2f0645d963bd2c9d25",
+      "game": "Coventry City @ Everton",
+      "homeTeam": "Everton",
+      "awayTeam": "Coventry City",
+      "commenceTime": "2026-11-06T20:00:00Z",
+      "market": "h2h",
+      "pick": "Everton",
+      "odds": -144,
+      "bookmaker": "MyBookie.ag",
+      "status": "PENDING",
+      "tier": "free",
+      "createdAt": "2026-11-01T21:45:45.749Z",
+      "resolvedAt": null
+    },
+    {
+      "id": "soccer_epl:586bec023ee8ac2f0645d963bd2c9d25:totals",
+      "type": "single",
+      "sport": "EPL",
+      "sportKey": "soccer_epl",
+      "eventId": "586bec023ee8ac2f0645d963bd2c9d25",
+      "game": "Coventry City @ Everton",
+      "homeTeam": "Everton",
+      "awayTeam": "Coventry City",
+      "commenceTime": "2026-11-06T20:00:00Z",
+      "market": "totals",
+      "pick": "Over 1.5 Gòl",
+      "line": 1.5,
+      "odds": -446,
+      "bookmaker": "1xBet",
+      "status": "PENDING",
+      "tier": "free",
+      "createdAt": "2026-11-01T21:45:46.521Z",
+      "resolvedAt": null
+    },
+    {
+      "id": "soccer_epl:586bec023ee8ac2f0645d963bd2c9d25:double_chance",
+      "type": "single",
+      "sport": "EPL",
+      "sportKey": "soccer_epl",
+      "eventId": "586bec023ee8ac2f0645d963bd2c9d25",
+      "game": "Coventry City @ Everton",
+      "homeTeam": "Everton",
+      "awayTeam": "Coventry City",
+      "commenceTime": "2026-11-06T20:00:00Z",
+      "market": "double_chance",
+      "pick": "Doub Chans: Everton or Draw",
+      "line": "home_or_draw",
+      "odds": -465,
+      "bookmaker": "1xBet",
+      "status": "PENDING",
+      "tier": "free",
+      "createdAt": "2026-11-01T21:45:46.521Z",
+      "resolvedAt": null
     }
   ],
-  "extraMarketsLastRun": "2026-11-01T16:36:07Z"
+  "extraMarketsLastRun": "2026-11-01T21:45:44Z"
 }
