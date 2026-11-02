@@ -1,12 +1,12 @@
 {
-  "updatedAt": "2026-11-02T01:18:24.193Z",
+  "updatedAt": "2026-11-02T08:56:55.304Z",
   "stats": {
-    "won": 110,
-    "lost": 69,
+    "won": 121,
+    "lost": 70,
     "push": 9,
-    "pending": 189,
-    "winRate": 61.5,
-    "totalTips": 377
+    "pending": 182,
+    "winRate": 63.4,
+    "totalTips": 382
   },
   "tips": [
     {
@@ -6475,10 +6475,10 @@
       "pick": "Inter Miami CF",
       "odds": 125,
       "bookmaker": "BetRivers",
-      "status": "PENDING",
+      "status": "WON",
       "tier": "free",
       "createdAt": "2026-11-01T00:44:29.501Z",
-      "resolvedAt": null
+      "resolvedAt": "2026-11-02T08:56:53.440Z"
     },
     {
       "id": "soccer_usa_mls:1a27bec6400dba567344a86aee6fca4a:h2h",
@@ -6494,10 +6494,10 @@
       "pick": "Los Angeles FC",
       "odds": -155,
       "bookmaker": "BetRivers",
-      "status": "PENDING",
+      "status": "LOST",
       "tier": "free",
       "createdAt": "2026-11-01T00:44:29.501Z",
-      "resolvedAt": null
+      "resolvedAt": "2026-11-02T08:56:53.440Z"
     },
     {
       "id": "soccer_usa_mls:c59921cdf131bc3c6e9fdc0cbe5abe3f:h2h",
@@ -6513,10 +6513,10 @@
       "pick": "Portland Timbers",
       "odds": -124,
       "bookmaker": "BetRivers",
-      "status": "PENDING",
+      "status": "WON",
       "tier": "free",
       "createdAt": "2026-11-01T00:44:29.501Z",
-      "resolvedAt": null
+      "resolvedAt": "2026-11-02T08:56:53.440Z"
     },
     {
       "id": "americanfootball_nfl:9255ca8f32aea590d00aa57de79f6bb6:h2h",
@@ -6741,10 +6741,10 @@
       "pick": "Washington Commanders",
       "odds": -258,
       "bookmaker": "DraftKings",
-      "status": "PENDING",
+      "status": "WON",
       "tier": "free",
       "createdAt": "2026-11-01T00:44:29.898Z",
-      "resolvedAt": null
+      "resolvedAt": "2026-11-02T08:56:53.440Z"
     },
     {
       "id": "americanfootball_nfl:7d664fbcd39350e559d83c0068ba7169:h2h",
@@ -6817,10 +6817,10 @@
       "pick": "Golden State Warriors",
       "odds": -130,
       "bookmaker": "FanDuel",
-      "status": "PENDING",
+      "status": "WON",
       "tier": "free",
       "createdAt": "2026-11-01T08:48:54.663Z",
-      "resolvedAt": null
+      "resolvedAt": "2026-11-02T08:56:53.440Z"
     },
     {
       "id": "basketball_nba:31fc89cbf3846e545e8e41a543a71d24:h2h",
@@ -6836,10 +6836,10 @@
       "pick": "Los Angeles Lakers",
       "odds": -192,
       "bookmaker": "DraftKings",
-      "status": "PENDING",
+      "status": "WON",
       "tier": "free",
       "createdAt": "2026-11-01T08:48:54.663Z",
-      "resolvedAt": null
+      "resolvedAt": "2026-11-02T08:56:53.440Z"
     },
     {
       "id": "americanfootball_nfl:c75744790b7acf6260c78ba5e739c0e5:h2h",
@@ -7035,10 +7035,10 @@
       "line": 1.5,
       "odds": -714,
       "bookmaker": "Coolbet",
-      "status": "PENDING",
+      "status": "WON",
       "tier": "free",
       "createdAt": "2026-11-01T08:48:55.584Z",
-      "resolvedAt": null
+      "resolvedAt": "2026-11-02T08:56:53.440Z"
     },
     {
       "id": "soccer_usa_mls:1a27bec6400dba567344a86aee6fca4a:double_chance",
@@ -7055,10 +7055,10 @@
       "line": "home_or_away",
       "odds": -444,
       "bookmaker": "Pinnacle",
-      "status": "PENDING",
+      "status": "WON",
       "tier": "free",
       "createdAt": "2026-11-01T08:48:55.584Z",
-      "resolvedAt": null
+      "resolvedAt": "2026-11-02T08:56:53.440Z"
     },
     {
       "id": "soccer_usa_mls:c59921cdf131bc3c6e9fdc0cbe5abe3f:totals",
@@ -7075,10 +7075,10 @@
       "line": 1.5,
       "odds": -526,
       "bookmaker": "Coolbet",
-      "status": "PENDING",
+      "status": "WON",
       "tier": "free",
       "createdAt": "2026-11-01T08:48:55.584Z",
-      "resolvedAt": null
+      "resolvedAt": "2026-11-02T08:56:53.440Z"
     },
     {
       "id": "soccer_usa_mls:c59921cdf131bc3c6e9fdc0cbe5abe3f:double_chance",
@@ -7095,10 +7095,10 @@
       "line": "home_or_draw",
       "odds": -526,
       "bookmaker": "MyBookie.ag",
-      "status": "PENDING",
+      "status": "WON",
       "tier": "free",
       "createdAt": "2026-11-01T08:48:55.584Z",
-      "resolvedAt": null
+      "resolvedAt": "2026-11-02T08:56:53.440Z"
     },
     {
       "id": "soccer_usa_mls:2bf8103627b1f0afe9f9b1b619ebbe61:totals",
@@ -7155,10 +7155,10 @@
       "line": 1.5,
       "odds": -833,
       "bookmaker": "Coolbet",
-      "status": "PENDING",
+      "status": "WON",
       "tier": "free",
       "createdAt": "2026-11-01T08:48:55.584Z",
-      "resolvedAt": null
+      "resolvedAt": "2026-11-02T08:56:53.440Z"
     },
     {
       "id": "soccer_usa_mls:b728a3eea55b37d5ce5268b9a594802f:double_chance",
@@ -7175,10 +7175,10 @@
       "line": "home_or_away",
       "odds": -391,
       "bookmaker": "Pinnacle",
-      "status": "PENDING",
+      "status": "WON",
       "tier": "free",
       "createdAt": "2026-11-01T08:48:55.584Z",
-      "resolvedAt": null
+      "resolvedAt": "2026-11-02T08:56:53.440Z"
     },
     {
       "id": "soccer_epl:586bec023ee8ac2f0645d963bd2c9d25:h2h",
@@ -7428,7 +7428,102 @@
       "tier": "free",
       "createdAt": "2026-11-02T01:18:24.039Z",
       "resolvedAt": null
+    },
+    {
+      "id": "basketball_nba:53ad3f78c949e79381b5e90a70293ac6:h2h",
+      "type": "single",
+      "sport": "NBA",
+      "sportKey": "basketball_nba",
+      "eventId": "53ad3f78c949e79381b5e90a70293ac6",
+      "game": "Atlanta Hawks @ Indiana Pacers",
+      "homeTeam": "Indiana Pacers",
+      "awayTeam": "Atlanta Hawks",
+      "commenceTime": "2026-11-03T00:40:00Z",
+      "market": "h2h",
+      "pick": "Atlanta Hawks",
+      "odds": -198,
+      "bookmaker": "DraftKings",
+      "status": "PENDING",
+      "tier": "free",
+      "createdAt": "2026-11-02T08:56:54.055Z",
+      "resolvedAt": null
+    },
+    {
+      "id": "basketball_nba:df7f8fce0b1c11db5140d60e1e126eb3:h2h",
+      "type": "single",
+      "sport": "NBA",
+      "sportKey": "basketball_nba",
+      "eventId": "df7f8fce0b1c11db5140d60e1e126eb3",
+      "game": "Sacramento Kings @ Dallas Mavericks",
+      "homeTeam": "Dallas Mavericks",
+      "awayTeam": "Sacramento Kings",
+      "commenceTime": "2026-11-03T01:10:00Z",
+      "market": "h2h",
+      "pick": "Dallas Mavericks",
+      "odds": -430,
+      "bookmaker": "FanDuel",
+      "status": "PENDING",
+      "tier": "free",
+      "createdAt": "2026-11-02T08:56:54.055Z",
+      "resolvedAt": null
+    },
+    {
+      "id": "basketball_nba:27c333f22603d4eda3b9b6a3888476dc:h2h",
+      "type": "single",
+      "sport": "NBA",
+      "sportKey": "basketball_nba",
+      "eventId": "27c333f22603d4eda3b9b6a3888476dc",
+      "game": "Phoenix Suns @ Golden State Warriors",
+      "homeTeam": "Golden State Warriors",
+      "awayTeam": "Phoenix Suns",
+      "commenceTime": "2026-11-03T03:10:00Z",
+      "market": "h2h",
+      "pick": "Golden State Warriors",
+      "odds": -180,
+      "bookmaker": "FanDuel",
+      "status": "PENDING",
+      "tier": "free",
+      "createdAt": "2026-11-02T08:56:54.055Z",
+      "resolvedAt": null
+    },
+    {
+      "id": "basketball_nba:afde8462706839f30115ea9d5f761066:h2h",
+      "type": "single",
+      "sport": "NBA",
+      "sportKey": "basketball_nba",
+      "eventId": "afde8462706839f30115ea9d5f761066",
+      "game": "Toronto Raptors @ Los Angeles Clippers",
+      "homeTeam": "Los Angeles Clippers",
+      "awayTeam": "Toronto Raptors",
+      "commenceTime": "2026-11-03T03:10:00Z",
+      "market": "h2h",
+      "pick": "Toronto Raptors",
+      "odds": -194,
+      "bookmaker": "FanDuel",
+      "status": "PENDING",
+      "tier": "free",
+      "createdAt": "2026-11-02T08:56:54.055Z",
+      "resolvedAt": null
+    },
+    {
+      "id": "basketball_nba:f4e4165c2b9e53531629f6d0ab982b13:h2h",
+      "type": "single",
+      "sport": "NBA",
+      "sportKey": "basketball_nba",
+      "eventId": "f4e4165c2b9e53531629f6d0ab982b13",
+      "game": "Miami Heat @ Los Angeles Lakers",
+      "homeTeam": "Los Angeles Lakers",
+      "awayTeam": "Miami Heat",
+      "commenceTime": "2026-11-03T03:10:00Z",
+      "market": "h2h",
+      "pick": "Los Angeles Lakers",
+      "odds": -135,
+      "bookmaker": "DraftKings",
+      "status": "PENDING",
+      "tier": "free",
+      "createdAt": "2026-11-02T08:56:54.055Z",
+      "resolvedAt": null
     }
   ],
-  "extraMarketsLastRun": "2026-11-01T21:45:44Z"
+  "extraMarketsLastRun": "2026-11-02T08:56:52Z"
 }
