@@ -1,12 +1,12 @@
 {
-  "updatedAt": "2026-11-03T02:11:05.601Z",
+  "updatedAt": "2026-11-03T11:40:04.004Z",
   "stats": {
-    "won": 122,
-    "lost": 72,
+    "won": 132,
+    "lost": 78,
     "push": 9,
-    "pending": 226,
+    "pending": 215,
     "winRate": 62.9,
-    "totalTips": 429
+    "totalTips": 434
   },
   "tips": [
     {
@@ -6760,10 +6760,10 @@
       "pick": "Seattle Seahawks",
       "odds": -170,
       "bookmaker": "DraftKings",
-      "status": "PENDING",
+      "status": "LOST",
       "tier": "free",
       "createdAt": "2026-11-01T00:44:29.898Z",
-      "resolvedAt": null
+      "resolvedAt": "2026-11-03T11:39:59.378Z"
     },
     {
       "id": "basketball_nba:e8559eaac12af915cfe6597644620c13:h2h",
@@ -7253,10 +7253,10 @@
       "pick": "Cleveland Cavaliers",
       "odds": -174,
       "bookmaker": "FanDuel",
-      "status": "PENDING",
+      "status": "LOST",
       "tier": "free",
       "createdAt": "2026-11-02T01:18:24.039Z",
-      "resolvedAt": null
+      "resolvedAt": "2026-11-03T11:39:59.378Z"
     },
     {
       "id": "basketball_nba:4f6688e4d1818bd8bb3e65352c7a0406:h2h",
@@ -7272,10 +7272,10 @@
       "pick": "New York Knicks",
       "odds": -850,
       "bookmaker": "DraftKings",
-      "status": "PENDING",
+      "status": "WON",
       "tier": "free",
       "createdAt": "2026-11-02T01:18:24.039Z",
-      "resolvedAt": null
+      "resolvedAt": "2026-11-03T11:39:59.378Z"
     },
     {
       "id": "basketball_nba:fdf913d713fd5851d418c59872bdf265:h2h",
@@ -7291,10 +7291,10 @@
       "pick": "Detroit Pistons",
       "odds": -175,
       "bookmaker": "DraftKings",
-      "status": "PENDING",
+      "status": "WON",
       "tier": "free",
       "createdAt": "2026-11-02T01:18:24.039Z",
-      "resolvedAt": null
+      "resolvedAt": "2026-11-03T11:39:59.378Z"
     },
     {
       "id": "basketball_nba:0a808d8f7afab3c0e249ca284c470806:h2h",
@@ -7310,10 +7310,10 @@
       "pick": "Philadelphia 76ers",
       "odds": -650,
       "bookmaker": "DraftKings",
-      "status": "PENDING",
+      "status": "WON",
       "tier": "free",
       "createdAt": "2026-11-02T01:18:24.039Z",
-      "resolvedAt": null
+      "resolvedAt": "2026-11-03T11:39:59.378Z"
     },
     {
       "id": "basketball_nba:6acd74a2d987fa101c79eaf378fd5891:h2h",
@@ -7329,10 +7329,10 @@
       "pick": "Orlando Magic",
       "odds": -120,
       "bookmaker": "DraftKings",
-      "status": "PENDING",
+      "status": "LOST",
       "tier": "free",
       "createdAt": "2026-11-02T01:18:24.039Z",
-      "resolvedAt": null
+      "resolvedAt": "2026-11-03T11:39:59.378Z"
     },
     {
       "id": "basketball_nba:6579d9162df09172d12f48eecc5220fb:h2h",
@@ -7348,10 +7348,10 @@
       "pick": "Memphis Grizzlies",
       "odds": -225,
       "bookmaker": "DraftKings",
-      "status": "PENDING",
+      "status": "LOST",
       "tier": "free",
       "createdAt": "2026-11-02T01:18:24.039Z",
-      "resolvedAt": null
+      "resolvedAt": "2026-11-03T11:39:59.378Z"
     },
     {
       "id": "basketball_nba:6907851d65a9d0046d4c6c2f4ffb5e80:h2h",
@@ -7367,10 +7367,10 @@
       "pick": "Minnesota Timberwolves",
       "odds": -520,
       "bookmaker": "DraftKings",
-      "status": "PENDING",
+      "status": "WON",
       "tier": "free",
       "createdAt": "2026-11-02T01:18:24.039Z",
-      "resolvedAt": null
+      "resolvedAt": "2026-11-03T11:39:59.378Z"
     },
     {
       "id": "basketball_nba:d6cb49b0ae478270e74d0e7ce7082e57:h2h",
@@ -7386,10 +7386,10 @@
       "pick": "Houston Rockets",
       "odds": -192,
       "bookmaker": "DraftKings",
-      "status": "PENDING",
+      "status": "WON",
       "tier": "free",
       "createdAt": "2026-11-02T01:18:24.039Z",
-      "resolvedAt": null
+      "resolvedAt": "2026-11-03T11:39:59.378Z"
     },
     {
       "id": "basketball_nba:fe9664deb3e21a28b10a3de39adfb82a:h2h",
@@ -7405,10 +7405,10 @@
       "pick": "San Antonio Spurs",
       "odds": -1000,
       "bookmaker": "DraftKings",
-      "status": "PENDING",
+      "status": "WON",
       "tier": "free",
       "createdAt": "2026-11-02T01:18:24.039Z",
-      "resolvedAt": null
+      "resolvedAt": "2026-11-03T11:39:59.378Z"
     },
     {
       "id": "basketball_nba:1dd700c1205f0c7287e5df99c7a17822:h2h",
@@ -7424,10 +7424,10 @@
       "pick": "Denver Nuggets",
       "odds": -170,
       "bookmaker": "DraftKings",
-      "status": "PENDING",
+      "status": "LOST",
       "tier": "free",
       "createdAt": "2026-11-02T01:18:24.039Z",
-      "resolvedAt": null
+      "resolvedAt": "2026-11-03T11:39:59.378Z"
     },
     {
       "id": "basketball_nba:53ad3f78c949e79381b5e90a70293ac6:h2h",
@@ -7443,10 +7443,10 @@
       "pick": "Atlanta Hawks",
       "odds": -198,
       "bookmaker": "DraftKings",
-      "status": "PENDING",
+      "status": "WON",
       "tier": "free",
       "createdAt": "2026-11-02T08:56:54.055Z",
-      "resolvedAt": null
+      "resolvedAt": "2026-11-03T11:39:59.378Z"
     },
     {
       "id": "basketball_nba:df7f8fce0b1c11db5140d60e1e126eb3:h2h",
@@ -7462,10 +7462,10 @@
       "pick": "Dallas Mavericks",
       "odds": -430,
       "bookmaker": "FanDuel",
-      "status": "PENDING",
+      "status": "LOST",
       "tier": "free",
       "createdAt": "2026-11-02T08:56:54.055Z",
-      "resolvedAt": null
+      "resolvedAt": "2026-11-03T11:39:59.378Z"
     },
     {
       "id": "basketball_nba:27c333f22603d4eda3b9b6a3888476dc:h2h",
@@ -7481,10 +7481,10 @@
       "pick": "Golden State Warriors",
       "odds": -180,
       "bookmaker": "FanDuel",
-      "status": "PENDING",
+      "status": "WON",
       "tier": "free",
       "createdAt": "2026-11-02T08:56:54.055Z",
-      "resolvedAt": null
+      "resolvedAt": "2026-11-03T11:39:59.378Z"
     },
     {
       "id": "basketball_nba:afde8462706839f30115ea9d5f761066:h2h",
@@ -7500,10 +7500,10 @@
       "pick": "Toronto Raptors",
       "odds": -194,
       "bookmaker": "FanDuel",
-      "status": "PENDING",
+      "status": "WON",
       "tier": "free",
       "createdAt": "2026-11-02T08:56:54.055Z",
-      "resolvedAt": null
+      "resolvedAt": "2026-11-03T11:39:59.378Z"
     },
     {
       "id": "basketball_nba:f4e4165c2b9e53531629f6d0ab982b13:h2h",
@@ -7519,10 +7519,10 @@
       "pick": "Los Angeles Lakers",
       "odds": -135,
       "bookmaker": "DraftKings",
-      "status": "PENDING",
+      "status": "WON",
       "tier": "free",
       "createdAt": "2026-11-02T08:56:54.055Z",
-      "resolvedAt": null
+      "resolvedAt": "2026-11-03T11:39:59.378Z"
     },
     {
       "id": "soccer_epl:5c87852253fd11eea5d34ad723356607:h2h",
@@ -8444,7 +8444,102 @@
       "tier": "free",
       "createdAt": "2026-11-03T02:11:05.601Z",
       "resolvedAt": null
+    },
+    {
+      "id": "basketball_nba:91df86557819598ca270ba35410cfcfa:h2h",
+      "type": "single",
+      "sport": "NBA",
+      "sportKey": "basketball_nba",
+      "eventId": "91df86557819598ca270ba35410cfcfa",
+      "game": "Philadelphia 76ers @ Detroit Pistons",
+      "homeTeam": "Detroit Pistons",
+      "awayTeam": "Philadelphia 76ers",
+      "commenceTime": "2026-11-05T00:10:00Z",
+      "market": "h2h",
+      "pick": "Detroit Pistons",
+      "odds": -126,
+      "bookmaker": "FanDuel",
+      "status": "PENDING",
+      "tier": "free",
+      "createdAt": "2026-11-03T11:39:59.974Z",
+      "resolvedAt": null
+    },
+    {
+      "id": "basketball_nba:6b33f8632d4dd100cba8453db82213fa:h2h",
+      "type": "single",
+      "sport": "NBA",
+      "sportKey": "basketball_nba",
+      "eventId": "6b33f8632d4dd100cba8453db82213fa",
+      "game": "Charlotte Hornets @ Brooklyn Nets",
+      "homeTeam": "Brooklyn Nets",
+      "awayTeam": "Charlotte Hornets",
+      "commenceTime": "2026-11-05T00:40:00Z",
+      "market": "h2h",
+      "pick": "Charlotte Hornets",
+      "odds": -138,
+      "bookmaker": "FanDuel",
+      "status": "PENDING",
+      "tier": "free",
+      "createdAt": "2026-11-03T11:39:59.974Z",
+      "resolvedAt": null
+    },
+    {
+      "id": "basketball_nba:38fdb396939e8aabebd93cb509618927:h2h",
+      "type": "single",
+      "sport": "NBA",
+      "sportKey": "basketball_nba",
+      "eventId": "38fdb396939e8aabebd93cb509618927",
+      "game": "Cleveland Cavaliers @ Oklahoma City Thunder",
+      "homeTeam": "Oklahoma City Thunder",
+      "awayTeam": "Cleveland Cavaliers",
+      "commenceTime": "2026-11-05T01:10:00Z",
+      "market": "h2h",
+      "pick": "Oklahoma City Thunder",
+      "odds": -144,
+      "bookmaker": "FanDuel",
+      "status": "PENDING",
+      "tier": "free",
+      "createdAt": "2026-11-03T11:39:59.974Z",
+      "resolvedAt": null
+    },
+    {
+      "id": "basketball_nba:b2557f74f4d7675ed3b76a4a064e0bc9:h2h",
+      "type": "single",
+      "sport": "NBA",
+      "sportKey": "basketball_nba",
+      "eventId": "b2557f74f4d7675ed3b76a4a064e0bc9",
+      "game": "Minnesota Timberwolves @ Houston Rockets",
+      "homeTeam": "Houston Rockets",
+      "awayTeam": "Minnesota Timberwolves",
+      "commenceTime": "2026-11-05T01:40:00Z",
+      "market": "h2h",
+      "pick": "Houston Rockets",
+      "odds": -355,
+      "bookmaker": "FanDuel",
+      "status": "PENDING",
+      "tier": "free",
+      "createdAt": "2026-11-03T11:39:59.975Z",
+      "resolvedAt": null
+    },
+    {
+      "id": "basketball_nba:6b25f3932db93d4c5ad7658def2645bf:h2h",
+      "type": "single",
+      "sport": "NBA",
+      "sportKey": "basketball_nba",
+      "eventId": "6b25f3932db93d4c5ad7658def2645bf",
+      "game": "Dallas Mavericks @ San Antonio Spurs",
+      "homeTeam": "San Antonio Spurs",
+      "awayTeam": "Dallas Mavericks",
+      "commenceTime": "2026-11-05T02:40:00Z",
+      "market": "h2h",
+      "pick": "San Antonio Spurs",
+      "odds": -650,
+      "bookmaker": "FanDuel",
+      "status": "PENDING",
+      "tier": "free",
+      "createdAt": "2026-11-03T11:39:59.975Z",
+      "resolvedAt": null
     }
   ],
-  "extraMarketsLastRun": "2026-11-03T02:11:00Z"
+  "extraMarketsLastRun": "2026-11-03T11:39:58Z"
 }
