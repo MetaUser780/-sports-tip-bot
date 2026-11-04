@@ -1,12 +1,12 @@
 {
-  "updatedAt": "2026-11-04T00:25:20.080Z",
+  "updatedAt": "2026-11-04T08:41:55.808Z",
   "stats": {
     "won": 132,
     "lost": 78,
     "push": 9,
-    "pending": 251,
+    "pending": 252,
     "winRate": 62.9,
-    "totalTips": 470
+    "totalTips": 471
   },
   "tips": [
     {
@@ -9233,7 +9233,26 @@
       "tier": "free",
       "createdAt": "2026-11-04T00:25:17.282Z",
       "resolvedAt": null
+    },
+    {
+      "id": "americanfootball_nfl:9760d8f19f84bfee300a74ceb656c95d:h2h",
+      "type": "single",
+      "sport": "NFL",
+      "sportKey": "americanfootball_nfl",
+      "eventId": "9760d8f19f84bfee300a74ceb656c95d",
+      "game": "Tampa Bay Buccaneers @ Chicago Bears",
+      "homeTeam": "Chicago Bears",
+      "awayTeam": "Tampa Bay Buccaneers",
+      "commenceTime": "2026-11-09T01:20:00Z",
+      "market": "h2h",
+      "pick": "Chicago Bears",
+      "odds": -290,
+      "bookmaker": "DraftKings",
+      "status": "PENDING",
+      "tier": "free",
+      "createdAt": "2026-11-04T08:41:52.792Z",
+      "resolvedAt": null
     }
   ],
-  "extraMarketsLastRun": "2026-11-04T00:25:15Z"
+  "extraMarketsLastRun": "2026-11-04T08:41:51Z"
 }
